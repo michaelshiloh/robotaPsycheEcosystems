@@ -165,7 +165,9 @@ class ChinonyeremsEcosystem {
     text("Food: "+foods.size(), 20, 110);
   }
 
-
+  void keyPressed()
+  {
+  }
 
   class Zoink {
 
