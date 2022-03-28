@@ -181,7 +181,7 @@ class YiyangEcosystem {
       pushMatrix();
       translate(location.x, location.y);
       rotate(velocity.heading());
-      triangle(0, 5, 0, -5, 20, 0);
+      triangle(0, 10, 0, -10, 30, 0);
       popMatrix();
     }
 
