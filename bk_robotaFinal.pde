@@ -218,6 +218,11 @@ class BriansEcosystem {
       addFoodAndFish();
     }
   }
+  
+  //built-in function that responds to keyPressed event
+  void keyPressed(){
+    // empty for now
+  }
 
   void draw() {
     //text settings
