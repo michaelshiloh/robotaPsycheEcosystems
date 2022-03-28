@@ -378,4 +378,7 @@ void draw() {
 void mouseClicked() {
 }
 
+void keyPressed() {
+}
+
 }
