@@ -71,7 +71,7 @@ class YiyangEcosystem {
     }
   }
 
-  void mousePressed() {
+  void mouseClicked() {
     if (LightSources.size() < 5) LightSources.add(new LightSource(mouseX, mouseY));
   }
 
