@@ -376,4 +376,7 @@ void draw() {
   }
 }
 
+void mouseClicked() {
+}
+
 }
