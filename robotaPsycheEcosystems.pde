@@ -7,6 +7,9 @@ ChinonyeremsEcosystem system3 = new ChinonyeremsEcosystem();
 EhtishamsEcosystem system4 = new EhtishamsEcosystem();
 AdinasEcosystem system5 = new AdinasEcosystem();
 
+// for Adina's ecosystem
+import java.io.*;
+import java.util.*;
 
 
 void setup(){
