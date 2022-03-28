@@ -6,7 +6,7 @@ Name: Adina Maratkyzy (am10567)
 Date: March 9, 2022
 */
 
-class adinasEcosystem {
+class AdinasEcosystem {
   
   class Alpha {
   
