@@ -1041,4 +1041,6 @@ class EhtishamsEcosystem {
       food.add(new Food(float(mouseX), float(mouseY)));
     }
   }
+  void keyPressed() {
+  }
 }
