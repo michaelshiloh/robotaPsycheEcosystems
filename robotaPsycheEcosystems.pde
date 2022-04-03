@@ -7,6 +7,7 @@ ChinonyeremsEcosystem system3 = new ChinonyeremsEcosystem();
 EhtishamsEcosystem system4 = new EhtishamsEcosystem();
 AdinasEcosystem system5 = new AdinasEcosystem();
 SnehilsEcosystem system6 = new SnehilsEcosystem();
+toomiesEcosystem system7 = new toomiesEcosystem();
 
 // for some of the ecosystem
 import java.io.*;
@@ -22,7 +23,7 @@ void setup(){
   system4.setup();
   system5.setup();
   system6.setup();
-  
+  system7.setup();
 }
 
 
@@ -34,6 +35,7 @@ void draw() {
   system4.draw();  
   system5.draw(); 
   system6.draw();
+  system7.setup();
 }
 
 void mouseClicked() {
@@ -43,6 +45,7 @@ void mouseClicked() {
   system4.mouseClicked(); 
   system5.mouseClicked();
   system6.mouseClicked();
+  system7.mouseClicked();
 }
 
 void keyPressed() {
