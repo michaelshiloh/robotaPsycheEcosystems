@@ -1,3 +1,5 @@
+class BadrsEcosystem {
+
 ArrayList<Creature> creatures = new ArrayList<Creature>(); // ArrayList to store all the creatures
 ArrayList<Food> foodlist = new ArrayList<Food>(); // ArrayList to store the food
 //Slider slider1; // Initialize the sliders
@@ -439,3 +441,4 @@ class Food {
     ellipse(location.x, location.y, 4, 4);
   }
 };
+}
