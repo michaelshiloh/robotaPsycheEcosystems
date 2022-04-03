@@ -27,17 +27,17 @@ class SnehilsEcosystem {
 
 //to stop or start loop and analyze the ecosystem closely 
 void keyPressed() {
-  switch (key) {
+  //switch (key) {
   //p pauses the loop
-  case 'p':
-    noLoop();
-    break;
+  //case 'p':
+    //noLoop();
+    //break;
   // r resumes the loop
-  case 'r':
-    singleFrame = false;
-    loop();
-    break;
-  }
+  //case 'r':
+    //singleFrame = false;
+    //loop();
+    //break;
+  //}
 }
 
 void mouseClicked() {
