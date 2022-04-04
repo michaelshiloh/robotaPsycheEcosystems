@@ -8,6 +8,7 @@ EhtishamsEcosystem system4 = new EhtishamsEcosystem();
 AdinasEcosystem system5 = new AdinasEcosystem();
 SnehilsEcosystem system6 = new SnehilsEcosystem();
 toomiesEcosystem system7 = new toomiesEcosystem();
+JiayiEcosystem system8 = new JiayiEcosystem();
 
 // for some of the ecosystem
 import java.io.*;
