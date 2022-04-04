@@ -19,7 +19,8 @@ class ChinonyeremsEcosystem {
   Incubator incubator;
 
   void setup() {
-    size(1400, 800);
+    //commented out size function for final project
+    //size(1400, 800);
 
     // initialize zoinks
     for (int i = 0; i < initial_zoink; i++) {
