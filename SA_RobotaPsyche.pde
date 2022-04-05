@@ -8,7 +8,7 @@ class SnehilsEcosystem {
   Attractor ellipseAttractor;
   //predator declared
   ArrayList<Predator> predators = new ArrayList<Predator>();
-  boolean singleFrame = true;
+  boolean singleFrame = false;
   int time = millis();
   //to show how many preys were killed or died 
   int deaths = 0;
