@@ -13,11 +13,9 @@ BadrsEcosystem system9 = new BadrsEcosystem();
 AbdulEcosystem system10 = new AbdulEcosystem();
 YejisEcosystem system11 = new YejisEcosystem();
 GenieEcosystem system12 = new GenieEcosystem();
-/*
- toomiesEcosystem
-  YiyangEcosystem
- PhillipEcosystem
- */
+YiyangEcosystem system13 = new YiyangEcosystem();
+PhillipEcosystem system14 = new PhillipEcosystem();
+
 
 // for some of the ecosystem
 import java.io.*;
@@ -39,6 +37,8 @@ void setup() {
   system10.setup();
   system11.setup();
   system12.setup();
+  system13.setup();
+  system14.setup();
 }
 
 
@@ -56,6 +56,8 @@ void draw() {
   system10.draw();
   system11.draw();
   system12.draw();
+  system13.draw();
+  system14.draw();
 }
 
 void mouseClicked() {
