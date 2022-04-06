@@ -104,7 +104,6 @@ class YejisEcosystem {
 
   void draw() {
     //Background set to black
-    background(0);
     flock.run();
 
     //When eel collides with seabug, seabug is eaten (removed from array list)
