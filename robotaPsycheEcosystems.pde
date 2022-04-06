@@ -10,22 +10,22 @@ SnehilsEcosystem system6 = new SnehilsEcosystem();
 toomiesEcosystem system7 = new toomiesEcosystem();
 JiayiEcosystem system8 = new JiayiEcosystem();
 BadrsEcosystem system9 = new BadrsEcosystem();
+AbdulEcosystem system10 = new AbdulEcosystem();
+YejisEcosystem system11 = new YejisEcosystem();
+GenieEcosystem system12 = new GenieEcosystem();
 /*
-AbdulEcosystem
-toomiesEcosystem
-YejisEcosystem
-GenieEcosystem
-YiyangEcosystem
-PhillipEcosystem
-*/
+ toomiesEcosystem
+  YiyangEcosystem
+ PhillipEcosystem
+ */
 
 // for some of the ecosystem
 import java.io.*;
 import java.util.*;
 
 
-void setup(){
- 
+void setup() {
+
   fullScreen();
   system1.setup(); // call setup for each ecosystem
   system2.setup();
@@ -36,6 +36,9 @@ void setup(){
   system7.setup();
   system8.setup();
   system9.setup();
+  system10.setup();
+  system11.setup();
+  system12.setup();
 }
 
 
@@ -44,19 +47,22 @@ void draw() {
   system1.draw();// call draw for each ecosystem
   system2.draw();
   system3.draw();
-  system4.draw();  
-  system5.draw(); 
+  system4.draw();
+  system5.draw();
   system6.draw();
   system7.draw();
   system8.draw();
   system9.draw();
+  system10.draw();
+  system11.draw();
+  system12.draw();
 }
 
 void mouseClicked() {
   system1.mouseClicked(); // call mouseClicked for each ecosystem
   system2.mouseClicked();
-  system3.mouseClicked(); 
-  system4.mouseClicked(); 
+  system3.mouseClicked();
+  system4.mouseClicked();
   system5.mouseClicked();
   system6.mouseClicked();
   system7.mouseClicked();
