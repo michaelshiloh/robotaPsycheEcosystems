@@ -8,7 +8,7 @@ class toomiesEcosystem {
   //AudioPlayer bgm;
 
   PImage pmei, psam, bg, candy, mei1, mei2, mei3, sam1, sam2, sam3;
-  PFont font;
+  //PFont font;
   int screenmode = 1;
   int r = 60;
   float dsam, dmei;
@@ -166,7 +166,7 @@ class toomiesEcosystem {
     sam3 = loadImage("sam3.png");
     //bg = loadImage("bg.png");
     candy = loadImage("candy.png");
-    font  = createFont("/Users/fatimaaljneibi/Downloads/Fonts/Hubballi/Hubballi-Regular.ttf", 32);
+    //font  = createFont("/Users/fatimaaljneibi/Downloads/Fonts/Hubballi/Hubballi-Regular.ttf", 32);
     noStroke();
     smooth(4);
 
@@ -181,9 +181,9 @@ class toomiesEcosystem {
     //start screen , background info
     if (screenmode == 1) {
       //background(#728DC6);
-      textFont(font, 70);
+      // text(70);
       text("babysitting simulator!", width/2, height/2-100);
-      textFont(font, 30);
+      //textFont( 30);
       text("-press the space key to start-", width/2, height/2);
       text("Your little sister Mei has invited her friend over to play", width/2, height/2+60);
       text("with her in your home's backyard, but it is your job to", width/2, height/2+100);
@@ -259,7 +259,7 @@ class toomiesEcosystem {
       rect(10, 35, 200, 20, 20);
       rect(10, 75, 200, 20, 20);
       textAlign(LEFT);
-      textFont(font, 20);
+      //textFont( 20);
       fill(0);
       text("press 'b' to go back to the main screen!", 10, height-8);
       text("click your mouse on the kids to give them candy!", 10, 20);
@@ -275,7 +275,7 @@ class toomiesEcosystem {
       popStyle();
 
       if (mei.adoration >= 10 && sam.adoration >=10) {
-        textFont(font, 40);
+        //textFont( 40);
         text("The kids like you know! Mission:Success!", width/2, height/2);
       }
 
