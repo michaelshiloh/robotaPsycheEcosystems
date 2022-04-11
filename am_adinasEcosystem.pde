@@ -28,7 +28,7 @@ class AdinasEcosystem {
   //Alpha constructor
   //---------------------------------------------------------------------------------//
   Alpha() {
-    location = new PVector(random(1, width) / 2, random(201, height));
+    location = new PVector(random(1, zoneWidth) / 2, random(201, zoneHeight));
     interval = frameCount;
     velocity = new PVector(random(3, 4), random(3, 4));
     randomChange = false;
@@ -56,7 +56,7 @@ class AdinasEcosystem {
   ArrayList<Wolf> populateWolves() {
     ArrayList<Wolf> wolvesPack = new ArrayList<Wolf>();
     for (int i = 0; i < 10; i++) { //start with 10 wolves in the pack
-      wolvesPack.add(new Wolf(random(0.6, 0.9), random(0.6, 0.9), random(width), random(height))); //create of random sizes
+      wolvesPack.add(new Wolf(random(0.6, 0.9), random(0.6, 0.9), random(zoneWidth), random(zoneHeight))); //create of random sizes
     }
     return wolvesPack;
   }
@@ -65,16 +65,16 @@ class AdinasEcosystem {
   //---------------------------------------------------------------------------------//
   void update() {
     // change the direction of the alpha if the wall is met
-    if (location.x <= 0 || location.x >= width) {
+    if (location.x <= 0 || location.x >= zoneWidth) {
       velocity.x *= -1;
     }
-    if (location.y <= 200 || location.y >= height) {
+    if (location.y <= 200 || location.y >= zoneHeight) {
       velocity.y *= -1;
     }
     //allowing to change the direction only if the alpha is inside the boundaries and the interval is met
     //we are checking the interval by substracting the frameCount from the interval that checked the frameCount last time
     //the interval is set to 3 seconds.
-    if (location.x > 0 && location.x < width && location.y > 200 && location.y < height && (frameCount - interval) > 180  && !running) {
+    if (location.x > 0 && location.x < zoneWidth && location.y > 200 && location.y < zoneHeight && (frameCount - interval) > 180  && !running) {
       randomChange = true; //allow for a random change of direction
     }
     if (randomChange) {
@@ -165,7 +165,7 @@ class AdinasEcosystem {
     }
     //check if foodMax is reached
     if (foodScore > foodMax) {
-      wolves.add(new Wolf(random(0.6, 0.9), random(0.6, 0.9), random(width), random(height))); //add a member to the pack
+      wolves.add(new Wolf(random(0.6, 0.9), random(0.6, 0.9), random(zoneWidth), random(zoneHeight))); //add a member to the pack
       foodScore = 50; //reset the foodscore value to the default of 50
     }
   }
@@ -182,21 +182,27 @@ class AdinasEcosystem {
     //---------------------------------------------------------------------------------//
     String ageString = (index + 1) + " alpha's age: " + age;
     fill(colors[0], colors[1], colors[2]);
-    textSize(20);
-    text(ageString, 15 + width/2.7 * index, 30);
+    //textSize(20);
+    //text(ageString, 15 + zoneWidth/2.7 * index, 30);
+    textSize(10);
+    text(ageString, 15 + zoneWidth/2.7 * index, 30);
     //---------------------------------------------------------------------------------//
     //Display food score
     //---------------------------------------------------------------------------------//
     String foodString = "Food score (max is 100): " + foodScore;
     fill(220);
-    textSize(15);
-    text(foodString, 15 + width/2.7 * index, 60);
+    //textSize(15);
+    //text(foodString, 15 + zoneWidth/2.7 * index, 60);
+    textSize(10);
+    text(ageString, 15 + zoneWidth/2.7 * index, 60);
     //---------------------------------------------------------------------------------//
     //Display pack count number
     //---------------------------------------------------------------------------------//
     String packString = "Pack size: " + wolves.size();
-    textSize(15);
-    text(packString, 15 + width/2.7 * index, 80);
+    //textSize(15);
+    //text(packString, 15 + zoneWidth/2.7 * index, 80);
+    textSize(10);
+    text(ageString, 15 + zoneWidth/2.7 * index, 80);
     //---------------------------------------------------------------------------------//
     //Color the Alpha
     //---------------------------------------------------------------------------------//
@@ -276,7 +282,7 @@ class Rabbit {
   //Rabbit class constructor
   //---------------------------------------------------------------------------------//
   Rabbit() {
-    location = new PVector(random(0, width), random(100, height));
+    location = new PVector(random(0, zoneWidth), random(100, zoneHeight));
     velocity = new PVector(2, 2);
   }
   //---------------------------------------------------------------------------------//
@@ -284,10 +290,10 @@ class Rabbit {
   //---------------------------------------------------------------------------------//
   void update() {
     // change the direction of the alpha if the wall is met
-    if (location.x <= 0 || location.x >= width) {
+    if (location.x <= 0 || location.x >= zoneWidth) {
       velocity.x *= -1;
     }
-    if (location.y <= 100 || location.y >= height) {
+    if (location.y <= 100 || location.y >= zoneHeight) {
       velocity.y *= -1;
     }
 
@@ -325,10 +331,11 @@ double distance(PVector a, PVector b) {
 //---------------------------------------------------------------------------------//
 //Display the legend box
 //---------------------------------------------------------------------------------//
-void legendDisplay() {
-  fill(0);
-  rect(0, height-620, width, -100);
-}
+
+//void legendDisplay() {
+//  fill(0);
+//  rect(0, zoneHeight-620, zoneWidth, -100);
+//}
 
 //---------------------------------------------------------------------------------//
 //creating first pack
