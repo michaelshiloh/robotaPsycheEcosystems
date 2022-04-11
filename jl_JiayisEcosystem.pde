@@ -1,3 +1,4 @@
+
 class JiayiEcosystem {
  
   class Algae{
@@ -299,8 +300,8 @@ class LilFrog{
 }
 
 void checkEdges(){
-    if (location.x > width-100) {
-      location.x = width-100;
+    if (location.x > zoneWidth-100) {
+      location.x = zoneWidth-100;
       velocity.x *= -1;
       acceleration.x *= -1;
       velocity.y *= -1;
@@ -313,8 +314,8 @@ void checkEdges(){
 
     }
 
-    if (location.y > height-100) {
-      location.y = height- 100;
+    if (location.y >zoneHeight-100) {
+      location.y = zoneHeight- 100;
       velocity.y *= -1;
       acceleration.y *= -1;
   
@@ -378,8 +379,8 @@ void setup() {
   countlfrog = 0;
   countmtadpole= 0;
   //create 2 frogs, 1 light, and 6 algaes
-  a = new Frog (random(width),random(height),0.06,0.06);
-  b = new Frog (random(width),random(height),-0.035,0.05);
+  a = new Frog (random(zoneWidth),random(zoneHeight),0.06,0.06);
+  b = new Frog (random(zoneWidth),random(zoneHeight),-0.035,0.05);
   c = new Light (mouseX,mouseY);
   for (int i = 0; i < algae.length; i++) {
   algae [i] = new Algae(random(1600),random(800),random(1000,2000));      
@@ -481,20 +482,20 @@ void draw() {
   
   
   
- //Legend
+  //Legend
 
-  textAlign(LEFT);
-  textSize(30);
-  text("Welcome to the Frog Pond!",50,50);
-  text("Little Frog Number:",50,200);
-  if (countmtadpole == 0){
-  text("There isn't any mature tadpole.",50,150);
-  }else{ 
-    text("There are mature tadpoles!",50,150);  
-  }
-  text(countlfrog, 300 ,200);
-  text("Move Your Mouse as Light Source to grow Little Tadpoles!", 50 ,100);
- 
+  //textAlign(LEFT);
+  //textSize(30);
+  //text("Welcome to the Frog Pond!",50,50);
+  //text("Little Frog Number:",50,200);
+  //if (countmtadpole == 0){
+  //text("There isn't any mature tadpole.",50,150);
+  //}else{ 
+  //  text("There are mature tadpoles!",50,150);  
+  //}
+  //text(countlfrog, 300 ,200);
+  //text("Move Your Mouse as Light Source to grow Little Tadpoles!", 50 ,100);
+
 }
 
 
