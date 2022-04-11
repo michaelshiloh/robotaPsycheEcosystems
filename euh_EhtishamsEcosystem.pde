@@ -18,7 +18,7 @@ class EhtishamsEcosystem {
     legendSize = 100;
 
     for (int i = 0; i < 10; i++) { //start with 10 mice
-      mice.add(new Mouse(random(zonezoneWidth), random(houseSize), null, null));
+      mice.add(new Mouse(random(zoneWidth), random(houseSize), null, null));
     }
 
     //let's create 3 points in the house which mice can seek
