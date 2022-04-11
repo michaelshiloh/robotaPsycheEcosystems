@@ -24,7 +24,7 @@ class ChinonyeremsEcosystem {
 
     // initialize zoinks
     for (int i = 0; i < initial_zoink; i++) {
-      zoinks.add(new Zoink(random(width-200), random(500, height))); //the zoinks spawn close to each other rather than spread apart
+      zoinks.add(new Zoink(random(zoneWidth-200), random(500, zoneHeight))); //the zoinks spawn close to each other rather than spread apart
     }
 
     //initialize food
@@ -35,17 +35,17 @@ class ChinonyeremsEcosystem {
     //initialize jeepers
     for (int i = 0; i < initial_jeeper; i++) {
       jeepers.add(new Jeeper(1.5, 
-        random(width), random(height)));
+        random(zoneWidth), random(zoneHeight)));
     }
 
     //initialize jinkies
     for (int i = 0; i < initial_jinkie; i++) {
       jinkies.add(new Jinkie(1.5, 
-        random(width), random(height)));
+        random(zoneWidth), random(zoneHeight)));
     }
 
     //initialize incubator
-    incubator = new Incubator((width-100), (height-500));
+    incubator = new Incubator((zoneWidth-100), (zoneHeight-500));
   }
 
   void draw() {
@@ -135,7 +135,7 @@ class ChinonyeremsEcosystem {
 
     // Instructions
     fill(255);
-    //text("Click to add more food. You can have no more than 2 at a time", 10, height-16);
+    //text("Click to add more food. You can have no more than 2 at a time", 10, zoneHeight-16);
   }
 
 
@@ -286,16 +286,16 @@ class ChinonyeremsEcosystem {
 
     //if zoink reaches the edge, it reappears on the opposite boundary
     void checkEdges() {
-      if (location.x > width) {
+      if (location.x > zoneWidth) {
         location.x = 0;
       } else if (location.x < 0) {
-        location.x = width;
+        location.x = zoneWidth;
       }
 
-      if (location.y > height) {
+      if (location.y > zoneHeight) {
         location.y = 0;
       } else if (location.y < 0) {
-        location.y = height;
+        location.y = zoneHeight;
       }
     }
 
@@ -325,7 +325,7 @@ class ChinonyeremsEcosystem {
     int nutrient = 80;
 
     Food() {
-      location = new PVector(random(20, width-20), random(0, 40));
+      location = new PVector(random(20, zoneWidth-20), random(0, 40));
       mass = 20; // Big mass so the force is greater than zoink-zoink force
       G = 0.4;
     }
@@ -354,16 +354,16 @@ class ChinonyeremsEcosystem {
 
     //if food reaches the edge, it reappears on the opposite boundary
     void checkEdges() {
-      if (location.x > width) {
+      if (location.x > zoneWidth) {
         location.x = 0;
       } else if (location.x < 0) {
-        location.x = width;
+        location.x = zoneWidth;
       }
 
-      if (location.y > height) {
+      if (location.y > zoneHeight) {
         location.y = 0;
       } else if (location.y < 0) {
-        location.y = height;
+        location.y = zoneHeight;
       }
     }
   }
@@ -423,16 +423,16 @@ class ChinonyeremsEcosystem {
 
     //if jeeper reaches the edge, it reappears on the opposite boundary
     void checkEdges() {
-      if (location.x > width) {
+      if (location.x > zoneWidth) {
         location.x = 0;
       } else if (location.x < 0) {
-        location.x = width;
+        location.x = zoneWidth;
       }
 
-      if (location.y > height) {
+      if (location.y > zoneHeight) {
         location.y = 0;
       } else if (location.y < 0) {
-        location.y = height;
+        location.y = zoneHeight;
       }
     }
 
@@ -515,16 +515,16 @@ class ChinonyeremsEcosystem {
 
     //if jinkie reaches the edge, it reappears on the opposite boundary
     void checkEdges() {
-      if (location.x > width) {
+      if (location.x > zoneWidth) {
         location.x = 0;
       } else if (location.x < 0) {
-        location.x = width;
+        location.x = zoneWidth;
       }
 
-      if (location.y > height) {
+      if (location.y > zoneHeight) {
         location.y = 0;
       } else if (location.y < 0) {
-        location.y = height;
+        location.y = zoneHeight;
       }
     }
 
@@ -580,7 +580,7 @@ class ChinonyeremsEcosystem {
         fill(192, 192, 192);
         rect(location.x, location.y, 100, 300);
         counter = 0;
-        zoinks.add(new Zoink(random(width), random(height)));
+        zoinks.add(new Zoink(random(zoneWidth), random(zoneHeight)));
       } else if (counter%2!=0 && counter!=0) { //if only 1 zoink has been in the incubator in that 'iteration' then the color of the incubator changes but 1 more zoink is needed for a new zoink to be spawned
         fill(81, 1, 160);
         rect(location.x, location.y, 100, 300);
