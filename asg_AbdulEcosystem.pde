@@ -33,7 +33,7 @@ class Attractor {
   float G;
 
   Attractor() {
-    location = new PVector(random(width-50), random(height-50));
+    location = new PVector(random(zonezoneWidth-50), random(zoneHeight-50));
 
     // mass and gravitational constant
     mass = 200;
@@ -229,22 +229,22 @@ class Mover {
   // making the movers appear on the opposite end of the screen
 
   void checkEdges() {
-    if (location.x > width) {
+    if (location.x > zonezoneWidth) {
       location.x = 0;
       //velocity.x *= -1; // full velocity, opposite direction
       velocity.x *= 0.2; // lose a bit of energy in the bounce
     } else if (location.x < 0) {
-      location.x = width;
+      location.x = zonezoneWidth;
       //velocity.x *= -1; // full velocity, opposite direction
       velocity.x *= 0.2; // lose a bit of energy in the bounce
     }
 
-    if (location.y > height) {
+    if (location.y > zoneHeight) {
       location.y = 0;
       //velocity.y *= -1; // full velocity, opposite direction
       velocity.y *= 0.2; // lose a bit of energy in the bounce
     } else if (location.y < 0) {
-      location.y = height;
+      location.y = zoneHeight;
       //velocity.y *= -1; // full velocity, opposite direction
       velocity.y *= 0.2; // lose a bit of energy in the bounce
     }
@@ -296,7 +296,7 @@ void setup() {
   for (int i = 0; i < 75; i++) {
     // Each Mover is initialized randomly.
     movers.add(new Mover(
-      random(width), random(height))); // initial location
+      random(zonezoneWidth), random(zoneHeight))); // initial location
   }
 
   a = new Attractor();// to attract movers
@@ -362,7 +362,7 @@ void draw() {
 
 
       // making the movers slow down towards the end of the screen
-      PVector screenArrive = movers.get(i).arrive(new PVector(width, height));
+      PVector screenArrive = movers.get(i).arrive(new PVector(zonezoneWidth, zoneHeight));
       PVector screenEndArrive = movers.get(i).arrive(new PVector(0, 0));
       movers.get(i).applyForce(screenArrive);
       movers.get(i).applyForce(screenEndArrive);
