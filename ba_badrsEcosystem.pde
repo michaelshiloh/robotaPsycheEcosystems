@@ -13,8 +13,8 @@ class BadrsEcosystem {
     //size(960, 480);
     // Create the creatures and add them to the ArrayList "creatures"
     for (int i = 0; i < 30; i++) {
-      float x = random(width);
-      float y = random(height);
+      float x = random(zoneWidth);
+      float y = random(zoneHeight);
       creatures.add(new Creature(x, y));
     }
     // Create the food and add it to the ArrayList "foodlist"
@@ -88,32 +88,32 @@ class BadrsEcosystem {
     //text("Food: " + foodlist.size(), 10, 40);
     //text("Healthy: " + cnt, 10, 60);
     //text("Unhealthy: " + cnt2, 10, 80);
-    //text("Temperature: " + temperature + " °C", width/2-55, 20);
+    //text("Temperature: " + temperature + " °C", zoneWidth/2-55, 20);
     //noStroke();
     //// Display the sliders
-    //rect(width-100, 0, 100, height/2-40);
+    //rect(zoneWidth-100, 0, 100, zoneHeight/2-40);
     //fill(0);
     //rectMode (CENTER);
     //slider1.display(2, 0, 100);
     //slider2.display(3, 0, 100);
     //slider3.display(2, 15, 32);
     //rectMode(CORNER);
-    //text("Creatures", width-76, 20);
-    //text("Food", width-65, 70);
-    //text("Temperature", width-85, 120);
+    //text("Creatures", zoneWidth-76, 20);
+    //text("Food", zoneWidth-65, 70);
+    //text("Temperature", zoneWidth-85, 120);
     //// Reset button
     //fill(50);
-    //rect(width-70, 170, 40, 20, 5);
+    //rect(zoneWidth-70, 170, 40, 20, 5);
     //fill(255);
-    //text("Reset ", width-66, 183);
-    //rect(0, height-65, width/3+60, 65);
+    //text("Reset ", zoneWidth-66, 183);
+    //rect(0, zoneHeight-65, zoneWidth/3+60, 65);
     //fill(0);
     //textSize(10);
-    //text("- Green means that the creature is healthy, red means it is unhealthy.", 10, height-50);
-    //text("- Eating food decreases hunger, and increases energy. ", 10, height-40);
-    //text("- With time and movement, hunger increases.", 10, height-30);
-    //text("- If the energy is too low or the creature hits the edges, its health decreases.", 10, height-20);
-    //text("- The creature dies when its health is too low, and reproduces when its energy is high.", 10, height-10);
+    //text("- Green means that the creature is healthy, red means it is unhealthy.", 10, zoneHeight-50);
+    //text("- Eating food decreases hunger, and increases energy. ", 10, zoneHeight-40);
+    //text("- With time and movement, hunger increases.", 10, zoneHeight-30);
+    //text("- If the energy is too low or the creature hits the edges, its health decreases.", 10, zoneHeight-20);
+    //text("- The creature dies when its health is too low, and reproduces when its energy is high.", 10, zoneHeight-10);
     //// Set the number of creatures, amount of food, temperature depending on the sliders
     //if (dragged) {
     //  dragged=false;
@@ -121,8 +121,8 @@ class BadrsEcosystem {
     //  if (slider1.sliderInt > creatures.size()) {
     //    int tmp = creatures.size();
     //    for (int i = 0; i < slider1.sliderInt-tmp; i++) {
-    //      float x = random(width);
-    //      float y = random(height);
+    //      float x = random(zoneWidth);
+    //      float y = random(zoneHeight);
     //      creatures.add(new Creature(x, y));
     //    }
     //  }
@@ -166,7 +166,7 @@ class BadrsEcosystem {
   }
   void mouseClicked() {
     // When user clicks on reset
-    //if (mouseX>width-70 && mouseX<width-30 && mouseY>170 && mouseY<190) {
+    //if (mouseX>zoneWidth-70 && mouseX<zoneWidth-30 && mouseY>170 && mouseY<190) {
     //  temperature = 24;
     //  size = 50;
     //  // Restore the default amount of food
@@ -189,8 +189,8 @@ class BadrsEcosystem {
     //  if (30 > creatures.size()) {
     //    int tmp = creatures.size();
     //    for (int i = 0; i < 30-tmp; i++) {
-    //      float x = random(width);
-    //      float y = random(height);
+    //      float x = random(zoneWidth);
+    //      float y = random(zoneHeight);
     //      creatures.add(new Creature(x, y));
     //    }
     //  }
@@ -207,9 +207,9 @@ class BadrsEcosystem {
     //  slider3.reset(920);
     //}
     // Apply the wind force, if user clicks somewhere on the screen
-    //if (mouseX<width-100 || mouseX>width-100 && mouseY>height/2-40) {
+    //if (mouseX<zoneWidth-100 || mouseX>zoneWidth-100 && mouseY>zoneHeight/2-40) {
     PVector wind;
-    if (mouseX<=width/2) {
+    if (mouseX<=zoneWidth/2) {
       wind = new PVector(60, 0);
     } else {
       wind = new PVector(-60, 0);
@@ -398,13 +398,13 @@ class BadrsEcosystem {
       // If creature hits the right or left border
       if (position.x < d) {
         desired = new PVector(dna.maxspeed, dna.velocity.y);
-      } else if (position.x > width - d) {
+      } else if (position.x > zoneWidth - d) {
         desired = new PVector(-dna.maxspeed, dna.velocity.y);
       }
       // If creature hits the top or bottom border
       if (position.y < d) {
         desired = new PVector(dna.velocity.x, dna.maxspeed);
-      } else if (position.y > height - d) {
+      } else if (position.y > zoneHeight - d) {
         desired = new PVector(dna.velocity.x, -dna.maxspeed);
       }
 
@@ -429,8 +429,8 @@ class BadrsEcosystem {
 
     // Constructor
     Food() {
-      x = random(25, width-25);
-      y = random(25, height-25);
+      x = random(25, zoneWidth-25);
+      y = random(25, zoneHeight-25);
       location = new PVector(x, y);
     }
 
