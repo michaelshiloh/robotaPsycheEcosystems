@@ -42,7 +42,6 @@ void setup() {
 void draw() {
   if (mouseX>=40&&mouseX<=140&&mouseY>=60&&mouseY<=100&&mousePressed)
   {
-    background(50);
     for (int i = 0; i < movers.length; i++) {
       //worms and the attract forces
       worms[i].update();
@@ -68,7 +67,6 @@ void draw() {
     buttonclick();
   } else 
   {
-    background(255);
     for (int i = 0; i < movers.length; i++) {
       //worms and the attract forces
       worms[i].update();
