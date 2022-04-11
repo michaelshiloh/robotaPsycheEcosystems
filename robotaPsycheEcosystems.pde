@@ -106,7 +106,7 @@ void draw() {
 }
 
 void mouseClicked() {
-  system1.mouseClicked(); // call mouseClicked for each ecosystem
+  //system1.mouseClicked(); // call mouseClicked for each ecosystem
   system2.mouseClicked();
   system3.mouseClicked();
   system4.mouseClicked();
