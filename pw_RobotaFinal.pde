@@ -28,21 +28,21 @@ void setup() {
   for (int i = 0; i < prey.length; i++) {
     // Each prey is initialized with random mass and random location.
     prey[i] = new Creature(random(1, 5), // mass
-      random(width), random(height), "prey"); // initial location
+      random(zoneWidth), random(zoneHeight), "prey"); // initial location
   }
   // Predator has a heavier mass, less agile than its preys
-  predator = new Creature(random(2, 7), random(width), random(height), "predator");
+  predator = new Creature(random(2, 7), random(zoneWidth), random(zoneHeight), "predator");
 }
 
 void draw() {
   //background(255);
 
   // Displaying information about the current status of the ecosystem
-  fill(0);
-  textSize(18);
-  text("Time elapsed: "+timeElapsed, 30, 30);
-  text("Preys alive: "+ alive_preys, 30, 50);
-  text("Food available: " + FG.food_cnt, 30, 70);
+  //fill(0);
+  //textSize(18);
+  //text("Time elapsed: "+timeElapsed, 30, 30);
+  //text("Preys alive: "+ alive_preys, 30, 50);
+  //text("Food available: " + FG.food_cnt, 30, 70);
 
   // Update timeElapsed after one whole second
   if (timeElapsed != millis()/1000) {
@@ -139,7 +139,7 @@ class Food extends Object {
   float size;
 
   Food() {
-    location = new PVector(random(width), random(height));
+    location = new PVector(random(zoneWidth), random(zoneHeight));
     size = random(-10.0, 10.0) + average_size;
   }
 
@@ -356,8 +356,8 @@ class Creature extends Object {
   // Also instead of bouncing at full-speed vehicles might lose speed.
 
   void checkEdges() {
-    if (location.x > width) {
-      location.x = width;
+    if (location.x > zoneWidth) {
+      location.x = zoneWidth;
       velocity.x *= -1; // full velocity, opposite direction
       velocity.x *= 0.8; // lose a bit of energy in the bounce
     } else if (location.x < 0) {
@@ -366,8 +366,8 @@ class Creature extends Object {
       velocity.x *= 0.8; // lose a bit of energy in the bounce
     }
 
-    if (location.y > height) {
-      location.y = height;
+    if (location.y > zoneHeight) {
+      location.y = zoneHeight;
       velocity.y *= -1; // full velocity, opposite direction
       velocity.y *= 0.8; // lose a bit of energy in the bounce
     } else if (location.y < 0) {
