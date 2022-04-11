@@ -27,7 +27,7 @@ class EhtishamsEcosystem {
     housePoints.add(new PVector(zoneWidth - 200, 100)); // a point on the right of the house
 
     flowField = new CatFlowField(15);
-    cat = new Cat(random(50, zoneWidth-50), random(houseSize+50, zonezoneHeight-(legendSize+50)));
+    cat = new Cat(random(50, zoneWidth-50), random(houseSize+50, zoneHeight-(legendSize+50)));
     frameRate(60);
   }
   //---------------------------------------------------------------------------------//
@@ -72,7 +72,7 @@ class EhtishamsEcosystem {
     fill(0);
     noStroke();
     rectMode(CORNER);
-    rect(0, zonezoneHeight-legendSize, zoneWidth, legendSize);
+    rect(0, zoneHeight-legendSize, zoneWidth, legendSize);
     PFont algerian = createFont("algerian", 16);
     textFont(algerian);
     text ("Mice Home", 10, 20);
@@ -103,7 +103,7 @@ class EhtishamsEcosystem {
     PFont georgia = createFont("georgia", 16);
     textFont(georgia);
     fill(0, 255, 255);
-    text ("Life Remaining - Indicated by a Rectangle:", 20, zonezoneHeight-(legendSize-20));
+    text ("Life Remaining - Indicated by a Rectangle:", 20, zoneHeight-(legendSize-20));
     fill(0, 255, 0);
     text ("Green: > 80 ", 40, zonezoneHeight-(legendSize-40));
     fill(0, 100, 255);
