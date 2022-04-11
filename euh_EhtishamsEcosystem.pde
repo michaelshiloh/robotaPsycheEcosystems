@@ -18,16 +18,16 @@ class EhtishamsEcosystem {
     legendSize = 100;
 
     for (int i = 0; i < 10; i++) { //start with 10 mice
-      mice.add(new Mouse(random(width), random(houseSize), null, null));
+      mice.add(new Mouse(random(zonezoneWidth), random(houseSize), null, null));
     }
 
     //let's create 3 points in the house which mice can seek
     housePoints.add(new PVector(200, 100)); // a point on the left of the house
-    housePoints.add(new PVector(width/2, 100)); // a point on the center of the house
-    housePoints.add(new PVector(width - 200, 100)); // a point on the right of the house
+    housePoints.add(new PVector(zoneWidth/2, 100)); // a point on the center of the house
+    housePoints.add(new PVector(zoneWidth - 200, 100)); // a point on the right of the house
 
     flowField = new CatFlowField(15);
-    cat = new Cat(random(50, width-50), random(houseSize+50, height-(legendSize+50)));
+    cat = new Cat(random(50, zoneWidth-50), random(houseSize+50, zonezoneHeight-(legendSize+50)));
     frameRate(60);
   }
   //---------------------------------------------------------------------------------//
@@ -37,7 +37,7 @@ class EhtishamsEcosystem {
     fill(175, 200);
     noStroke();
     rectMode(CORNER);
-    rect(0, 0, width, houseSize); //draw house
+    rect(0, 0, zoneWidth, houseSize); //draw house
 
     //Below function call is commented in order to give us more control of food to observe various aspects of the simulation. Simply uncomment if you just want to see and not interact.
     //spawnNewFood();
@@ -62,7 +62,7 @@ class EhtishamsEcosystem {
 
     cat.update();
     flowField.shiftField(); //change field direction randomly after some time to exhibit random movement of cat
-    displayLegend();
+    //displayLegend(); //Commented text out
   }
   //---------------------------------------------------------------------------------//
   //Display Legend: It displays all the informative text on screen
@@ -72,7 +72,7 @@ class EhtishamsEcosystem {
     fill(0);
     noStroke();
     rectMode(CORNER);
-    rect(0, height-legendSize, width, legendSize);
+    rect(0, zonezoneHeight-legendSize, zoneWidth, legendSize);
     PFont algerian = createFont("algerian", 16);
     textFont(algerian);
     text ("Mice Home", 10, 20);
@@ -103,29 +103,29 @@ class EhtishamsEcosystem {
     PFont georgia = createFont("georgia", 16);
     textFont(georgia);
     fill(0, 255, 255);
-    text ("Life Remaining - Indicated by a Rectangle:", 20, height-(legendSize-20));
+    text ("Life Remaining - Indicated by a Rectangle:", 20, zonezoneHeight-(legendSize-20));
     fill(0, 255, 0);
-    text ("Green: > 80 ", 40, height-(legendSize-40));
+    text ("Green: > 80 ", 40, zonezoneHeight-(legendSize-40));
     fill(0, 100, 255);
-    text ("Blue: > 30 and < 80 (reproduction occurs in blue)", 40, height-(legendSize-60));
+    text ("Blue: > 30 and < 80 (reproduction occurs in blue)", 40, zoneHeight-(legendSize-60));
     fill (255, 0, 0);
-    text ("Red: < 30 ", 40, height-(legendSize-80));
+    text ("Red: < 30 ", 40, zoneHeight-(legendSize-80));
 
     fill(0, 255, 255);
-    text ("Hunger - Indicated by inner color of triangle:", width - 350, height-(legendSize-20));
+    text ("Hunger - Indicated by inner color of triangle:", zoneWidth - 350, zoneHeight-(legendSize-20));
     fill(0, 255, 0);
-    text ("Green: < 50 ", width - 300, height-(legendSize-40));
+    text ("Green: < 50 ", zoneWidth - 300, zoneHeight-(legendSize-40));
     fill (255, 233, 0);
-    text ("Yellow: > 50 and < 80", width - 300, height-(legendSize-60));
+    text ("Yellow: > 50 and < 80", zoneWidth - 300, zoneHeight-(legendSize-60));
     fill (128, 0, 0);
-    text ("Maroon: > 80 ", width - 300, height-(legendSize-80));
+    text ("Maroon: > 80 ", zoneWidth - 300, zoneHeight-(legendSize-80));
 
     fill (0, 255, 255);
-    text ("Gender - Indicated by triangle's outline (stroke):", width/2 - 150, height-(legendSize-20));
+    text ("Gender - Indicated by triangle's outline (stroke):", zoneWidth/2 - 150, zoneHeight-(legendSize-20));
     fill (255, 53, 184);
-    text ("Pink: Female", width/2 - 100, height-(legendSize-50));
+    text ("Pink: Female", zoneWidth/2 - 100, zoneHeight-(legendSize-50));
     fill (0, 0, 255);
-    text ("Blue: Male", width/2 - 100, height-(legendSize-80));
+    text ("Blue: Male", zoneWidth/2 - 100, zoneHeight-(legendSize-80));
   }
 
   //---------------------------------------------------------------------------------//
@@ -134,8 +134,8 @@ class EhtishamsEcosystem {
   // On call in draw function, this fucntion spawns new food on a random location after every 600 frames (10 seconds)
   void spawnNewFood() {
     if (frameCount - lastSpawnTime > 600) {
-      float x = random(30, width-30);
-      float y = random(houseSize+30, height-(legendSize+30));
+      float x = random(30, zoneWidth-30);
+      float y = random(houseSize+30, zoneHeight-(legendSize+30));
       food.add(new Food(x, y));
       lastSpawnTime = frameCount;
     }
@@ -158,8 +158,8 @@ class EhtishamsEcosystem {
     //---------------------------------------------------------------------------------//
     CatFlowField(int _res) { // Constructor takes the desired resolution as argument
       pixelsPerSquare = _res;
-      cols = width/pixelsPerSquare;
-      rows = height/pixelsPerSquare;
+      cols = zoneWidth/pixelsPerSquare;
+      rows = zoneHeight/pixelsPerSquare;
       // Declare the array of PVectors which will hold the field
       field = new PVector[cols][rows];
       fieldChangeTime = 0;
@@ -381,7 +381,7 @@ class EhtishamsEcosystem {
           flowField.updateField(1.5*PI, 2.5*PI); // 270 degrees to 450 degrees (mainly skewed towards right)
           lastFieldChange[0] = frameCount;
         }
-      } else if (location.x > width - minWallDistance) { //Right Wall
+      } else if (location.x > zoneWidth - minWallDistance) { //Right Wall
         if (frameCount - lastFieldChange[1] > 30) { //give a second to cat to increase its distance from this wall before chnaging the flow field again
           flowField.updateField(PI/2, 1.5*PI); // 90 degrees to 270 degrees (mainly skewed towards left)
           lastFieldChange[1] = frameCount;
@@ -393,7 +393,7 @@ class EhtishamsEcosystem {
           flowField.updateField(0, PI);  // 0 degrees to 180 degrees (mainly skewed towards bottom)
           lastFieldChange[2] = frameCount;
         }
-      } else if (location.y > height - (minWallDistance + legendSize)) { //Bottom Wall
+      } else if (location.y > zoneHeight - (minWallDistance + legendSize)) { //Bottom Wall
         if (frameCount - lastFieldChange[3] > 30) { //give a second to cat to increase its distance from this wall before chnaging the flow field again
           flowField.updateField(PI, 2*PI);  // 0 degrees to 180 degrees (mainly skewed towards top)
           lastFieldChange[3] = frameCount;
@@ -830,7 +830,7 @@ class EhtishamsEcosystem {
       PVector desired = null;
       if (location.x < 20) {
         desired = new PVector(2, velocity.y);
-      } else if (location.x > width - 20) {
+      } else if (location.x > zoneWidth - 20) {
         desired = new PVector(-2, velocity.y);
       } 
 
@@ -936,12 +936,12 @@ class EhtishamsEcosystem {
       if (location.x < 50) { //left wall
         velocityFromWall = new PVector(maxSpeed, velocity.y);
         lastWallTurnTime= frameCount;
-      } else if (location.x > width - 50) { //right wall
+      } else if (location.x > zoneWidth - 50) { //right wall
         velocityFromWall = new PVector(-maxSpeed, velocity.y);
         lastWallTurnTime= frameCount;
       } 
 
-      if (location.y > (height - (legendSize + 50))) { //bottom wall  (we don't add top wall as its mice house which mice can cross)
+      if (location.y > (zoneHeight - (legendSize + 50))) { //bottom wall  (we don't add top wall as its mice house which mice can cross)
         velocityFromWall = new PVector(velocity.x, - maxSpeed);
         lastWallTurnTime= frameCount;
       }
@@ -1037,7 +1037,7 @@ class EhtishamsEcosystem {
   //Mouse Clicked function
   //---------------------------------------------------------------------------------//
   void mouseClicked() {
-    if (mouseY > (houseSize + 30) && mouseY < (height - (legendSize - 30))) {
+    if (mouseY > (houseSize + 30) && mouseY < (zoneHeight - (legendSize - 30))) {
       food.add(new Food(float(mouseX), float(mouseY)));
     }
   }
