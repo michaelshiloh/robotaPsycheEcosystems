@@ -64,7 +64,7 @@ void draw() {
     }
 
     //button
-    buttonclick();
+    //buttonclick();
   } else 
   {
     for (int i = 0; i < movers.length; i++) {
@@ -89,7 +89,7 @@ void draw() {
       movers[i].display();
     }
 
-    buttonclick();
+    //buttonclick();
     mouseposition();
   }
 
@@ -143,7 +143,7 @@ void draw() {
   //button to switch between night and day
   //when there is light the fireflies fly away to escape
   //when there is no light the fireflies fly inwards or raom around 
-  void buttonclick()
+ /* void buttonclick()
   {
     //button
     fill(50);
@@ -175,7 +175,7 @@ void draw() {
     text("The tiny squares are the worms which are the food of fireflies", 40, 430);
     text("The triangle on your mouse is the human", 40, 460);
     text("The blue circle generated are the larvaes", 40, 490);
-  }
+  }*/
 
   //food for the fireflies
   class Worms {
@@ -186,7 +186,7 @@ void draw() {
     float topspeed;
 
     Worms() {
-      location = new PVector(random(width), random(height));
+      location = new PVector(random(zoneWidth), random(zoneHeight));
       velocity = new PVector(0, 0);
       mass = 5;
     }
@@ -229,7 +229,7 @@ void draw() {
     float topspeed;
 
     Mover() {
-      location = new PVector(random(width), random(height));
+      location = new PVector(random(zoneWidth), random(zoneHeight));
       velocity = new PVector(0, 0);
     }
 
@@ -287,7 +287,7 @@ void draw() {
     //steering towards other direction when closing
     void checkLoc() {
       topspeed=1;
-      if (location.x>750 || location.y>450 )
+      if (location.x>zoneWidth-50 || location.y>zoneHeight-50 )
       {
         PVector steer1=new PVector(random(100), random(100));
         steer1.normalize();
@@ -305,13 +305,13 @@ void draw() {
 
     //check the edge so the fireflies stay in frame
     void checkEdges() {
-      if (location.x > width) {
+      if (location.x > zoneWidth) {
         location.x = 400;
       } else if (location.x < 0) {
         location.x = 100;
       }
 
-      if (location.y > height) {
+      if (location.y > zoneHeight) {
         location.y = 200;
       } else if (location.y < 0) {
         location.y = 50;
@@ -395,7 +395,7 @@ void draw() {
     //steering towards other direction when closinge 
     void checkLoc() {
       topspeed=1;
-      if (location.x>750 || location.y>450 )
+      if (location.x>zoneWidth-50 || location.y>zoneHeight-50 )
       {
         PVector steer1=new PVector(random(100), random(100));
         steer1.normalize();
@@ -412,13 +412,13 @@ void draw() {
     }
     //check the edge so the fireflies stay in frame
     void checkEdges() {
-      if (location.x > width) {
+      if (location.x > zoneWidth) {
         location.x = 400;
       } else if (location.x < 0) {
         location.x = 100;
       }
 
-      if (location.y > height) {
+      if (location.y > zoneHeight) {
         location.y = 200;
       } else if (location.y < 0) {
         location.y = 50;
