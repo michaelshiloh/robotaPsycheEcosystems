@@ -13,7 +13,7 @@ class SnehilsEcosystem {
   //to show how many preys were killed or died 
   int deaths = 0;
   void setup() {
-    ellipseAttractor = new Attractor(new PVector(abs(random(width) - 260), abs(random(height) - 260)));
+    ellipseAttractor = new Attractor(new PVector(abs(random(zoneWidth) - 260), abs(random(zoneHeight) - 260)));
     predators.add(new Predator());
     predators.add(new Predator());
   
@@ -120,36 +120,36 @@ void draw() {
   }
 
   //Below are various text methods to display important information about the ecosystem
-  String b = "Blue prey: " + moversBlue.size();
-  textSize(10);
-  textAlign(LEFT);
-  fill(0, 0, 255);
-  text(b, 10, height - 10);
+  //String b = "Blue prey: " + moversBlue.size();
+  //textSize(10);
+  //textAlign(LEFT);
+  //fill(0, 0, 255);
+  //text(b, 10, height - 10);
 
 
-  String r = "Red prey: " + moversRed.size();
-  textSize(10);
-  textAlign(RIGHT);
-  fill(255, 0, 0);
-  text(r, width - 10, height - 10);
+  //String r = "Red prey: " + moversRed.size();
+  //textSize(10);
+  //textAlign(RIGHT);
+  //fill(255, 0, 0);
+  //text(r, width - 10, height - 10);
 
-  String p = "Prey Deaths: " + deaths;
-  textSize(10);
-  textAlign(CENTER);
-  fill(0, 0, 255);
-  text(p, width/2, height - 10);
+  //String p = "Prey Deaths: " + deaths;
+  //textSize(10);
+  //textAlign(CENTER);
+  //fill(0, 0, 255);
+  //text(p, width/2, height - 10);
   
-  String g = "Green Predators: 2" ;
-  textSize(10);
-  textAlign(RIGHT,TOP);
-  fill(0, 255, 0);
-  text(g, width-10, 10);
+  //String g = "Green Predators: 2" ;
+  //textSize(10);
+  //textAlign(RIGHT,TOP);
+  //fill(0, 255, 0);
+  //text(g, width-10, 10);
   
-  String text = "Press 'r' to resume and 'p' to pause" ;
-  textSize(10);
-  textAlign(LEFT,TOP);
-  fill(0, 0, 0);
-  text(text, 10, 10);
+  //String text = "Press 'r' to resume and 'p' to pause" ;
+  //textSize(10);
+  //textAlign(LEFT,TOP);
+  //fill(0, 0, 0);
+  //text(text, 10, 10);
 }
 
 
@@ -162,7 +162,7 @@ class Predator {
 
   Predator() {
     //random location for the predator to start
-    location = new PVector(random(width / 2, width / 2 + 100), random(height / 2, height/2 + 100));
+    location = new PVector(random(zoneWidth / 2, zoneWidth / 2 + 100), random(zoneHeight / 2, zoneHeight/2 + 100));
   }
 
   void display() {
@@ -200,16 +200,16 @@ class Predator {
   //to keep the predator in the canvas
   void checkEdges() {
 
-    if (location.x > width) {
-      location.x = width;
+    if (location.x > zoneWidth) {
+      location.x = zoneWidth;
       velocity.x *= -1;
     } else if (location.x < 0) {
       location.x = 0;
       velocity.x *= -1;
     }
 
-    if (location.y > height) {
-      location.y = height;
+    if (location.y > zoneHeight) {
+      location.y = zoneHeight;
       velocity.y *= -1;
     } else if (location.y < 0) {
       location.y = 0;
@@ -248,7 +248,7 @@ class Attractor {
     //new food source is created using this method once the radius reaches or is less than 10
     
     if (radius <= 10) {
-      ellipseAttractor = new Attractor(new PVector(abs(random(width)), abs(random(height) - 260)));
+      ellipseAttractor = new Attractor(new PVector(abs(random(zoneWidth)), abs(random(zoneHeight) - 260)));
       for (int i = 0; i < moversRed.size(); i++) {
         //the preys are indicated of the source and are instructed to move towrds it 
         moversRed.get(i).attractor = ellipseAttractor;
@@ -272,7 +272,7 @@ class Mover extends DNA {
 
   Mover(Attractor att, color mC, float _hunger) {
     super(_hunger);
-    location = new PVector(random(width), random(height));
+    location = new PVector(random(zoneWidth), random(zoneHeight));
     moverColor = mC;
     attractor = att;
   }
@@ -365,16 +365,16 @@ class Mover extends DNA {
   }
 
   void checkEdges() {
-    if (location.x > width) {
-      location.x = width;
+    if (location.x > zoneWidth) {
+      location.x = zoneWidth;
       velocity.x *= -1;
     } else if (location.x < 0) {
       location.x = 0;
       velocity.x *= -1;
     }
 
-    if (location.y > height) {
-      location.y = height;
+    if (location.y > zoneHeight) {
+      location.y = zoneHeight;
       velocity.y *= -1;
     } else if (location.y < 0) {
       location.y = 0;
