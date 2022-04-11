@@ -135,7 +135,7 @@ class ChinonyeremsEcosystem {
 
     // Instructions
     fill(255);
-    text("Click to add more food. You can have no more than 2 at a time", 10, height-16);
+    //text("Click to add more food. You can have no more than 2 at a time", 10, height-16);
   }
 
 
@@ -160,10 +160,10 @@ class ChinonyeremsEcosystem {
   // display population of each creature
   void displayPopulation() {
     fill(255);
-    text("Zoinks: "+zoinks.size(), 20, 50);
-    text("Jinkies: "+jinkies.size(), 20, 70);
-    text("Jeepers: "+jeepers.size(), 20, 90);
-    text("Food: "+foods.size(), 20, 110);
+    //text("Zoinks: "+zoinks.size(), 20, 50);
+    //text("Jinkies: "+jinkies.size(), 20, 70);
+    //text("Jeepers: "+jeepers.size(), 20, 90);
+    //text("Food: "+foods.size(), 20, 110);
   }
 
   void keyPressed()
@@ -280,7 +280,7 @@ class ChinonyeremsEcosystem {
       translate(location.x, location.y);
       ellipse(0, 0, r, r);
       fill(255);
-      text(stored_food, r, -r); // text showing how much food each zoink is storing
+      //text(stored_food, r, -r); // text showing how much food each zoink is storing
       popMatrix();
     }
 
@@ -509,7 +509,7 @@ class ChinonyeremsEcosystem {
       //triangle(0, mass*4, 0, -(mass*4), mass*19, 0);
       ellipse(0, 0, mass*4+5, mass*19);
       fill(255);
-      text(stored_food, -mass*4, mass*19); //text displaying how much food the jinkie has
+      //text(stored_food, -mass*4, mass*19); //text displaying how much food the jinkie has
       popMatrix();
     }
 
