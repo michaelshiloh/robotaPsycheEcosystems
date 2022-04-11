@@ -105,7 +105,7 @@ class EhtishamsEcosystem {
     fill(0, 255, 255);
     text ("Life Remaining - Indicated by a Rectangle:", 20, zoneHeight-(legendSize-20));
     fill(0, 255, 0);
-    text ("Green: > 80 ", 40, zonezoneHeight-(legendSize-40));
+    text ("Green: > 80 ", 40, zoneHeight-(legendSize-40));
     fill(0, 100, 255);
     text ("Blue: > 30 and < 80 (reproduction occurs in blue)", 40, zoneHeight-(legendSize-60));
     fill (255, 0, 0);
