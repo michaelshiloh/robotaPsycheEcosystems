@@ -10,6 +10,7 @@
  - introduce another creature
  
  Change log:
+ - Apr 11 - switch from width/height to zoneWidth/zoneHeight and minimize text
  - Mar 28 - make a separate file with just the class in root repo
  - Mar 23 - copy midterm content, put everything in Ecosystem class
  **********/
@@ -70,7 +71,7 @@ class BriansEcosystem {
     float[] shapeA; // alpha values
 
     Fish() {
-      location = new PVector(random(width), random(height)); // random so starting points are different
+      location = new PVector(random(zoneWidth), random(zoneHeight)); // random so starting points are different
       velocity = new PVector(0, 0);
       acceleration = new PVector(0, 0);
       currentShape = 0;
@@ -197,7 +198,7 @@ class BriansEcosystem {
 
     foods = new ArrayList<Food>();
     for (int i=0; i<2; i++) { //2 food at the start
-      foods.add(new Food(random(width), random(height)));
+      foods.add(new Food(random(zoneWidth), random(zoneHeight)));
     }
   }
 
@@ -229,12 +230,12 @@ class BriansEcosystem {
     fill(0);
     textSize(20);
 
-    // no fish on the screen
+    // no fish on the screen - has been disabled for minimal text
     if (fishes.size() == 0) {
       // restart screen - looks "static" because there is nothing else on display
-      textAlign(CENTER);
-      text("No More Fish...", width/2, height/4);
-      text("Try again? Click the mouse", width/2, height*3/4);
+      // textAlign(CENTER);
+      // text("No More Fish...", zoneWidth/2, zoneHeight/4);
+      // text("Try again? Click the mouse", zoneWidth/2, zoneHeight*3/4);
     }
 
     // there are fish on the screen
@@ -277,10 +278,10 @@ class BriansEcosystem {
       }
 
       //text should be on top of the fish and food so they come after the display()
-      textAlign(LEFT);
-      text("Click to drop food for the fish", width/8, height/12);
+      //textAlign(LEFT);
+      //text("Click to drop food for the fish", zoneWidth/8, zoneHeight/12);
       textAlign(RIGHT);
-      text(fishes.size() + " fish left", width*7/8, height/12);
+      text(fishes.size() + " fish left", zoneWidth*7/8, zoneHeight/12);
     }
   }
 }
