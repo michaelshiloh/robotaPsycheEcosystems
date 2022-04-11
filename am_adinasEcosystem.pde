@@ -368,7 +368,7 @@ void setup() {
 //Draw function
 //---------------------------------------------------------------------------------//
 void draw() {
-  legendDisplay();
+  //legendDisplay();
 
   for (int j = 0; j < numofpacks; j++) {
     alphas.get(j).display(colors[j], j);
