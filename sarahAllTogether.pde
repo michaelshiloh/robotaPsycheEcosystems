@@ -361,7 +361,7 @@ class SarahsEcosystem {
         velocity.x *= -1;
       }
 
-      if (location.y > zoneHeigth - radius) {
+      if (location.y > zoneHeight - radius) {
         velocity.y *= -1;
       } else if (location.y < 0 + radius) {
         velocity.y *= -1;
@@ -379,7 +379,7 @@ class SarahsEcosystem {
     int x = 0; 
     int y = 0; 
     int w = 400; 
-    int h = zoneHeigth;
+    int h = zoneHeight;
     PVector center = new PVector(x+w/2, y+h/2); 
 
 
