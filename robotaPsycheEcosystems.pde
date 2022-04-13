@@ -86,8 +86,52 @@ void setup() {
 
 
 void draw() {
-/*
   background(200);
+
+	// Indoors (top left)
+	zoneHeight = height/2;
+	zoneWidth = width/2;
+	pushMatrix();
+	translate(0,0);
+  system4.draw();
+  system7.draw();
+  system13.draw();
+	popMatrix();
+
+	// Do the sky zone (top right);
+	zoneHeight = height/2;
+	zoneWidth = width/2;
+	pushMatrix();
+	translate(width/2,0);
+  system3.draw();
+  system14.draw();
+	popMatrix();
+
+// Land outdoors (lower left)
+	zoneHeight = height/2;
+	zoneWidth = width/2;
+	pushMatrix();
+	translate(0,height/2);
+  system5.draw();
+  system6.draw();
+  system9.draw();
+  system10.draw();
+  system12.draw();
+	popMatrix();
+
+// Water (lower right)
+	zoneHeight = height/2;
+	zoneWidth = width/2;
+	pushMatrix();
+	translate(width/2,height/2);
+  system2.draw();
+  system8.draw();
+  system11.draw();
+	popMatrix();
+
+
+
+/*
   //system1.draw();// call draw for each ecosystem
   system2.draw();
   system3.draw();
