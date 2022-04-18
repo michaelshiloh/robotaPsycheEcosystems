@@ -74,8 +74,8 @@ class Frog{
   
   //Frog changes directions when it feels it is close to the edge
  void checkEdges(){
-    if (location.x > width-100) {
-      location.x = width-100;
+    if (location.x > zoneWidth-100) {
+      location.x = zoneWidth-100;
       velocity.x *= -1;
       acceleration.x *= -1;
       velocity.y *= -1;
