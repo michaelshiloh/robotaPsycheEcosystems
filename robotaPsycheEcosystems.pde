@@ -86,23 +86,19 @@ void setup() {
 
 
 void draw() {
-  background(200);
 
-	// Indoors (top left)
-	zoneHeight = height/2;
-	zoneWidth = width/2;
-	pushMatrix();
-	translate(0,0);
-  system4.draw();
-  system7.draw();
-  system13.draw();
-	popMatrix();
+doIndoors();
 
 	// Do the sky zone (top right);
 	zoneHeight = height/2;
 	zoneWidth = width/2;
 	pushMatrix();
 	translate(width/2,0);
+
+  fill(0,0,200);
+	noStroke();
+	rect(0,0,zoneWidth, zoneHeight);
+
   system3.draw();
   system14.draw();
 	popMatrix();
@@ -112,6 +108,11 @@ void draw() {
 	zoneWidth = width/2;
 	pushMatrix();
 	translate(0,height/2);
+
+  fill(0,200,0);
+	noStroke();
+	rect(0,0,zoneWidth, zoneHeight);
+
   system5.draw();
   system6.draw();
   system9.draw();
@@ -124,29 +125,33 @@ void draw() {
 	zoneWidth = width/2;
 	pushMatrix();
 	translate(width/2,height/2);
+
+  fill(00,100,100);
+	noStroke();
+	rect(0,0,zoneWidth, zoneHeight);
+
   system2.draw();
   system8.draw();
   system11.draw();
 	popMatrix();
 
+}
+void doIndoors() {
+  // Indoors (top left)
+  zoneHeight = height/2;
+  zoneWidth = width/2;
 
+  pushMatrix();
+  translate(0,0);
 
-/*
-  //system1.draw();// call draw for each ecosystem
-  system2.draw();
-  system3.draw();
+  fill(230);
+  noStroke();
+  rect(0,0,zoneWidth, zoneHeight);
+
   system4.draw();
-  system5.draw();
-  system6.draw();
   system7.draw();
-  system8.draw();
-  system9.draw();
-  system10.draw();
-  system11.draw();
-  system12.draw();
   system13.draw();
-  system14.draw();
-	*/
+  popMatrix();
 }
 
 void mouseClicked() {
