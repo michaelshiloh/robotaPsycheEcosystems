@@ -173,7 +173,7 @@ class Predator {
     //the method below is to calculate the nearest distance between the prey and the predator
     //Once the nearest distance is obtained the predator follows that prey
     Mover nearest = moversRed.get(0);
-    float nearestDistance = width;
+    float nearestDistance = zoneWidth;
     for (int i = 0; i < moversRed.size(); i++) {
       float d = dist(location.x, location.y, moversRed.get(i).location.x, moversRed.get(i).location.y);
       if (d < nearestDistance) {
