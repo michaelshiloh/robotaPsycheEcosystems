@@ -7,6 +7,7 @@
  
  Change log:
  23 Mar 2022 - created
+ 20 April 2022 - zoneWidth / zoneHeight
  
  This code is in the public domain
  */
@@ -77,26 +78,26 @@ class YejisEcosystem {
     //Flock of eels
     flock = new Flock();
     for (int i = 0; i < 10; i++) {
-      Eel e = new Eel(width/2, height/2);
+      Eel e = new Eel(zoneWidth/2, zoneHeight/2);
       flock.addEel(e);
     }
 
     // Fifty Seabugs
     seabugs = new ArrayList<Seabug>();
     for (int i = 0; i < 50; i++) {
-      seabugs.add(new Seabug(random(width), random(height)));
+      seabugs.add(new Seabug(random(zoneWidth), random(zoneHeight)));
     }
 
     // One Diver
     humans = new ArrayList<Human>();
     for (int i = 0; i < 1; i++) {
-      humans.add(new Human(width/2, height/2));
+      humans.add(new Human(zoneWidth/2, zoneHeight/2));
     }
 
     //Ten Whales
     whales = new ArrayList<Whale>();
     for (int i = 0; i < 10; i++) {
-      whales.add(new Whale(random(width), random(height)));
+      whales.add(new Whale(random(zoneWidth), random(zoneHeight)));
     }
   }
 
@@ -113,7 +114,7 @@ class YejisEcosystem {
         if (d < eels.get(k).r + seabugs.get(i).r) {
           counter += 1;
           seabugs.remove(i);
-          seabugs.add(new Seabug(random(width), random(height)));
+          seabugs.add(new Seabug(random(zoneWidth), random(zoneHeight)));
         }
       }
     }
@@ -125,7 +126,7 @@ class YejisEcosystem {
         if (d < humans.get(k).r + whales.get(i).r-60) {
           whales.remove(i);
           humanHuntWhale += 1;
-          whales.add(new Whale(random(width), random(height)));
+          whales.add(new Whale(random(zoneWidth), random(zoneHeight)));
         }
       }
     }
