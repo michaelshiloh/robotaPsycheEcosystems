@@ -12,11 +12,11 @@ class YiyangEcosystem {
 
   void setup() {
     size(1200,800);
-    // LightSources.add(new LightSource(width/2, height/2));
+    // LightSources.add(new LightSource(zoneWidth/2, zoneHeight/2));
 
     for (int i = 0; i < movers.length; i++) {
       // Each Mover is initialized randomly.
-      movers[i] = new Mover(random(width), random(height)); // initial location
+      movers[i] = new Mover(random(zoneWidth), random(zoneHeight)); // initial location
     }
   }
 
@@ -24,7 +24,7 @@ class YiyangEcosystem {
     if (mode == 0) { // dark mode
       // background(0,0,0);
       fill(0,0,0);
-      rect(0, 0, width, 20);
+      rect(0, 0, zoneWidth, 20);
       
       fill(255,255,255);
       if (LightSources.size() >= 5) {
@@ -37,7 +37,7 @@ class YiyangEcosystem {
     else if (mode == 1) { // day mode
       // background(255,255,255);
       fill(255,255,255);
-      rect(0, 0, width, 20);
+      rect(0, 0, zoneWidth, 20);
 
       fill(0,0,0);
       if (LightSources.size() >= 5) {
@@ -190,9 +190,9 @@ class YiyangEcosystem {
     // or reappear at a random location or other ideas. Also instead of
     // bouncing at full-speed vehicles might lose speed. So many options!
     void checkEdges() {
-      if (location.x > width*.95) {
+      if (location.x > zoneWidth*.95) {
         velocity.x *= 0.7; // slow down near the edge
-      } else if (location.x < width*0.05) {
+      } else if (location.x < zoneWidth*0.05) {
         velocity.x *= 0.7; // slow down near the edge
       }
       if (location.y > height*0.95) {
@@ -201,8 +201,8 @@ class YiyangEcosystem {
         velocity.x *= 0.7; // slow down near the edge
       }
 
-      if (location.x > width) {
-        location.x = width-5;
+      if (location.x > zoneWidth) {
+        location.x = zoneWidth-5;
         velocity.x *= -0.9; // bounce back with energy loss
       } else if (location.x < 0) {
         location.x = 5;
