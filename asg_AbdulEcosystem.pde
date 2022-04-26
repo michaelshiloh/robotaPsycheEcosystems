@@ -391,11 +391,11 @@ void draw() {
               fill(0, 255, 255);
               // checking that the movers are close enough to reproduce
 
-              if (dist(movers.get(i).location.x, movers.get(i).location.y, movers.get(j).location.x, movers.get(j).location.y) == (movers.get(i).mass + movers.get(j).mass)) {
+              //if (dist(movers.get(i).location.x, movers.get(i).location.y, movers.get(j).location.x, movers.get(j).location.y) == (movers.get(i).mass + movers.get(j).mass)) {
 
-                movers.add(new Mover(
-                  ((movers.get(i).location.x + movers.get(j).location.x)/2), (movers.get(i).location.y +  movers.get(j).location.y)/2)); // initial location
-              }
+              //  movers.add(new Mover(
+              //    ((movers.get(i).location.x + movers.get(j).location.x)/2), (movers.get(i).location.y +  movers.get(j).location.y)/2)); // initial location
+              //}
             }
 
             // making the smaller movers attracted to the larger movers 
