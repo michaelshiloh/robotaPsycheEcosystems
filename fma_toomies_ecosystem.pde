@@ -178,32 +178,7 @@ class toomiesEcosystem {
   }
 
   void draw() {
-    //start screen , background info
-    if (screenmode == 1) {
-      //background(#728DC6);
-      // text(70);
-      text("babysitting simulator!", width/2, height/2-100);
-      //textFont( 30);
-      text("-press the space key to start-", width/2, height/2);
-      text("Your little sister Mei has invited her friend over to play", width/2, height/2+60);
-      text("with her in your home's backyard, but it is your job to", width/2, height/2+100);
-      text("babysit them and make sure they don't cause any chaos!", width/2, height/2+140);
-      text("(give them candy to make them listen to you!)", width/2, height/2+180);
-
-      // moving to next screen , resetting some values for the next screen
-      if (keyPressed) {
-        if (key == ' ' ) {
-          screenmode = 2;
-          sam.adoration = 1;
-          mei.adoration = 1;
-          pmei = mei1;
-          psam = sam1;
-          mei.timerstarted = false;
-          sam.timerstarted = false;
-        }
-      }
-    }  // title screen end
-    if (screenmode == 2) {
+  
       //background(bg);
 
       // calling class functions :
@@ -286,8 +261,8 @@ class toomiesEcosystem {
       }
 
       // candy image on mouse
-      image(candy, mouseX, mouseY, 150, 150);
-    } // main screen end
+      //image(candy, mouseX, mouseY, 150, 150);
+   
   } // draw end
 
   void mouseClicked() {
