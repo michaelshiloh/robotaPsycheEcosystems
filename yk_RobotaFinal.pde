@@ -8,6 +8,7 @@
  Change log:
  23 Mar 2022 - created
  20 April 2022 - zoneWidth / zoneHeight
+ 27 April 2022 - zoneWidth / zoneHeight + Commented out all text
  
  This code is in the public domain
  */
