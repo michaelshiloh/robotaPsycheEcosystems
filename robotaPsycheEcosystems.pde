@@ -8,23 +8,20 @@ YiyangEcosystem yiyang = new YiyangEcosystem();
 toomiesEcosystem toomie = new toomiesEcosystem();
 
 // Sky (top right)
-ChinonyeremsEcosystem system3 = new ChinonyeremsEcosystem();
-PhillipEcosystem system14 = new PhillipEcosystem();
+ChinonyeremsEcosystem chinonyerem = new ChinonyeremsEcosystem();
+PhillipEcosystem phillip = new PhillipEcosystem();
 
 // Land outdoors (lower left)
-AdinasEcosystem system5 = new AdinasEcosystem();
-SnehilsEcosystem system6 = new SnehilsEcosystem();
-BadrsEcosystem system9 = new BadrsEcosystem();
-AbdulEcosystem system10 = new AbdulEcosystem();
-GenieEcosystem system12 = new GenieEcosystem();
+AdinasEcosystem adina = new AdinasEcosystem();
+SnehilsEcosystem snehil = new SnehilsEcosystem();
+BadrsEcosystem badr = new BadrsEcosystem();
+AbdulEcosystem abdul = new AbdulEcosystem();
+GenieEcosystem genie = new GenieEcosystem();
 
 // Water (lower right)
-BriansEcosystem system2 = new BriansEcosystem();
-JiayiEcosystem system8 = new JiayiEcosystem();
-YejisEcosystem system11 = new YejisEcosystem();
-
-//MichaelsEcosystem system1 = new MichaelsEcosystem();
-
+BriansEcosystem brian = new BriansEcosystem();
+JiayiEcosystem jiayi = new JiayiEcosystem();
+YejisEcosystem yeji = new YejisEcosystem();
 
 // for some of the ecosystem
 import java.io.*;
@@ -54,8 +51,8 @@ void setup() {
   zoneWidth = width/2;
   pushMatrix();
   translate(width/2, 0);
-  system3.setup();
-  system14.setup();
+  chinonyerem.setup();
+  phillip.setup();
   popMatrix();
 
   // Land outdoors (lower left)
@@ -63,11 +60,11 @@ void setup() {
   zoneWidth = width/2;
   pushMatrix();
   translate(0, height/2);
-  system5.setup();
-  system6.setup();
-  system9.setup();
-  system10.setup();
-  system12.setup();
+  adina.setup();
+  snehil.setup();
+  badr.setup();
+  abdul.setup();
+  genie.setup();
   popMatrix();
 
   // Water (lower right)
@@ -75,29 +72,24 @@ void setup() {
   zoneWidth = width/2;
   pushMatrix();
   translate(width/2, height/2);
-  system2.setup();
-  system8.setup();
-  system11.setup();
+  brian.setup();
+  jiayi.setup();
+  yeji.setup();
   popMatrix();
 
-
-  //system1.setup(); // call setup for each ecosystem
 }
 
 
 void draw() {
 
-  doIndoors();\
-  /*
-  doSky();
-  // Land outdoors (lower left)
-  doOutdoors();
-  doWater();
-  */
+  doIndoors(); // Indoors (top left)
+  doSky(); // Sky (top right)
+  doOutdoors(); // Land outdoors (lower left)
+  doWater(); // Water (lower right)
+  
 }
 
 void doWater() {
-  // Water (lower right)
   zoneHeight = height/2;
   zoneWidth = width/2;
   pushMatrix();
@@ -107,9 +99,9 @@ void doWater() {
   noStroke();
   rect(0, 0, zoneWidth, zoneHeight);
 
-  system2.draw();
-  system8.draw();
-  system11.draw();
+  brian.draw();
+  jiayi.draw();
+  yeji.draw();
   popMatrix();
 }
 void doOutdoors() {
@@ -122,11 +114,11 @@ void doOutdoors() {
   noStroke();
   rect(0, 0, zoneWidth, zoneHeight);
 
-  system5.draw();
-  system6.draw();
-  system9.draw();
-  system10.draw();
-  system12.draw();
+  adina.draw();
+  snehil.draw();
+  badr.draw();
+  abdul.draw();
+  genie.draw();
   popMatrix();
 }
 void doSky() {
@@ -140,8 +132,8 @@ void doSky() {
   noStroke();
   rect(0, 0, zoneWidth, zoneHeight);
 
-  system3.draw();
-  system14.draw();
+  chinonyerem.draw();
+  phillip.draw();
   popMatrix();
 }
 
@@ -164,15 +156,14 @@ void doIndoors() {
 }
 
 void mouseClicked() {
-  //system1.mouseClicked(); // call mouseClicked for each ecosystem
-  system2.mouseClicked();
-  system3.mouseClicked();
+  brian.mouseClicked();
+  chinonyerem.mouseClicked();
   ehtisham.mouseClicked();
-  system5.mouseClicked();
-  system6.mouseClicked();
+  adina.mouseClicked();
+  snehil.mouseClicked();
   toomie.mouseClicked();
 }
 
 void keyPressed() {
-  system6.keyPressed();
+  snehil.keyPressed();
 }
