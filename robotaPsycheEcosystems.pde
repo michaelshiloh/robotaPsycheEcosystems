@@ -3,9 +3,9 @@
 // create objects for each ecosystem
 
 // Indoors (top left)
-EhtishamsEcosystem system4 = new EhtishamsEcosystem();
-YiyangEcosystem system13 = new YiyangEcosystem();
-toomiesEcosystem system7 = new toomiesEcosystem();
+EhtishamsEcosystem ehtisham = new EhtishamsEcosystem();
+YiyangEcosystem yiyang = new YiyangEcosystem();
+toomiesEcosystem toomie = new toomiesEcosystem();
 
 // Sky (top right)
 ChinonyeremsEcosystem system3 = new ChinonyeremsEcosystem();
@@ -39,46 +39,46 @@ void setup() {
 
   fullScreen();
 
-	// Indoors (top left)
-	zoneHeight = height/2;
-	zoneWidth = width/2;
-	pushMatrix();
-	translate(0,0);
-  system4.setup();
-  system7.setup();
-  system13.setup();
-	popMatrix();
+  // Indoors (top left)
+  zoneHeight = height/2;
+  zoneWidth = width/2;
+  pushMatrix();
+  translate(0, 0);
+  ehtisham.setup();
+  toomie.setup();
+  yiyang.setup();
+  popMatrix();
 
-	// Do the sky zone (top right);
-	zoneHeight = height/2;
-	zoneWidth = width/2;
-	pushMatrix();
-	translate(width/2,0);
+  // Do the sky zone (top right);
+  zoneHeight = height/2;
+  zoneWidth = width/2;
+  pushMatrix();
+  translate(width/2, 0);
   system3.setup();
   system14.setup();
-	popMatrix();
+  popMatrix();
 
-// Land outdoors (lower left)
-	zoneHeight = height/2;
-	zoneWidth = width/2;
-	pushMatrix();
-	translate(0,height/2);
+  // Land outdoors (lower left)
+  zoneHeight = height/2;
+  zoneWidth = width/2;
+  pushMatrix();
+  translate(0, height/2);
   system5.setup();
   system6.setup();
   system9.setup();
   system10.setup();
   system12.setup();
-	popMatrix();
+  popMatrix();
 
-// Water (lower right)
-	zoneHeight = height/2;
-	zoneWidth = width/2;
-	pushMatrix();
-	translate(width/2,height/2);
+  // Water (lower right)
+  zoneHeight = height/2;
+  zoneWidth = width/2;
+  pushMatrix();
+  translate(width/2, height/2);
   system2.setup();
   system8.setup();
   system11.setup();
-	popMatrix();
+  popMatrix();
 
 
   //system1.setup(); // call setup for each ecosystem
@@ -87,70 +87,79 @@ void setup() {
 
 void draw() {
 
-doIndoors();
+  doIndoors();\
+  /*
+  doSky();
+  // Land outdoors (lower left)
+  doOutdoors();
+  doWater();
+  */
+}
 
-	// Do the sky zone (top right);
-	zoneHeight = height/2;
-	zoneWidth = width/2;
-	pushMatrix();
-	translate(width/2,0);
+void doWater() {
+  // Water (lower right)
+  zoneHeight = height/2;
+  zoneWidth = width/2;
+  pushMatrix();
+  translate(width/2, height/2);
 
-  fill(0,0,200);
-	noStroke();
-	rect(0,0,zoneWidth, zoneHeight);
+  fill(00, 100, 100);
+  noStroke();
+  rect(0, 0, zoneWidth, zoneHeight);
 
-  system3.draw();
-  system14.draw();
-	popMatrix();
+  system2.draw();
+  system8.draw();
+  system11.draw();
+  popMatrix();
+}
+void doOutdoors() {
+  zoneHeight = height/2;
+  zoneWidth = width/2;
+  pushMatrix();
+  translate(0, height/2);
 
-// Land outdoors (lower left)
-	zoneHeight = height/2;
-	zoneWidth = width/2;
-	pushMatrix();
-	translate(0,height/2);
-
-  fill(0,200,0);
-	noStroke();
-	rect(0,0,zoneWidth, zoneHeight);
+  fill(0, 200, 0);
+  noStroke();
+  rect(0, 0, zoneWidth, zoneHeight);
 
   system5.draw();
   system6.draw();
   system9.draw();
   system10.draw();
   system12.draw();
-	popMatrix();
-
-// Water (lower right)
-	zoneHeight = height/2;
-	zoneWidth = width/2;
-	pushMatrix();
-	translate(width/2,height/2);
-
-  fill(00,100,100);
-	noStroke();
-	rect(0,0,zoneWidth, zoneHeight);
-
-  system2.draw();
-  system8.draw();
-  system11.draw();
-	popMatrix();
-
+  popMatrix();
 }
+void doSky() {
+  // Do the sky zone (top right);
+  zoneHeight = height/2;
+  zoneWidth = width/2;
+  pushMatrix();
+  translate(width/2, 0);
+
+  fill(0, 0, 200);
+  noStroke();
+  rect(0, 0, zoneWidth, zoneHeight);
+
+  system3.draw();
+  system14.draw();
+  popMatrix();
+}
+
 void doIndoors() {
   // Indoors (top left)
   zoneHeight = height/2;
   zoneWidth = width/2;
 
   pushMatrix();
-  translate(0,0);
+  translate(0, 0);
 
   fill(230);
   noStroke();
-  rect(0,0,zoneWidth, zoneHeight);
+  rect(0, 0, zoneWidth, zoneHeight);
 
-  system4.draw();
-  system7.draw();
-  system13.draw();
+  ehtisham.draw(); // Ehtisham
+  toomie.draw();
+  yiyang.draw();
   popMatrix();
 }
 
@@ -158,10 +167,10 @@ void mouseClicked() {
   //system1.mouseClicked(); // call mouseClicked for each ecosystem
   system2.mouseClicked();
   system3.mouseClicked();
-  system4.mouseClicked();
+  ehtisham.mouseClicked();
   system5.mouseClicked();
   system6.mouseClicked();
-  system7.mouseClicked();
+  toomie.mouseClicked();
 }
 
 void keyPressed() {
