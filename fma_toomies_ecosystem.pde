@@ -3,10 +3,6 @@
 
 class toomiesEcosystem {
 
-  //import ddf.minim.*;
-  //Minim minim;
-  //AudioPlayer bgm;
-
   PImage pmei, psam, bg, candy, mei1, mei2, mei3, sam1, sam2, sam3;
   //PFont font;
   int screenmode = 1;
