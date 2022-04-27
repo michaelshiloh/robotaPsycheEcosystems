@@ -145,7 +145,7 @@ class YejisEcosystem {
 
     //When whales eats 100 eels, they give birth to more whales
     if (counterTwo % 100 == 0 && counterTwo != 0) {
-      whales.add(new Whale(width/3, height/3));
+      whales.add(new Whale(zoneWidth/3, zoneHeight/3));
     }
 
     //Seabug update
@@ -179,15 +179,15 @@ class YejisEcosystem {
     // Instructions
 
     fill(255);
-    text("Eels: "+int(eels.size()), 10, 20);
-    text("Seabug: "+int(seabugs.size()), 10, 40);
-    text("Divers: "+int(humans.size()), 10, 60);
-    text("Whales: "+int(whales.size()), 10, 80);
-    text("Click to produce more Eels!", 600, 20);
-    text("Use WASD to move the diver!", 600, 40);
-    text("Number of eels eaten by Whale: "+int(counterTwo), 1260, 20);
-    text("Number of whales hunted by divers: "+int(humanHuntWhale), 1260, 40);
-    text("Number of seabugs eaten by Eel: "+int(counter), 1260, 60);
+    //text("Eels: "+int(eels.size()), 10, 20);
+    //text("Seabug: "+int(seabugs.size()), 10, 40);
+    //text("Divers: "+int(humans.size()), 10, 60);
+    //text("Whales: "+int(whales.size()), 10, 80);
+    //text("Click to produce more Eels!", 600, 20);
+    //text("Use WASD to move the diver!", 600, 40);
+    //text("Number of eels eaten by Whale: "+int(counterTwo), 1260, 20);
+    //text("Number of whales hunted by divers: "+int(humanHuntWhale), 1260, 40);
+    //text("Number of seabugs eaten by Eel: "+int(counter), 1260, 60);
   }
 
   // Add a new eel into the System by mouse drag
@@ -302,10 +302,10 @@ class YejisEcosystem {
 
     // Wraparound
     void borders() {
-      if (position.x < -r) position.x = width+r;
-      if (position.y < -r) position.y = height+r;
-      if (position.x > width+r) position.x = -r;
-      if (position.y > height+r) position.y = -r;
+      if (position.x < -r) position.x = zoneWidth+r;
+      if (position.y < -r) position.y = zoneHeight+r;
+      if (position.x > zoneWidth+r) position.x = -r;
+      if (position.y > zoneHeight+r) position.y = -r;
     }
 
     // Separation
@@ -470,10 +470,10 @@ class YejisEcosystem {
 
     // Wraparound
     void borders() {
-      if (position.x < -r) position.x = width+r;
-      if (position.y < -r) position.y = height+r;
-      if (position.x > width+r) position.x = -r;
-      if (position.y > height+r) position.y = -r;
+      if (position.x < -r) position.x = zoneWidth+r;
+      if (position.y < -r) position.y = zoneHeight+r;
+      if (position.x > zoneWidth+r) position.x = -r;
+      if (position.y > zoneHeight+r) position.y = -r;
     }
   }
 
@@ -562,10 +562,10 @@ class YejisEcosystem {
 
     // Wraparound
     void borders() {
-      if (position.x < -r) position.x = width+r;
-      if (position.y < -r) position.y = height+r;
-      if (position.x > width+r) position.x = -r;
-      if (position.y > height+r) position.y = -r;
+      if (position.x < -r) position.x = zoneWidth+r;
+      if (position.y < -r) position.y = zoneHeight+r;
+      if (position.x > zoneWidth+r) position.x = -r;
+      if (position.y > zoneHeight+r) position.y = -r;
     }
   }
 
@@ -653,10 +653,10 @@ class YejisEcosystem {
 
     // Wraparound
     void borders() {
-      if (position.x < -r) position.x = width+r;
-      if (position.y < -r) position.y = height+r;
-      if (position.x > width+r) position.x = -r;
-      if (position.y > height+r) position.y = -r;
+      if (position.x < -r) position.x = zoneWidth+r;
+      if (position.y < -r) position.y = zoneHeight+r;
+      if (position.x > zoneWidth+r) position.x = -r;
+      if (position.y > zoneHeight+r) position.y = -r;
     }
   }
 }
