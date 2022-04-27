@@ -226,19 +226,7 @@ class toomiesEcosystem {
 
       // code for going back to the main screen, + instructions:
       pushStyle();
-
-      fill(255, 180);
-      noStroke();
-      rect(2, height-24, 350, 20, 20);
-      rect(2, 6, 430, 20, 20);
-      rect(10, 35, 200, 20, 20);
-      rect(10, 75, 200, 20, 20);
-      textAlign(LEFT);
-      //textFont( 20);
-      fill(0);
-      text("press 'b' to go back to the main screen!", 10, height-8);
-      text("click your mouse on the kids to give them candy!", 10, 20);
-
+      
       // visual rep of their levels:
       text("sam's adoration levels:", 20, 50);
       text("mei's adoration levels:", 20, 90);
