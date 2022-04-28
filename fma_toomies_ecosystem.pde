@@ -1,5 +1,6 @@
 //Toomie's Robota Pysche midterm project: Babysitting Simulator. March 9th, 2022.
 // Use the mouse to give the children candy when they misbehave so that they listen to you and begin to like you. Once their adoration levels reach a certain value,they will stop trying to cause mischief!
+// changes made to fit the integrated ecosystem: no more mouse, the babysitter is a character like the children now
 
 class toomiesEcosystem {
 
