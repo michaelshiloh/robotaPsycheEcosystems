@@ -13,8 +13,6 @@ Mei mei;
 Sam sam;
 Babysitter babysitter;
 
-// the classes tab:
-
 // mei's class;
 class Mei {
   float sizew= 130;
@@ -42,7 +40,7 @@ class Mei {
       sizeh = 200;
     }
   }
-  // move function : she gets a random velocity and moves around the yard. Also contains the timer stuff,
+  // move function : she gets a random velocity and moves around the yard. Also contains the timer stuff, 
   //so she gets angry every 4 seconds and the timer restarts. If her adoration is >= 10 her image switches.
   void move() {
     if (adoration >= 1 && adoration < 10) {
@@ -241,6 +239,7 @@ class Babysitter {
     acceleration.add(force);
   } //this is called in the seek function
 
+//from the nature of code with changes to fit my program
   void seek() {
     // desired velocity = target - location
     // steering force = desired velocity - current velocity
@@ -255,7 +254,6 @@ class Babysitter {
       PVector arriveForce = babysitter.arrive(sam.location);
       // Apply the force
       babysitter.applyForce(arriveForce);
-      
     } else if (dmei < dsam && pmei == mei2 || dmei > dsam && psam != sam2 && pmei == mei2) {
       PVector desired = PVector.sub(mei.location, location);
       desired.setMag(maxspeed);
@@ -269,7 +267,7 @@ class Babysitter {
       babysitter.applyForce(arriveForce);
     }
   }
-
+// mostly from lecture notes
   PVector arrive(PVector target) {
     PVector desired = PVector.sub(target, location);
     // The distance is the magnitude of the vector
@@ -311,9 +309,8 @@ class Babysitter {
     }
   }
 } // end of babysitter's class
-
 void setup() {
-  size(1200, 700);
+  //size(1200, 700);
   bg = loadImage("bg.png");
   mei1 = loadImage("mei1.png");
   mei2 = loadImage("mei2.png");
@@ -338,7 +335,7 @@ void setup() {
 }
 
 void draw() {
-  background(150);
+  //background(150);
 
   // calling class functions :
   sam.display();
@@ -357,8 +354,8 @@ void draw() {
   babysitter.seek();
   babysitter.candy();
 
-  
- 
+
+
   //collision detection calculation between babysitter & kids:
   dsam = PVector.dist(babysitter.location, sam.location);
   dmei = PVector.dist(babysitter.location, mei.location);
