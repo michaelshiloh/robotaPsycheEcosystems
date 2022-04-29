@@ -12,7 +12,7 @@ Mei mei;
 Sam sam;
 Babysitter babysitter;
 
-  // the classes tab:
+// the classes tab:
 
 // mei's class;
 class Mei {
@@ -48,15 +48,16 @@ class Mei {
       velocity.y += random(-.1, .1);
       location.add(velocity); // she moves around
 
-      if (pmei == mei1 && frameCount % 240 == 0) { // every 4 seconds
+      if (pmei == mei1 && frameCount % 300 == 0) { // every 5 seconds
         pmei = mei2;
+        timerstarted = false;
 
         if (timerstarted == false) {
           timer = millis();
           timerstarted = true;
         }
 
-        if (millis() > timer + 7000) { // if you ignore her for 7 seconds you lose a point
+        if (millis() > timer + 8000) { // if you ignore her for 7 seconds you lose a point
           adoration -=1;
           timerstarted = false;
         }
@@ -240,24 +241,54 @@ class Babysitter {
   void seek() {
     // desired velocity = target - location
     // steering force = desired velocity - current velocity
-    if (dsam < dmei && psam == sam2 || dsam > dmei && pmei == mei1 && psam == sam2) {
-      pbabysitter = bsnormal;
+    if (dsam < dmei && psam == sam2 || dsam > dmei && pmei != mei2 && psam == sam2) {
       PVector desired = PVector.sub(sam.location, location);
       desired.setMag(maxspeed);
       PVector steer = PVector.sub(desired, velocity);
       steer.limit(maxforce); //limiting the steering force
       applyForce(steer);
       pbabysitter = bscandy;
-    } else if (dmei < dsam && pmei == mei2 || dmei > dsam && psam == sam1 && pmei == mei2) {
-      pbabysitter = bsnormal;
+      // Calculate the arriving force
+      PVector arriveForce = babysitter.arrive(sam.location);
+      // Apply the force
+      babysitter.applyForce(arriveForce);
+      
+    } else if (dmei < dsam && pmei == mei2 || dmei > dsam && psam != sam2 && pmei == mei2) {
       PVector desired = PVector.sub(mei.location, location);
       desired.setMag(maxspeed);
       PVector steer = PVector.sub(desired, velocity);
       steer.limit(maxforce); //limiting the steering force
       applyForce(steer);
       pbabysitter = bscandy;
+      // Calculate the arriving force
+      PVector arriveForce = babysitter.arrive(mei.location);
+      // Apply the force
+      babysitter.applyForce(arriveForce);
     }
   }
+
+  PVector arrive(PVector target) {
+    PVector desired = PVector.sub(target, location);
+    // The distance is the magnitude of the vector
+    // pointing from location to target.
+    float d = desired.mag();
+    desired.normalize();
+    // If we are closer than 200 pixels...
+    if (d < 200) {
+      float m = map(d, 0, 200, 0, maxspeed);
+      desired.mult(m);
+    } else {
+      // Otherwise, proceed at maximum speed.
+      desired.mult(maxspeed);
+    }
+    // The usual steering = desired - velocity
+    PVector steer = PVector.sub(desired, velocity);
+    steer.limit(maxforce);
+    return(steer);
+  }
+
+
+
 
   void candy() {
     // if the babysitter collides with the kids (giving them the candy) then they get happy & behaved - their timers reset and adoration increases by 1.
@@ -278,6 +309,8 @@ class Babysitter {
 } // end of babysitter's class
 
 void setup() {
+  size(1200, 700);
+  bg = loadImage("bg.png");
   mei1 = loadImage("mei1.png");
   mei2 = loadImage("mei2.png");
   mei3 = loadImage("mei3.png");
@@ -287,6 +320,7 @@ void setup() {
   bscandy = loadImage("bscandy.png");
   bsnormal = loadImage("bsnormal.png");
   bshappy = loadImage("bshappy.png");
+  //candy = loadImage("candy.png");
   font  = createFont("/Users/fatimaaljneibi/Downloads/Fonts/Hubballi/Hubballi-Regular.ttf", 32);
   noStroke();
   smooth(4);
@@ -299,7 +333,7 @@ void setup() {
   babysitter = new Babysitter(random(100, width-100), random(500, height-100), random(2, -2), random(2, -2));
 }
 
- void draw() {
+void draw() {
   background(150);
 
   // calling class functions :
@@ -319,6 +353,8 @@ void setup() {
   babysitter.seek();
   babysitter.candy();
 
+  
+ 
   //collision detection calculation between babysitter & kids:
   dsam = PVector.dist(babysitter.location, sam.location);
   dmei = PVector.dist(babysitter.location, mei.location);
@@ -342,6 +378,7 @@ void setup() {
     text("The kids like their babysitter know! Mission:Success!", width/2, height/2);
   }
 } // draw end
+
 
   void mouseClicked() {
   }
