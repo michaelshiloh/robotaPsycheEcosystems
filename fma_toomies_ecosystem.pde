@@ -1,5 +1,6 @@
 //Toomie's Robota Pysche midterm project: Babysitting Simulator. March 9th, 2022.
-// Use the mouse to give the children candy when they misbehave so that they listen to you and begin to like you. Once their adoration levels reach a certain value,they will stop trying to cause mischief!
+// Use the mouse to give the children candy when they misbehave so that they listen to you and begin to like you. 
+//Once their adoration levels reach a certain value,they will stop trying to cause mischief!
 // changes made to fit the integrated ecosystem: no more mouse, the babysitter is a character like the children now
 
 class toomiesEcosystem {
@@ -41,7 +42,8 @@ class Mei {
       sizeh = 200;
     }
   }
-  // move function : she gets a random velocity and moves around the yard. Also contains the timer stuff, so she gets angry every 4 seconds and the timer restarts. If her adoration is >= 10 her image switches.
+  // move function : she gets a random velocity and moves around the yard. Also contains the timer stuff,
+  //so she gets angry every 4 seconds and the timer restarts. If her adoration is >= 10 her image switches.
   void move() {
     if (adoration >= 1 && adoration < 10) {
       velocity.x += random (-1, 1);
@@ -68,7 +70,8 @@ class Mei {
     }
   } // move function end
 
-  // the edge function is just to make sure she doesnt fly offscreen, so i change her velocity to get her moving in the opposite direction
+  // the edge function is just to make sure she doesnt fly offscreen, so i change her velocity to 
+  //get her moving in the opposite direction
   void edge() {
     if (location.x >= width-50) {
       velocity.x =  random(-1, 0);
@@ -291,7 +294,8 @@ class Babysitter {
 
 
   void candy() {
-    // if the babysitter collides with the kids (giving them the candy) then they get happy & behaved - their timers reset and adoration increases by 1.
+    // if the babysitter collides with the kids (giving them the candy) then they get happy & behaved - 
+    //their timers reset and adoration increases by 1.
     if ( dsam < r && psam == sam2 ) {
       psam = sam1;
       sam.adoration +=1;
