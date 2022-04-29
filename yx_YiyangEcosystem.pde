@@ -195,9 +195,9 @@ class YiyangEcosystem {
       } else if (location.x < zoneWidth*0.05) {
         velocity.x *= 0.7; // slow down near the edge
       }
-      if (location.y > height*0.95) {
+      if (location.y > zoneHeight*0.95) {
         velocity.x *= 0.7; // slow down near the edge
-      } else if (location.y < height*0.05) {
+      } else if (location.y < zoneHeight*0.05) {
         velocity.x *= 0.7; // slow down near the edge
       }
 
@@ -208,8 +208,8 @@ class YiyangEcosystem {
         location.x = 5;
         velocity.x *= -0.9; // bounce back with energy loss
       }
-      if (location.y > height) {
-        location.y = height-5;
+      if (location.y > zoneHeight) {
+        location.y = zoneHeight-5;
         velocity.y *= -0.9; // bounce back with energy loss
       } else if (location.y < 0) {
         location.y = 5;
