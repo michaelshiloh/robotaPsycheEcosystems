@@ -71,11 +71,11 @@ class Mei {
   // the edge function is just to make sure she doesnt fly offscreen, so i change her velocity to 
   //get her moving in the opposite direction
   void edge() {
-    if (location.x >= width-50) {
+    if (location.x >= zoneWidth-50) {
       velocity.x =  random(-1, 0);
     } else if (location.x <= 50) {
       velocity.x = random(0, 1);
-    } else if (location.y >= height-100) {
+    } else if (location.y >= zoneHeight-100) {
       velocity.y = random(-1, 0);
     } else if (location.y <=500) {
       velocity.y = random(0, 1) ;
@@ -157,11 +157,11 @@ class Sam {
   }
 
   void edge() {
-    if (location.x >= width-50) {
+    if (location.x >= zoneWidth-50) {
       velocity.x =  random(-1, 0);
     } else if (location.x <= 50) {
       velocity.x = random(0, 1);
-    } else if (location.y >= height-100) {
+    } else if (location.y >= zoneHeight-100) {
       velocity.y = random(-1, 0);
     } else if (location.y <=500) {
       velocity.y = random(0, 1) ;
@@ -329,9 +329,9 @@ void setup() {
   textAlign(CENTER);
 
   // class objects: (people)
-  sam= new Sam(random(100, width-100), random(500, height-100), random(2, -2), random(2, -2));
-  mei = new Mei(random(100, width-100), random(500, height-100), random(2, -2), random(2, -2));
-  babysitter = new Babysitter(random(100, width-100), random(500, height-100), random(2, -2), random(2, -2));
+  sam= new Sam(random(100, zoneWidth-100), random(500, zoneHeight-100), random(2, -2), random(2, -2));
+  mei = new Mei(random(100, zoneWidth-100), random(500, zoneHeight-100), random(2, -2), random(2, -2));
+  babysitter = new Babysitter(random(100, zoneWidth-100), random(500, zoneHeight-100), random(2, -2), random(2, -2));
 }
 
 void draw() {
