@@ -6,7 +6,6 @@
 class toomiesEcosystem {
 
 PImage pbabysitter, pmei, psam, bg, candy, mei1, mei2, mei3, sam1, sam2, sam3, bscandy, bsnormal, bshappy;
-PFont font;
 int r = 80;
 float dsam, dmei;
 Mei mei;
