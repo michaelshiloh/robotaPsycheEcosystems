@@ -215,11 +215,11 @@ class Babysitter {
 
   //same as mei's edge function
   void edge() {
-    if (location.x >= width-50) {
+    if (location.x >= zoneWidth-50) {
       velocity.x =  random(-1, 0);
     } else if (location.x <= 50) {
       velocity.x = random(0, 1);
-    } else if (location.y >= height-100) {
+    } else if (location.y >= zoneHeight-100) {
       velocity.y = random(-1, 0);
     } else if (location.y <=500) {
       velocity.y = random(0, 1) ;
