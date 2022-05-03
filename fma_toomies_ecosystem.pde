@@ -311,22 +311,19 @@ class Babysitter {
 } // end of babysitter's class
 void setup() {
   //size(1200, 700);
-  bg = loadImage("bg.png");
-  mei1 = loadImage("mei1.png");
-  mei2 = loadImage("mei2.png");
-  mei3 = loadImage("mei3.png");
-  sam1 = loadImage("sam1.png");
-  sam2 = loadImage("sam2.png");
-  sam3 = loadImage("sam3.png");
-  bscandy = loadImage("bscandy.png");
-  bsnormal = loadImage("bsnormal.png");
-  bshappy = loadImage("bshappy.png");
-  //candy = loadImage("candy.png");
-  font  = createFont("/Users/fatimaaljneibi/Downloads/Fonts/Hubballi/Hubballi-Regular.ttf", 32);
+  mei1 = loadImage("toomie/mei1.png");
+  mei2 = loadImage("toomie/mei2.png");
+  mei3 = loadImage("toomie/mei3.png");
+  sam1 = loadImage("toomie/sam1.png");
+  sam2 = loadImage("toomie/sam2.png");
+  sam3 = loadImage("toomie/sam3.png");
+  bscandy = loadImage("toomie/bscandy.png");
+  bsnormal = loadImage("toomie/bsnormal.png");
+  bshappy = loadImage("toomie/bshappy.png");
   noStroke();
   smooth(4);
   imageMode(CENTER);
-  textAlign(CENTER);
+  //textAlign(CENTER);
 
   // class objects: (people)
   sam= new Sam(random(100, zoneWidth-100), random(500, zoneHeight-100), random(2, -2), random(2, -2));
@@ -362,22 +359,12 @@ void draw() {
 
   // visual rep of their levels:
   pushStyle();
-  textAlign(LEFT);
-  textSize(20);
-  //text("sam's adoration levels:", 20, 50);
-  //text("mei's adoration levels:", 20, 90);
   fill(#6583ED);
   rect(2, 55, sam.adoration*20, 20);
   fill(#A449F0);
   rect(2, 95, mei.adoration*20, 20);
   popStyle();
 
-
-  //might leave this out
- // if (mei.adoration >= 10 && sam.adoration >=10) {
- //  textFont(font, 40);
- //  text("The kids like their babysitter know! Mission:Success!", width/2, height/2);
-//  }
 } // draw end
 
 
