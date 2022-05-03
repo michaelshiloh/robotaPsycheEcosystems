@@ -364,8 +364,8 @@ void draw() {
   pushStyle();
   textAlign(LEFT);
   textSize(20);
-  text("sam's adoration levels:", 20, 50);
-  text("mei's adoration levels:", 20, 90);
+  //text("sam's adoration levels:", 20, 50);
+  //text("mei's adoration levels:", 20, 90);
   fill(#6583ED);
   rect(2, 55, sam.adoration*20, 20);
   fill(#A449F0);
@@ -374,10 +374,10 @@ void draw() {
 
 
   //might leave this out
-  if (mei.adoration >= 10 && sam.adoration >=10) {
-    textFont(font, 40);
-    text("The kids like their babysitter know! Mission:Success!", width/2, height/2);
-  }
+ // if (mei.adoration >= 10 && sam.adoration >=10) {
+ //  textFont(font, 40);
+ //  text("The kids like their babysitter know! Mission:Success!", width/2, height/2);
+//  }
 } // draw end
 
 
