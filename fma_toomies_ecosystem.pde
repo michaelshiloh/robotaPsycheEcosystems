@@ -210,6 +210,7 @@ class Babysitter {
 
   //display function : just displays the image and changes its height if the image changes.
   void display() {
+    println(location.y);
     image(pbabysitter, location.x, location.y, sizew, sizeh);
   }
 

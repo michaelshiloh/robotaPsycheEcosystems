@@ -34,81 +34,96 @@ int	zoneWidth;
 
 void setup() {
 
-  fullScreen();
+  // fullScreen();
+  size (1000,1000);
+  frameRate(5);
 
-  // Indoors (top left)
+// All zones are the same size
   zoneHeight = height/2;
   zoneWidth = width/2;
+
+// There are four zones, corresponding to the four quadrants of the canvas
+// Parameters are the top left corner of each zone
+  setupIndoors(0, 0); // Indoors (top left)
+  setupSky(width/2, 0); // Do the sky zone (top right);
+  setupLand(0, height/2); // Land outdoors (lower left)
+  setupWater(width/2, height/2); // Water (lower right)
+}
+
+void setupIndoors(int xloc, int yloc) {
   pushMatrix();
-  translate(0, 0);
+  translate(xloc, yloc);
   ehtisham.setup();
   toomie.setup();
   yiyang.setup();
   popMatrix();
-
-  // Do the sky zone (top right);
-  zoneHeight = height/2;
-  zoneWidth = width/2;
+}
+void setupSky(int xloc, int yloc) {
   pushMatrix();
-  translate(width/2, 0);
+  translate(xloc, yloc);
   chinonyerem.setup();
   phillip.setup();
   popMatrix();
-
-  // Land outdoors (lower left)
-  zoneHeight = height/2;
-  zoneWidth = width/2;
+}
+void setupLand(int xloc, int yloc) {
   pushMatrix();
-  translate(0, height/2);
+  translate(xloc, yloc);
   adina.setup();
   snehil.setup();
   badr.setup();
   abdul.setup();
   genie.setup();
   popMatrix();
-
-  // Water (lower right)
-  zoneHeight = height/2;
-  zoneWidth = width/2;
+}
+void setupWater(int xloc, int yloc) {
   pushMatrix();
-  translate(width/2, height/2);
+  translate(xloc, yloc);
   brian.setup();
   jiayi.setup();
   yeji.setup();
   popMatrix();
-
 }
-
 
 void draw() {
-
-  doIndoors(); // Indoors (top left)
-  doSky(); // Sky (top right)
-  doOutdoors(); // Land outdoors (lower left)
-  doWater(); // Water (lower right)
-  
+  drawIndoors(0, 0); // Indoors (top left)
+  drawSky(width/2, 0); // Sky (top right)
+  drawLand(0, height/2); // Land outdoors (lower left)
+  //drawWater(width/2, height/2); // Water (lower right)
 }
 
-void doWater() {
-  zoneHeight = height/2;
-  zoneWidth = width/2;
+void drawIndoors(int xloc, int yloc) {
+  // Indoors (top left)
   pushMatrix();
-  translate(width/2, height/2);
+  translate(xloc, yloc);
 
-  fill(00, 100, 100);
+  fill(230);
   noStroke();
   rect(0, 0, zoneWidth, zoneHeight);
 
-  brian.draw();
-  jiayi.draw();
-  yeji.draw();
+  // ehtisham.draw(); // Ehtisham
+  toomie.draw();
+  //  yiyang.draw();
   popMatrix();
 }
-void doOutdoors() {
-  zoneHeight = height/2;
-  zoneWidth = width/2;
+
+void drawSky(int xloc, int yloc) {
+
   pushMatrix();
-  translate(0, height/2);
+  translate(xloc, yloc);
+
+  fill(0, 0, 200);
+  noStroke();
+  println("drawSky x size is " + zoneWidth + " ysize is " + zoneHeight);
+  rect(0, 0, zoneWidth, zoneHeight);
+
+  chinonyerem.draw();
+  phillip.draw();
+  popMatrix();
+}
+
+void drawLand(int xloc, int yloc) {
+  pushMatrix();
+  translate(xloc, yloc);
 
   fill(0, 200, 0);
   noStroke();
@@ -121,37 +136,19 @@ void doOutdoors() {
   genie.draw();
   popMatrix();
 }
-void doSky() {
-  // Do the sky zone (top right);
-  zoneHeight = height/2;
-  zoneWidth = width/2;
-  pushMatrix();
-  translate(width/2, 0);
 
-  fill(0, 0, 200);
+void drawWater(int xloc, int yloc) {
+
+  pushMatrix();
+  translate(xloc, yloc);
+
+  fill(00, 100, 100);
   noStroke();
   rect(0, 0, zoneWidth, zoneHeight);
 
-  chinonyerem.draw();
-  phillip.draw();
-  popMatrix();
-}
-
-void doIndoors() {
-  // Indoors (top left)
-  zoneHeight = height/2;
-  zoneWidth = width/2;
-
-  pushMatrix();
-  translate(0, 0);
-
-  fill(230);
-  noStroke();
-  rect(0, 0, zoneWidth, zoneHeight);
-
-  ehtisham.draw(); // Ehtisham
-  toomie.draw();
-  yiyang.draw();
+  brian.draw();
+  jiayi.draw();
+  yeji.draw();
   popMatrix();
 }
 
