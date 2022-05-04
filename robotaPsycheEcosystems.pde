@@ -34,16 +34,15 @@ int	zoneWidth;
 
 void setup() {
 
-  // fullScreen();
-  size (1000,1000);
-  frameRate(5);
+  size(1000, 1000);
 
-// All zones are the same size
+  // All zones are the same size
   zoneHeight = height/2;
   zoneWidth = width/2;
 
-// There are four zones, corresponding to the four quadrants of the canvas
-// Parameters are the top left corner of each zone
+
+  // There are four zones, corresponding to the four quadrants of the canvas
+  // Parameters are the top left corner of each zone
   setupIndoors(0, 0); // Indoors (top left)
   setupSky(width/2, 0); // Do the sky zone (top right);
   setupLand(0, height/2); // Land outdoors (lower left)
@@ -85,7 +84,7 @@ void setupWater(int xloc, int yloc) {
 }
 
 void draw() {
-  drawIndoors(0, 0); // Indoors (top left)
+  //drawIndoors(0, 0); // Indoors (top left)
   drawSky(width/2, 0); // Sky (top right)
   drawLand(0, height/2); // Land outdoors (lower left)
   //drawWater(width/2, height/2); // Water (lower right)
@@ -113,18 +112,18 @@ void drawSky(int xloc, int yloc) {
 
   fill(0, 0, 200);
   noStroke();
-  println("drawSky x size is " + zoneWidth + " ysize is " + zoneHeight);
+  println("drawSky x size is " + zoneWidth + " ysize is " + zoneHeight + " xloc " + xloc + " yloc " + yloc);
   rect(0, 0, zoneWidth, zoneHeight);
 
-  chinonyerem.draw();
-  phillip.draw();
+  // chinonyerem.draw();
+  // phillip.draw();
   popMatrix();
 }
 
 void drawLand(int xloc, int yloc) {
   pushMatrix();
   translate(xloc, yloc);
-
+  println("drawLand x size is " + zoneWidth + " ysize is " + zoneHeight + " xloc " + xloc + " yloc " + yloc);
   fill(0, 200, 0);
   noStroke();
   rect(0, 0, zoneWidth, zoneHeight);

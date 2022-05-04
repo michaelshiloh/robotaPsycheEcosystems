@@ -72,7 +72,7 @@ class YejisEcosystem {
   void setup() {
 
     //Size of canvas
-    size(1500, 900);
+    //size(1500, 900);
 
     //Creating Entities
 

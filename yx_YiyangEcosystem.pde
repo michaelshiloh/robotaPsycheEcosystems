@@ -11,7 +11,7 @@ class YiyangEcosystem {
   ArrayList<LightSource> LightSources = new ArrayList<LightSource>(); // light sources
 
   void setup() {
-    size(1200,800);
+    //size(1200,800);
     // LightSources.add(new LightSource(zoneWidth/2, zoneHeight/2));
 
     for (int i = 0; i < movers.length; i++) {
