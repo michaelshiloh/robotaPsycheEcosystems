@@ -13,8 +13,12 @@ class EhtishamsEcosystem {
   //setup
   //---------------------------------------------------------------------------------//
   void setup() {
-    houseOccupancy = 150;
-    houseSize = 200;
+    if (zoneWidth <= 600){
+      houseOccupancy = 60;
+    } else {
+      houseOccupancy = 100;
+    }
+    houseSize = zoneHeight/6;
     legendSize = 100;
 
     for (int i = 0; i < 10; i++) { //start with 10 mice
@@ -22,9 +26,9 @@ class EhtishamsEcosystem {
     }
 
     //let's create 3 points in the house which mice can seek
-    housePoints.add(new PVector(200, 100)); // a point on the left of the house
-    housePoints.add(new PVector(zoneWidth/2, 100)); // a point on the center of the house
-    housePoints.add(new PVector(zoneWidth - 200, 100)); // a point on the right of the house
+    housePoints.add(new PVector((zoneWidth/10)+20, houseSize/2)); // a point on the left of the house
+    housePoints.add(new PVector(zoneWidth/2, houseSize/2)); // a point on the center of the house
+    housePoints.add(new PVector((zoneWidth/1.25)-20, houseSize/2)); // a point on the right of the house
 
     flowField = new CatFlowField(15);
     cat = new Cat(random(50, zoneWidth-50), random(houseSize+50, zoneHeight-(legendSize+50)));
@@ -40,7 +44,7 @@ class EhtishamsEcosystem {
     rect(0, 0, zoneWidth, houseSize); //draw house
 
     //Below function call is commented in order to give us more control of food to observe various aspects of the simulation. Simply uncomment if you just want to see and not interact.
-    //spawnNewFood();
+    spawnNewFood();
 
     for (int i = 0; i < food.size(); i++) { //Display food
       food.get(i).display();
@@ -59,6 +63,21 @@ class EhtishamsEcosystem {
         miceInHouse += 1;
       }
     }
+    
+    if (zoneWidth <= 600){
+      if (miceInHouse >= 50) {
+        fill(255, 0, 0);
+      } else {
+        fill(0);
+      }
+    } else {
+      if (miceInHouse >= 90) {
+        fill(255, 0, 0);
+      } else {
+        fill(0);
+      }
+    }
+    text ("Mice in House: " + miceInHouse, 10, 40);
 
     cat.update();
     flowField.shiftField(); //change field direction randomly after some time to exhibit random movement of cat
@@ -81,7 +100,7 @@ class EhtishamsEcosystem {
     } else {
       fill(0);
     }
-    text ("Current Occupancy: " + miceInHouse, 10, 40);
+    text ("Current Mice: " + miceInHouse, 10, 40);
 
     fill(0);
     text ("Room: ", 10, houseSize + 20);
@@ -133,9 +152,9 @@ class EhtishamsEcosystem {
   //---------------------------------------------------------------------------------//
   // On call in draw function, this fucntion spawns new food on a random location after every 600 frames (10 seconds)
   void spawnNewFood() {
-    if (frameCount - lastSpawnTime > 600) {
-      float x = random(30, zoneWidth-30);
-      float y = random(houseSize+30, zoneHeight-(legendSize+30));
+    if (frameCount - lastSpawnTime > 500) {
+      float x = random(20, zoneWidth-20);
+      float y = random(houseSize+20, zoneHeight-(20));
       food.add(new Food(x, y));
       lastSpawnTime = frameCount;
     }
@@ -268,8 +287,17 @@ class EhtishamsEcosystem {
       location = new PVector(x, y);
       maxspeed = 2;
       maxforce = 0.1;
-      detectionRange = 300;
-      size = 30;
+      
+      detectionRange = zoneWidth/4;
+      
+      if (zoneHeight >= 1000){
+        size = 30;
+      } else if (zoneHeight >= 600 && zoneHeight < 1000){
+        size = 20;
+      }  else {
+        size = 15;
+      }
+
       minWallDistance = 100;
       closestMouse = null;
       closestMouseDistance= 100000; //very large number so that we can compare it with distances from mouse instances and assign it the distance to closest mouse
@@ -307,7 +335,7 @@ class EhtishamsEcosystem {
       closestMouseDistance= 100000; //initialized to a very large value to help us in comparison. Resets every frame to find correct distance every frame.
       closestMouse = null; //Resets every frame to find closest mouse every frame.
       for (int i = 0; i < mice.size(); i++) {
-        if (mice.get(i).lifeRemaining > 0 && mice.get(i).location.y > houseSize) {
+        if (mice.get(i).lifeRemaining > 0 && mice.get(i).location.y >= houseSize) {
           float distance = location.dist(mice.get(i).location);
           if (distance < closestMouseDistance) {
             closestMouseDistance = distance;
@@ -327,26 +355,26 @@ class EhtishamsEcosystem {
       //if closest mouse is outside house and in range
       if (closestMouse != null && closestMouse.distanceFromCat < detectionRange && closestMouse.location.y > houseSize) {
         //Catch Mouse:
-        if ((frameCount - lastMouseEatTime) > 500) { //Cat gets faster and aggressive if no mouse eaten in 500 frames
-          maxspeed = 8;
-          maxforce = 2;
-          detectionRange = 500;
-        } else {
-          maxspeed = 5;
+        if ((frameCount - lastMouseEatTime) > 600) { //Cat gets faster and aggressive if no mouse eaten in 500 frames       
+          maxspeed = 7;
           maxforce = 1;
-          detectionRange = 300;
+          detectionRange = zoneWidth/2.4;
+        } else {
+          maxspeed = 4;
+          maxforce = 0.5;
+          detectionRange = zoneWidth/4;
         }
         seek(closestMouse);
       } else {
         //Roam Around the room
-        if ((frameCount - lastMouseEatTime) > 500) {
+        if ((frameCount - lastMouseEatTime) > 600) {
           maxspeed = 4;
           maxforce = 0.5;
-          detectionRange = 500;
+          detectionRange = zoneWidth/2.4;
         } else {
           maxspeed = 2;
           maxforce = 0.1;
-          detectionRange = 400;
+          detectionRange = zoneWidth/4;
         }
         follow(flowField);
       }
@@ -360,7 +388,7 @@ class EhtishamsEcosystem {
     void checkMouseCaught() {
       for (int i = 0; i < mice.size(); i++) {
         Mouse curr = mice.get(i);
-        if (curr.location.y > 200) {
+        if (curr.location.y > houseSize) {
           if ((curr.location.x <= location.x+size && curr.location.x >= location.x-size) && (curr.location.y + curr.size <= location.y+(size*2) && curr.location.y + curr.size >= location.y-(size*2))) {
             mice.get(i).lifeRemaining = 0; //we don't need to remove it from arrayList here. We are doing that in draw function already.
             lastMouseEatTime = frameCount;
@@ -376,24 +404,24 @@ class EhtishamsEcosystem {
     //The following method ensures that the cat stays inside the room. When a cat is about to hit a wall, its flow field changes to the other direction
 
     void boundaries() {
-      if (location.x < minWallDistance) { //Left Wall
+      if (location.x < (minWallDistance + size)) { //Left Wall
         if (frameCount - lastFieldChange[0] > 30) { //give a second to cat to increase its distance from this wall before chnaging the flow field again
           flowField.updateField(1.5*PI, 2.5*PI); // 270 degrees to 450 degrees (mainly skewed towards right)
           lastFieldChange[0] = frameCount;
         }
-      } else if (location.x > zoneWidth - minWallDistance) { //Right Wall
+      } else if (location.x > zoneWidth - (minWallDistance + size)) { //Right Wall
         if (frameCount - lastFieldChange[1] > 30) { //give a second to cat to increase its distance from this wall before chnaging the flow field again
           flowField.updateField(PI/2, 1.5*PI); // 90 degrees to 270 degrees (mainly skewed towards left)
           lastFieldChange[1] = frameCount;
         }
       }
 
-      if (location.y < (minWallDistance + houseSize)) { //Top Wall
+      if (location.y < ((minWallDistance + size) + houseSize)) { //Top Wall
         if (frameCount - lastFieldChange[2] > 30) { //give a second to cat to increase its distance from this wall before chnaging the flow field again
           flowField.updateField(0, PI);  // 0 degrees to 180 degrees (mainly skewed towards bottom)
           lastFieldChange[2] = frameCount;
         }
-      } else if (location.y > zoneHeight - (minWallDistance + legendSize)) { //Bottom Wall
+      } else if (location.y > zoneHeight - (minWallDistance + size)) { //Bottom Wall
         if (frameCount - lastFieldChange[3] > 30) { //give a second to cat to increase its distance from this wall before chnaging the flow field again
           flowField.updateField(PI, 2*PI);  // 0 degrees to 180 degrees (mainly skewed towards top)
           lastFieldChange[3] = frameCount;
@@ -540,7 +568,15 @@ class EhtishamsEcosystem {
       //Inheriting attributes from parents or setting at random:
       //If parents doesn't exist
       if (parent1 == null) { // only need to check with one parent
-        size = random(3, 6);
+        
+        if (zoneHeight >= 1000){
+          size = random(4, 7);
+        } else if (zoneHeight >= 600 && zoneHeight < 1000){
+          size = random(3, 6);
+        } else {
+          size = random(2, 5);
+        }
+        
         sizeAtBirth = size;
         sizeIncreaseRate = random(0.05, 0.1);
         maxSpeed = random (2, 4);
@@ -941,7 +977,7 @@ class EhtishamsEcosystem {
         lastWallTurnTime= frameCount;
       } 
 
-      if (location.y > (zoneHeight - (legendSize + 50))) { //bottom wall  (we don't add top wall as its mice house which mice can cross)
+      if (location.y > (zoneHeight - (50))) { //bottom wall  (we don't add top wall as its mice house which mice can cross)
         velocityFromWall = new PVector(velocity.x, - maxSpeed);
         lastWallTurnTime= frameCount;
       }
@@ -1026,10 +1062,9 @@ class EhtishamsEcosystem {
       location = new PVector(x, y);
     }
     void display() {
-      noStroke();
       fill(255, 170, 51);
-      rectMode(CENTER);
       rect(location.x, location.y, 15, 15);
+
     }
   }
 
@@ -1037,7 +1072,7 @@ class EhtishamsEcosystem {
   //Mouse Clicked function
   //---------------------------------------------------------------------------------//
   void mouseClicked() {
-    if (mouseY > (houseSize + 30) && mouseY < (zoneHeight - (legendSize - 30))) {
+    if (mouseY > (houseSize + 20) && mouseY < (zoneHeight - (20)) && mouseX < zoneWidth) {
       food.add(new Food(float(mouseX), float(mouseY)));
     }
   }
