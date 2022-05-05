@@ -164,11 +164,15 @@ class ChinonyeremsEcosystem {
   }
 
   int writeText(int xloc, int yloc, int textSize) {
-    text("Zoinks: "+zoinks.size(), xloc, yloc);
-    text("Jinkies: "+jinkies.size(), xloc, yloc + 20);
-    text("Jeepers: "+jeepers.size(), xloc, yloc + 40);
-    text("Food: "+foods.size(), xloc, yloc + 60);
-    return(60);
+    text("The zoinks are HUNTERS, circular in shape and are either grey or lemon green", xloc, yloc);
+    text("The jinkies are PREDATORS, triangular in shape and are purple", xloc, yloc + 20);
+    text("The jeepers are DEFENDERS, elliptical in shape and are either red or pink", xloc, yloc + 40);
+    text("The food particles are NUTRITION, circular in shape and are light pink", xloc, yloc + 60);
+    text("Zoinks: "+zoinks.size(), xloc, yloc + 80);
+    text("Jinkies: "+jinkies.size(), xloc, yloc + 100);
+    text("Jeepers: "+jeepers.size(), xloc, yloc + 120);
+    text("Food: "+foods.size(), xloc, yloc + 140);
+    return(140);
   }
 
   void keyPressed()
