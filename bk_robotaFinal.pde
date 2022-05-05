@@ -14,7 +14,7 @@
  - Mar 28 - make a separate file with just the class in root repo
  - Mar 23 - copy midterm content, put everything in Ecosystem class
  **********/
- 
+
 class BriansEcosystem {
   /**********
    food class
@@ -51,8 +51,8 @@ class BriansEcosystem {
 
 
   /**********
-  fish class
-  **********/
+   fish class
+   **********/
   class Fish {
     float mass = 10; //increased as fish eats food, decreased over time, consider this as radius
     float gravity = 0.01;
@@ -177,8 +177,8 @@ class BriansEcosystem {
       mass -= 0.003; //decrease mass ever so slightly every time this function is called per frame
     }
   }
-  
-  
+
+
   /**********
    actual setup, draw, etc.
    **********/
@@ -219,9 +219,9 @@ class BriansEcosystem {
       addFoodAndFish();
     }
   }
-  
+
   //built-in function that responds to keyPressed event
-  void keyPressed(){
+  void keyPressed() {
     // empty for now
   }
 

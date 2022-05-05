@@ -32,13 +32,13 @@ class ChinonyeremsEcosystem {
 
     //initialize jeepers
     for (int i = 0; i < initial_jeeper; i++) {
-      jeepers.add(new Jeeper(1.5, 
+      jeepers.add(new Jeeper(1.5,
         random(zoneWidth), random(zoneHeight)));
     }
 
     //initialize jinkies
     for (int i = 0; i < initial_jinkie; i++) {
-      jinkies.add(new Jinkie(1.5, 
+      jinkies.add(new Jinkie(1.5,
         random(zoneWidth), random(zoneHeight)));
     }
 
