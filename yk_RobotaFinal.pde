@@ -67,7 +67,7 @@ class YejisEcosystem {
     }
   }
   
-  void writeText(int xloc, int yloc, int textSize) {
+  int writeText(int xloc, int yloc, int textSize) {
    text("Eels: "+int(eels.size()), xloc, yloc);
    text("Seabug: "+int(seabugs.size()), xloc, yloc+20);
    text("Divers: "+int(humans.size()), xloc, yloc+40);
