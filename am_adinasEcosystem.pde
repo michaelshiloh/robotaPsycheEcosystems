@@ -211,9 +211,8 @@ class AdinasEcosystem {
     popMatrix();
   }
   
-  int writeTextAlpha(int xloc, int yloc, int textSize) {
-   int index = 0;
-    
+  int writeTextAlpha(int xloc, int yloc, int textSize, int index) {
+  
    String ageString = (index + 1) + " alpha's age: " + age;
    fill(colors[0], colors[1], colors[2]);
    text(ageString, xloc, yloc);
@@ -225,8 +224,6 @@ class AdinasEcosystem {
    String packString = "Pack size: " + wolves.size();
    textSize(10);
    text(ageString, xloc, yloc+50);
-   
-   index = index + 1;
     
    return yloc;
   }
@@ -402,7 +399,7 @@ void keyPressed() {
 
 int writeText(int xloc, int yloc, int textSize) {
    for (int k = 0; k < numofpacks; k++) {
-    alphas.get(j).writeTextAlpha( xloc, yloc, textSize);
+    alphas.get(k).writeTextAlpha( xloc, yloc, textSize, k);
   }
 }
 
