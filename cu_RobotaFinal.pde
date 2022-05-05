@@ -19,8 +19,6 @@ class ChinonyeremsEcosystem {
   Incubator incubator;
 
   void setup() {
-    //commented out size function for final project
-    //size(1400, 800);
 
     // initialize zoinks
     for (int i = 0; i < initial_zoink; i++) {
@@ -49,7 +47,6 @@ class ChinonyeremsEcosystem {
   }
 
   void draw() {
-    //background(2, 7, 20);
 
     //displays population sizes
     displayPopulation();
@@ -438,7 +435,6 @@ class ChinonyeremsEcosystem {
 
     //If the jeeper collides with the zoink, it will eat it
     void eat(Zoink z) {
-      //if (location.x >= z.location.x && location.x <= z.location.x+0.5)
       if (dist(location.x, location.y, z.location.x, z.location.y)<(25+z.r))
       {
         zoinks.remove(z);
