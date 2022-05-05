@@ -63,7 +63,7 @@ class Attractor {
   void display() {
     stroke(10);
     fill(149, 235, 52);
-    println(location.x, location.y);
+    
     ellipse(location.x, location.y, mass*2, mass*2);
   }
 }
