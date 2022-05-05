@@ -308,23 +308,22 @@ void setup() {
   a = new Attractor();// to attract movers
 }
 
-void instructionsText() {
+int writeText(int xloc, int yloc, int textSize) {
   //text
   fill(0);
   textAlign(CENTER);
-  textSize(38);
+  textSize(textSize+10);
   // displaying the on screen text instructions
   text("Instructions: " + "\n\n", 380, 150);
-  textSize(25);
+  textSize(textSize);
   text("1. There are three types of movers based on their sizes; "+ "\n"+"the biggest (green) is the most aggresive for food," + "\n"+ "followed by the purple, and the" + "\n" +
-
     " least aggresive is the yellow." + 
     "\n" +"2. On the mouse click, a new  enemy"+ 
     "\n"+" is created, and the movers" + " are repelled by the enemy " + 
     "\n"+ "3. The smallest movers are, also attracted"+ "\n" +" to the largest movers, as if for protection"  + 
     "\n"+ "4. The medium movers consume, the small"+ "\n" +" movers when largest movers, as if for protection"  + "\n" 
-    , 400, 190);
-
+    , xloc, yloc);
+    return yloc;
   //text end
 }
 void draw() {
@@ -454,14 +453,14 @@ void draw() {
 
       // making the predator eat the mover
       // making the enemy eat the movers 
-      //for (int e = 0; e < enemy.size(); e++) {
-      //  // checking the distance between the enemy and the mover
-      //  if (dist(movers.get(i).location.x, movers.get(i).location.y, enemy.get(e).location.x, enemy.get(e).location.y) <= enemy.get(e).mass/4) {
-      //    movers.remove(i);
-      //    enemy.get(e).mass += 10;
-      //    i--;
-      //  }
-      //}
+      for (int e = 0; e < enemy.size(); e++) {
+        // checking the distance between the enemy and the mover
+        if (dist(movers.get(i).location.x, movers.get(i).location.y, enemy.get(e).location.x, enemy.get(e).location.y) <= enemy.get(e).mass/4) {
+          movers.remove(i);
+          enemy.get(e).mass += 10;
+          i--;
+        }
+      }
     }
 
     // displaying the attractor and predator 
@@ -482,7 +481,10 @@ void drawText(String text) {
 }
 
 void mouseClicked() {
-  enemy.add(new Enemy());
+  if (mouseX < zoneWidth && mouseY <zoneHeight){
+    enemy.add(new Enemy());
+  }
+  
 }
 void keyPressed(){
 }
