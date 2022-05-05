@@ -305,15 +305,15 @@ void draw() {
 
     //check the edge so the fireflies stay in frame
     void checkEdges() {
-      if (location.x > zoneWidth) {
+      if (location.x > zoneWidth-8) {
         location.x = 400;
-      } else if (location.x < 0) {
+      } else if (location.x < 8) {
         location.x = 100;
       }
 
-      if (location.y > zoneHeight) {
+      if (location.y > zoneHeight-8) {
         location.y = 200;
-      } else if (location.y < 0) {
+      } else if (location.y < 8) {
         location.y = 50;
       }
     }
@@ -412,15 +412,15 @@ void draw() {
     }
     //check the edge so the fireflies stay in frame
     void checkEdges() {
-      if (location.x > zoneWidth) {
+      if (location.x > zoneWidth-8) {
         location.x = 400;
-      } else if (location.x < 0) {
+      } else if (location.x < 8) {
         location.x = 100;
       }
 
-      if (location.y > zoneHeight) {
+      if (location.y > zoneHeight-8) {
         location.y = 200;
-      } else if (location.y < 0) {
+      } else if (location.y < 8) {
         location.y = 50;
       }
     }

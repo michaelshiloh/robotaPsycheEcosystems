@@ -235,9 +235,11 @@ class Creature extends Object {
   String type;
   int age;
   int maxAge;
+  int radius;
   boolean alive;
 
   Creature(float _mass_, float _x_, float _y_, String _type) {
+    radius = 5;
     mass = _mass_;
     location = new PVector(_x_, _y_);
     velocity = new PVector(0, 0);
@@ -356,21 +358,21 @@ class Creature extends Object {
   // Also instead of bouncing at full-speed vehicles might lose speed.
 
   void checkEdges() {
-    if (location.x > zoneWidth) {
+    if (location.x > zoneWidth - radius) {
       location.x = zoneWidth;
       velocity.x *= -1; // full velocity, opposite direction
       velocity.x *= 0.8; // lose a bit of energy in the bounce
-    } else if (location.x < 0) {
+    } else if (location.x < radius) {
       location.x = 0;
       velocity.x *= -1; // full velocity, opposite direction
       velocity.x *= 0.8; // lose a bit of energy in the bounce
     }
 
-    if (location.y > zoneHeight) {
+    if (location.y > zoneHeight - radius) {
       location.y = zoneHeight;
       velocity.y *= -1; // full velocity, opposite direction
       velocity.y *= 0.8; // lose a bit of energy in the bounce
-    } else if (location.y < 0) {
+    } else if (location.y < radius) {
       location.y = 0;
       velocity.y *= -1; // full velocity, opposite direction
       velocity.y *= 0.8; // lose a bit of energy in the bounce
