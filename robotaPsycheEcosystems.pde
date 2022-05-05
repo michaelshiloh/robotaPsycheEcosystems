@@ -143,9 +143,11 @@ void drawLand(int xloc, int yloc) {
   abdul.draw();
   genie.draw();
 
-  int yOffset = ehtisham.writeText(0, 0, 14);
-  yOffset = toomie.writeText(0, yOffset + 20, 10);
-  yiyang.writeText(0, yOffset + 20, 8);
+  int yOffset = adina.writeText(0, 0, 14);
+  yOffset = snehil.writeText(0, yOffset + 20, 10);
+  yOffset = badr.writeText(0, yOffset + 20, 10);
+  yOffset = abdul.writeText(0, yOffset + 20, 10);
+  genie.writeText(0, yOffset + 20, 8);
 
   popMatrix();
 }
