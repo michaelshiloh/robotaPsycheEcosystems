@@ -105,7 +105,7 @@ void drawIndoors(int xloc, int yloc) {
 
   int yOffset = ehtisham.writeText(0, 0, 14);
   yOffset = toomie.writeText(0, yOffset+20, 10);
-  yiyang.writeText(0, yOffset+20, 8);
+ // yiyang.writeText(0, yOffset+20, 8);
 
   popMatrix();
 }
@@ -143,8 +143,8 @@ void drawOutdoors(int xloc, int yloc) {
   abdul.draw();
   genie.draw();
 
-  int yOffset = adina.writeText(0, 0, 14);
-  yOffset = snehil.writeText(0, yOffset + 20, 10);
+  int yOffset = 0;//adina.writeText(0, 0, 14);
+  //yOffset = snehil.writeText(0, yOffset + 20, 10);
   yOffset = badr.writeText(0, yOffset + 20, 10);
   yOffset = abdul.writeText(0, yOffset + 20, 10);
   genie.writeText(0, yOffset + 20, 8);
@@ -165,7 +165,7 @@ void drawWater(int xloc, int yloc) {
   jiayi.draw();
   yeji.draw();
 
-  int yOffset = brian.writeText(0, 0, 14);
+  int yOffset = 0; //brian.writeText(0, 0, 14);
   yOffset = jiayi.writeText(0, yOffset + 20, 10);
   yeji.writeText(0, yOffset + 20, 8);
 
