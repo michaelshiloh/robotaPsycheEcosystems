@@ -32,13 +32,13 @@ class ChinonyeremsEcosystem {
 
     //initialize jeepers
     for (int i = 0; i < initial_jeeper; i++) {
-      jeepers.add(new Jeeper(1.5,
+      jeepers.add(new Jeeper(1.5, 
         random(zoneWidth), random(zoneHeight)));
     }
 
     //initialize jinkies
     for (int i = 0; i < initial_jinkie; i++) {
-      jinkies.add(new Jinkie(1.5,
+      jinkies.add(new Jinkie(1.5, 
         random(zoneWidth), random(zoneHeight)));
     }
 
@@ -161,6 +161,14 @@ class ChinonyeremsEcosystem {
     //text("Jinkies: "+jinkies.size(), 20, 70);
     //text("Jeepers: "+jeepers.size(), 20, 90);
     //text("Food: "+foods.size(), 20, 110);
+  }
+
+  int writeText(int xloc, int yloc, int textSize) {
+    text("Zoinks: "+zoinks.size(), xloc, yloc);
+    text("Jinkies: "+jinkies.size(), xloc, yloc + 20);
+    text("Jeepers: "+jeepers.size(), xloc, yloc + 40);
+    text("Food: "+foods.size(), xloc, yloc + 60);
+    return(60);
   }
 
   void keyPressed()
