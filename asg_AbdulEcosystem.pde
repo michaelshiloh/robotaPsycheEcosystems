@@ -1,9 +1,15 @@
-/*
+/*///////////////////////////////////////////////////////////////////////////
 Name: Abdul Samad Gomda
 Class: Robota Psyche
 Date: 9th March 2022
 Description: This is an ecosystem midterm project for the class Robota Psyche.
-*/
+
+1. There are three types of movers based on their sizes; the biggest (green) is the most aggresive for food,
+followed by the purple, and the least aggresive is the yellow.
+2. On the mouse click, a new  enemy is created, and the movers" + " are repelled by the enemy 
+3. The smallest movers are, also attracted"+ "\n" +" to the largest movers, as if for protection
+4. The medium movers consume, the small"+ "\n" +" movers when largest movers, as if for protection
+*//////////////////////////////////////////////////////////////////////////////
 
 class AbdulEcosystem{
 
@@ -33,7 +39,7 @@ class Attractor {
   float G;
 
   Attractor() {
-    location = new PVector(random(zoneWidth-50), random(zoneHeight-50));
+    location = new PVector(random(zoneWidth-400), random(zoneHeight-400));
 
     // mass and gravitational constant
     mass = 200;
@@ -57,6 +63,7 @@ class Attractor {
   void display() {
     stroke(10);
     fill(149, 235, 52);
+    println(location.x, location.y);
     ellipse(location.x, location.y, mass*2, mass*2);
   }
 }
@@ -230,23 +237,22 @@ class Mover {
 
   void checkEdges() {
     if (location.x > zoneWidth) {
-      location.x = 0;
-      //velocity.x *= -1; // full velocity, opposite direction
-      velocity.x *= 0.2; // lose a bit of energy in the bounce
-    } else if (location.x < 0) {
       location.x = zoneWidth;
-      //velocity.x *= -1; // full velocity, opposite direction
-      velocity.x *= 0.2; // lose a bit of energy in the bounce
+      velocity.x *= -1; // full velocity, opposite direction
+      //velocity.x *= 0.2; // lose a bit of energy in the bounce
+    } else if (location.x < 0) {
+      location.x = 0;
+      velocity.x *= -1; // full velocity, opposite direction
+      //velocity.x *= 0.2; // lose a bit of energy in the bounce
     }
-
-    if (location.y > zoneHeight) {
-      location.y = 0;
-      //velocity.y *= -1; // full velocity, opposite direction
-      velocity.y *= 0.2; // lose a bit of energy in the bounce
-    } else if (location.y < 0) {
+    if (location.y >= zoneHeight) {
       location.y = zoneHeight;
-      //velocity.y *= -1; // full velocity, opposite direction
-      velocity.y *= 0.2; // lose a bit of energy in the bounce
+      velocity.y *= -1; // full velocity, opposite direction
+      //velocity.y *= 0.2; // lose a bit of energy in the bounce
+    } else if (location.y <= 0) {
+      location.y = 0;
+      velocity.y *= -1; // full velocity, opposite direction
+      //velocity.y *= 0.2; // lose a bit of energy in the bounce
     }
   }
 }
@@ -296,7 +302,7 @@ void setup() {
   for (int i = 0; i < 75; i++) {
     // Each Mover is initialized randomly.
     movers.add(new Mover(
-      random(zoneWidth), random(zoneHeight))); // initial location
+      random(zoneWidth-50), random(zoneHeight-50))); // initial location
   }
 
   a = new Attractor();// to attract movers
@@ -318,9 +324,6 @@ void instructionsText() {
     "\n"+ "3. The smallest movers are, also attracted"+ "\n" +" to the largest movers, as if for protection"  + 
     "\n"+ "4. The medium movers consume, the small"+ "\n" +" movers when largest movers, as if for protection"  + "\n" 
     , 400, 190);
-
-
-
 
   //text end
 }
@@ -417,10 +420,10 @@ void draw() {
             }
 
             // making the medium mover consume the small mover
-            if ((movers.get(i).mass == 100 && movers.get(j).mass == 50) && (dist(movers.get(i).location.x, movers.get(i).location.y, movers.get(j).location.x, movers.get(j).location.y) <= movers.get(i).mass/2)) {
-              movers.remove(j);
-              i--; // removing one mover from the global movers
-            }
+            //if ((movers.get(i).mass == 100 && movers.get(j).mass == 50) && (dist(movers.get(i).location.x, movers.get(i).location.y, movers.get(j).location.x, movers.get(j).location.y) <= movers.get(i).mass/2)) {
+            //  movers.remove(j);
+            //  i--; // removing one mover from the global movers
+            //}
           }
 
           a = new Attractor();// to attract movers
@@ -451,14 +454,14 @@ void draw() {
 
       // making the predator eat the mover
       // making the enemy eat the movers 
-      for (int e = 0; e < enemy.size(); e++) {
-        // checking the distance between the enemy and the mover
-        if (dist(movers.get(i).location.x, movers.get(i).location.y, enemy.get(e).location.x, enemy.get(e).location.y) <= enemy.get(e).mass/4) {
-          movers.remove(i);
-          enemy.get(e).mass += 10;
-          i--;
-        }
-      }
+      //for (int e = 0; e < enemy.size(); e++) {
+      //  // checking the distance between the enemy and the mover
+      //  if (dist(movers.get(i).location.x, movers.get(i).location.y, enemy.get(e).location.x, enemy.get(e).location.y) <= enemy.get(e).mass/4) {
+      //    movers.remove(i);
+      //    enemy.get(e).mass += 10;
+      //    i--;
+      //  }
+      //}
     }
 
     // displaying the attractor and predator 
