@@ -39,7 +39,7 @@ class Attractor {
   float G;
 
   Attractor() {
-    location = new PVector(random(zoneWidth-400), random(zoneHeight-400));
+    location = new PVector(random(200, zoneWidth-200), random(200, zoneHeight-200));
 
     // mass and gravitational constant
     mass = 200;
