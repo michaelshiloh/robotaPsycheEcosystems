@@ -70,13 +70,13 @@ class Mei {
   // the edge function is just to make sure she doesnt fly offscreen, so i change her velocity to 
   //get her moving in the opposite direction
   void edge() {
-    if (location.x >= zoneWidth-50) {
+    if (location.x >= zoneWidth-r) {
       velocity.x =  random(-1, 0);
-    } else if (location.x <= 50) {
+    } else if (location.x <= r) {
       velocity.x = random(0, 1);
-    } else if (location.y >= zoneHeight-100) {
+    } else if (location.y >= zoneHeight-150) {
       velocity.y = random(-1, 0);
-    } else if (location.y <=500) {
+    } else if (location.y <=300) {
       velocity.y = random(0, 1) ;
     }
   }//edge function
@@ -103,7 +103,7 @@ class Sam {
   float gravity = .5;
   boolean timerstarted = false;
   float timer, up, down, maxspeed;
-  int ground = 500;
+  int ground = 300;
   float jumpspeed = 10;
   boolean jump = false;
 
@@ -216,13 +216,13 @@ class Babysitter {
 
   //same as mei's edge function
   void edge() {
-    if (location.x >= zoneWidth-50) {
+    if (location.x >= zoneWidth-r) {
       velocity.x =  random(-1, 0);
-    } else if (location.x <= 50) {
+    } else if (location.x <= r) {
       velocity.x = random(0, 1);
-    } else if (location.y >= zoneHeight-100) {
+    } else if (location.y >= zoneHeight-150) {
       velocity.y = random(-1, 0);
-    } else if (location.y <=500) {
+    } else if (location.y <=300) {
       velocity.y = random(0, 1) ;
     }
   }//edge function end
@@ -321,7 +321,6 @@ void setup() {
   bsnormal = loadImage("toomie/bsnormal.png");
   bshappy = loadImage("toomie/bshappy.png");
   noStroke();
-  smooth(4);
   imageMode(CENTER);
   //textAlign(CENTER);
 
@@ -351,14 +350,13 @@ void draw() {
   babysitter.seek();
   babysitter.candy();
 
-
-
   //collision detection calculation between babysitter & kids:
   dsam = PVector.dist(babysitter.location, sam.location);
   dmei = PVector.dist(babysitter.location, mei.location);
 
   // visual rep of their levels:
   pushStyle();
+  noStroke();
   fill(#6583ED);
   rect(2, 55, sam.adoration*20, 20);
   fill(#A449F0);
