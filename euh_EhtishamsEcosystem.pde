@@ -83,6 +83,33 @@ class EhtishamsEcosystem {
     flowField.shiftField(); //change field direction randomly after some time to exhibit random movement of cat
     //displayLegend(); //Commented text out
   }
+  
+  //---------------------------------------------------------------------------------//
+  //New Legend:
+  //---------------------------------------------------------------------------------//
+
+  int writeText(int xloc, int yloc, int textSize) {
+    
+    textSize(textSize); 
+    
+    text ("The cat is represented by gray triangle with black or red outline (red outline represents high hunger level)", xloc, yloc);
+    
+    text ("The top block (dark gray) represents mice home where the cat cannot enter", xloc, yloc+20);
+    
+    text ("Mice are represented by small triangles with small LIFE BARS below", xloc, yloc+40);
+    
+    text ("Green life bar -> Young, Blue life bar -> Adult, Red life bar -> Old ", xloc, yloc+60);
+    
+    text ("Mice triangle OUTLINE represents their GENDER (blue - male and pink - female)", xloc, yloc+80);
+    
+    text ("Mice triangle INNER COLOR represents HUNGER level (green - not hungry, yellow - hungry, red - very hungry)", xloc, yloc+100);
+    
+    text ("Mice leave house only to get FOOD (which is represented by yellow rectangle)", xloc, yloc+120);
+    
+    return(120);
+
+  }
+  
   //---------------------------------------------------------------------------------//
   //Display Legend: It displays all the informative text on screen
   //---------------------------------------------------------------------------------//
