@@ -277,7 +277,7 @@ class ChinonyeremsEcosystem {
       translate(location.x, location.y);
       ellipse(0, 0, r, r);
       fill(255);
-      //text(stored_food, r, -r); // text showing how much food each zoink is storing
+      text(stored_food, r, -r); // text showing how much food each zoink is storing
       popMatrix();
     }
 
@@ -422,13 +422,13 @@ class ChinonyeremsEcosystem {
     void checkEdges() {
       if (location.x > zoneWidth) {
         location.x = 0;
-      } else if (location.x < 15) { //changed from 0 to 15
+      } else if (location.x < 0) { //changed from 0 to 15
         location.x = zoneWidth;
       }
 
       if (location.y > zoneHeight) {
         location.y = 0;
-      } else if (location.y < 15) { //changed from 0 to 15
+      } else if (location.y < 0) { //changed from 0 to 15
         location.y = zoneHeight;
       }
     }
@@ -505,7 +505,7 @@ class ChinonyeremsEcosystem {
       //triangle(0, mass*4, 0, -(mass*4), mass*19, 0);
       ellipse(0, 0, mass*4+5, mass*19);
       fill(255);
-      //text(stored_food, -mass*4, mass*19); //text displaying how much food the jinkie has
+      text(stored_food, -mass*4, mass*19); //text displaying how much food the jinkie has
       popMatrix();
     }
 
