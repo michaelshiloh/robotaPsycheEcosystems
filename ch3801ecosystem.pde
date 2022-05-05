@@ -134,6 +134,14 @@ void draw() {
   }
 }
 
+void writeText(int xloc, int yloc, int textSize)
+{
+  text("25 male fireflies(yellow circles)", xloc, yloc);
+  text("25 female fireflies(pink circles)", xloc, yloc+20);
+  text("limited amount of worms as food(little grey squares)", xloc, yloc+40);
+  text("larvae reproduced when conditions(food,encounters) met",xloc,yloc+60);
+  text("Triangle as human(disrupt the system)", xloc,yloc+80);
+}
   //a function to keep track of the humans(where the mouse is)
   void mouseposition()
   {
