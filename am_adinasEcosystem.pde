@@ -8,7 +8,7 @@ Date: March 9, 2022
 
 class AdinasEcosystem {
 
-  void writeText(int xloc, int yloc, int textSize) {
+  int writeText(int xloc, int yloc, int textSize) {
    int index = 0;
     
    String ageString = (index + 1) + " alpha's age: " + age;
