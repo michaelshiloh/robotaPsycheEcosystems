@@ -11,7 +11,7 @@ toomiesEcosystem toomie = new toomiesEcosystem();
 ChinonyeremsEcosystem chinonyerem = new ChinonyeremsEcosystem();
 PhillipEcosystem phillip = new PhillipEcosystem();
 
-// Land outdoors (lower left)
+// Outdoors (lower left)
 AdinasEcosystem adina = new AdinasEcosystem();
 SnehilsEcosystem snehil = new SnehilsEcosystem();
 BadrsEcosystem badr = new BadrsEcosystem();
@@ -44,14 +44,14 @@ void setup() {
   // Parameters are the top left corner of each zone
   setupIndoors(0, 0); // Indoors (top left)
   setupSky(width/2, 0); // Do the sky zone (top right);
-  setupLand(0, height/2); // Land outdoors (lower left)
+  setupOutdoors(0, height/2); // Outdoors outdoors (lower left)
   setupWater(width/2, height/2); // Water (lower right)
 }
 
 void draw() {
   //drawIndoors(0, 0); // Indoors (top left)
   // drawSky(width/2, 0); // Sky (top right)
-  // drawLand(0, height/2); // Land outdoors (lower left)
+  // drawOutdoors(0, height/2); // Outdoors outdoors (lower left)
   drawWater(width/2, height/2); // Water (lower right)
 }
 
@@ -70,7 +70,7 @@ void setupSky(int xloc, int yloc) {
   phillip.setup();
   popMatrix();
 }
-void setupLand(int xloc, int yloc) {
+void setupOutdoors(int xloc, int yloc) {
   pushMatrix();
   translate(xloc, yloc);
   adina.setup();
@@ -127,7 +127,7 @@ void drawSky(int xloc, int yloc) {
 
   popMatrix();
 }
-void drawLand(int xloc, int yloc) {
+void drawOutdoors(int xloc, int yloc) {
 
   pushMatrix();
   translate(xloc, yloc);
