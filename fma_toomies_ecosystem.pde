@@ -307,7 +307,11 @@ class Babysitter {
       mei.timerstarted = false;
       pbabysitter = bshappy;
     }
-  }
+  } 
+  void writeText(int xloc, int yloc, int textSize) {
+      text("babysitting simulator:", xloc, yloc);
+      text("the babysitter is trying to prevent the kids from causing trouble, she gives them candy to make them stop ", xloc, yloc+20);
+    }
 } // end of babysitter's class
 void setup() {
   //size(1200, 700);
@@ -349,6 +353,7 @@ void draw() {
   babysitter.update();
   babysitter.seek();
   babysitter.candy();
+  babysitter.writeText();
 
   //collision detection calculation between babysitter & kids:
   dsam = PVector.dist(babysitter.location, sam.location);
