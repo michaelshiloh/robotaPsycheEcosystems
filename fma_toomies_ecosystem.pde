@@ -326,9 +326,9 @@ void setup() {
   //textAlign(CENTER);
 
   // class objects: (people)
-  sam= new Sam(random(100, zoneWidth-100), random(500, zoneHeight-100), random(2, -2), random(2, -2));
-  mei = new Mei(random(100, zoneWidth-100), random(500, zoneHeight-100), random(2, -2), random(2, -2));
-  babysitter = new Babysitter(random(100, zoneWidth-100), random(500, zoneHeight-100), random(2, -2), random(2, -2));
+  sam= new Sam(random(100, zoneWidth-150), random(300, zoneHeight-250), random(2, -2), random(2, -2));
+  mei = new Mei(random(100, zoneWidth-150), random(300, zoneHeight-250), random(2, -2), random(2, -2));
+  babysitter = new Babysitter(random(100, zoneWidth-150), random(300, zoneHeight-250), random(2, -2), random(2, -2));
 }
 
 void draw() {
