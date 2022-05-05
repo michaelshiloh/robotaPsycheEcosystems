@@ -12,10 +12,10 @@ class BadrsEcosystem {
   int writeText(int xloc, int yloc, int textSize) {
     text("Alive: " + creatures.size(), xloc, yloc);
     text("Food: " + foodlist.size(), xloc, yloc+20);
-    text("Healthy: " + cnt, xloc, yloc+20);
-    text("Unhealthy: " + cnt2, xloc, yloc+20);
-    text("Temperature: " + temperature + " °C", xloc, yloc+20);
-    return(80);
+    //text("Healthy: " + cnt, xloc, yloc+20);
+    //text("Unhealthy: " + cnt2, xloc, yloc+20);
+    text("Temperature: " + temperature + " °C", xloc, yloc+40);
+    return(40);
   }
 
   void setup() {
