@@ -75,6 +75,7 @@ class YejisEcosystem {
    text("Number of eels eaten by whale: "+int(counterTwo), xloc, yloc+80);
    text("Number of eels eaten by whale: "+int(humanHuntWhale), xloc, yloc+100);
    text("Number of seabugs eaten by Eel: "+int(counter), xloc, yloc+120);
+   return(20); //return the last Y offset so that I know where to start the next text block
   }
 
   //Setup Function

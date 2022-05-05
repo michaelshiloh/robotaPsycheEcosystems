@@ -9,6 +9,12 @@ class BadrsEcosystem {
   boolean dragged = false; // flag for sliders
   int size = 50; // default amount of food
 
+  int writeText(int xloc, int yloc, int textSize) {
+    text("Eels: "+int(eels.size()), xloc, yloc);
+    text("Eels: "+int(seabugs.size()), xloc, yloc+20);
+    return(20);
+  }
+
   void setup() {
     //size(960, 480);
     // Create the creatures and add them to the ArrayList "creatures"

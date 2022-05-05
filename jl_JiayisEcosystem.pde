@@ -339,6 +339,14 @@ class JiayiEcosystem {
   void keyPressed() {
   }
 
+void writeText(int xloc, int yloc, int textSize) {
+textSize(textSize);
+text("Big green ovals: Frogs", xloc, yloc);
+text("Triangles: Tadpoles", xloc, yloc+20);
+text("Small green ovals: Little Frogs", xloc, yloc+40);
+text("Yellow circle: Light", xloc, yloc+60);
+return(60);
+}
 
 
   Frog a;

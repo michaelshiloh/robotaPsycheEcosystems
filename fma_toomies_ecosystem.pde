@@ -288,9 +288,6 @@ class toomiesEcosystem {
       return(steer);
     }
 
-
-
-
     void candy() {
       // if the babysitter collides with the kids (giving them the candy) then they get happy & behaved -
       //their timers reset and adoration increases by 1.
@@ -307,10 +304,6 @@ class toomiesEcosystem {
         mei.timerstarted = false;
         pbabysitter = bshappy;
       }
-    }
-    void writeText(int xloc, int yloc, int textSize) {
-      text("babysitting simulator:", xloc, yloc);
-      text("the babysitter is trying to prevent the kids from causing trouble, she gives them candy to make them stop ", xloc, yloc+20);
     }
   } // end of babysitter's class
   void setup() {
@@ -353,7 +346,6 @@ class toomiesEcosystem {
     babysitter.update();
     babysitter.seek();
     babysitter.candy();
-    babysitter.writeText();
 
     //collision detection calculation between babysitter & kids:
     dsam = PVector.dist(babysitter.location, sam.location);
@@ -374,5 +366,11 @@ class toomiesEcosystem {
   }
 
   void keyPressed() {
+  }
+  
+  void writeText(int xloc, int yloc, int textSize) {
+    text("babysitting simulator:", xloc, yloc);
+    text("the babysitter is trying to prevent the kids from causing trouble, she gives them candy to make them stop ", xloc, yloc+20);
+    return(20);
   }
 }// ecosystem end
