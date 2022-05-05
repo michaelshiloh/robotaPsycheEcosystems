@@ -103,9 +103,9 @@ void drawIndoors(int xloc, int yloc) {
   toomie.draw();
   yiyang.draw();
 
-  ehtisham.writeText(0, 0, 14);
-  toomie.writeText(0, 20, 10);
-  yiyang.writeText(0, 40, 8);
+  int yOffset = ehtisham.writeText(0, 0, 14);
+  toomie.writeText(0, yOffset+20, 10);
+  yiyang.writeText(0, yOffset+40, 8);
 
   popMatrix();
 }
@@ -142,6 +142,11 @@ void drawLand(int xloc, int yloc) {
   badr.draw();
   abdul.draw();
   genie.draw();
+  
+  ehtisham.writeText(0, 0, 14);
+  toomie.writeText(0, 20, 10);
+  yiyang.writeText(0, 40, 8);
+  
   popMatrix();
 }
 void drawWater(int xloc, int yloc) {
