@@ -368,7 +368,7 @@ class toomiesEcosystem {
   void keyPressed() {
   }
   
-  void writeText(int xloc, int yloc, int textSize) {
+  int writeText(int xloc, int yloc, int textSize) {
     text("babysitting simulator:", xloc, yloc);
     text("the babysitter is trying to prevent the kids from causing trouble, she gives them candy to make them stop ", xloc, yloc+20);
     return(20);
