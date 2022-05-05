@@ -422,13 +422,13 @@ class ChinonyeremsEcosystem {
     void checkEdges() {
       if (location.x > zoneWidth) {
         location.x = 0;
-      } else if (location.x < 0) {
+      } else if (location.x < 15) { //changed from 0 to 15
         location.x = zoneWidth;
       }
 
       if (location.y > zoneHeight) {
         location.y = 0;
-      } else if (location.y < 0) {
+      } else if (location.y < 15) { //changed from 0 to 15
         location.y = zoneHeight;
       }
     }
