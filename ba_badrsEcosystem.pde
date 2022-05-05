@@ -15,7 +15,7 @@ class BadrsEcosystem {
     text("Healthy: " + cnt, xloc, yloc+20);
     text("Unhealthy: " + cnt2, xloc, yloc+20);
     text("Temperature: " + temperature + " °C", xloc, yloc+20);
-    return(20);
+    return(80);
   }
 
   void setup() {
