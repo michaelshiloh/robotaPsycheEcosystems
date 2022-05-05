@@ -34,12 +34,11 @@ int	zoneWidth;
 
 void setup() {
 
-  size(1000, 1000);
+  fullScreen();
 
   // All zones are the same size
   zoneHeight = height/2;
   zoneWidth = width/2;
-
 
   // There are four zones, corresponding to the four quadrants of the canvas
   // Parameters are the top left corner of each zone
@@ -50,9 +49,9 @@ void setup() {
 }
 
 void draw() {
-  drawIndoors(0, 0); // Indoors (top left)
-  drawSky(width/2, 0); // Sky (top right)
-  drawLand(0, height/2); // Land outdoors (lower left)
+  //drawIndoors(0, 0); // Indoors (top left)
+ // drawSky(width/2, 0); // Sky (top right)
+ // drawLand(0, height/2); // Land outdoors (lower left)
   drawWater(width/2, height/2); // Water (lower right)
 }
 
@@ -103,6 +102,11 @@ void drawIndoors(int xloc, int yloc) {
   ehtisham.draw(); // Ehtisham
   toomie.draw();
   yiyang.draw();
+  
+  ehtisham.writeText(0, 0, 14);
+  toomie.writeText(0, 20, 10);
+  yiyang.writeText(0, 40, 8);
+  
   popMatrix();
 }
 void drawSky(int xloc, int yloc) {
@@ -146,8 +150,8 @@ void drawWater(int xloc, int yloc) {
   rectMode(CORNER);
   rect(0, 0, zoneWidth, zoneHeight);
 
-  brian.draw();
-  jiayi.draw();
+  //brian.draw();
+  //jiayi.draw();
   yeji.draw();
   popMatrix();
 }
