@@ -77,7 +77,7 @@ class EhtishamsEcosystem {
         fill(0);
       }
     }
-    text ("Mice in House: " + miceInHouse, 10, 40);
+    text ("Mice in House: " + miceInHouse, 50, 50);
 
     cat.update();
     flowField.shiftField(); //change field direction randomly after some time to exhibit random movement of cat
