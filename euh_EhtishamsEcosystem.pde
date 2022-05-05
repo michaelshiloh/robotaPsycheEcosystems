@@ -13,7 +13,7 @@ class EhtishamsEcosystem {
   //setup
   //---------------------------------------------------------------------------------//
   void setup() {
-    if (zoneWidth <= 600){
+    if (zoneWidth <= 600) {
       houseOccupancy = 60;
     } else {
       houseOccupancy = 100;
@@ -63,8 +63,8 @@ class EhtishamsEcosystem {
         miceInHouse += 1;
       }
     }
-    
-    if (zoneWidth <= 600){
+
+    if (zoneWidth <= 600) {
       if (miceInHouse >= 50) {
         fill(255, 0, 0);
       } else {
@@ -287,14 +287,14 @@ class EhtishamsEcosystem {
       location = new PVector(x, y);
       maxspeed = 2;
       maxforce = 0.1;
-      
+
       detectionRange = zoneWidth/4;
-      
-      if (zoneHeight >= 1000){
+
+      if (zoneHeight >= 1000) {
         size = 30;
-      } else if (zoneHeight >= 600 && zoneHeight < 1000){
+      } else if (zoneHeight >= 600 && zoneHeight < 1000) {
         size = 20;
-      }  else {
+      } else {
         size = 15;
       }
 
@@ -355,7 +355,7 @@ class EhtishamsEcosystem {
       //if closest mouse is outside house and in range
       if (closestMouse != null && closestMouse.distanceFromCat < detectionRange && closestMouse.location.y > houseSize) {
         //Catch Mouse:
-        if ((frameCount - lastMouseEatTime) > 600) { //Cat gets faster and aggressive if no mouse eaten in 500 frames       
+        if ((frameCount - lastMouseEatTime) > 600) { //Cat gets faster and aggressive if no mouse eaten in 500 frames
           maxspeed = 7;
           maxforce = 1;
           detectionRange = zoneWidth/2.4;
@@ -520,7 +520,7 @@ class EhtishamsEcosystem {
     float closestMateDistance;
     Boolean seekingMate; //If mouse is seeking mate, it will seek food after mating
 
-    // following attributes are used in separateFromCatAndWalls() method to make a mouse move in a certain direction (after turning from wall ) for some time before focusing solely on 
+    // following attributes are used in separateFromCatAndWalls() method to make a mouse move in a certain direction (after turning from wall ) for some time before focusing solely on
     // separating from the cat again. This is done to both avoid hitting a wall and getting caught by cat.
     float lastWallTurnTime;
     PVector velocityFromWall;
@@ -568,15 +568,15 @@ class EhtishamsEcosystem {
       //Inheriting attributes from parents or setting at random:
       //If parents doesn't exist
       if (parent1 == null) { // only need to check with one parent
-        
-        if (zoneHeight >= 1000){
+
+        if (zoneHeight >= 1000) {
           size = random(4, 7);
-        } else if (zoneHeight >= 600 && zoneHeight < 1000){
+        } else if (zoneHeight >= 600 && zoneHeight < 1000) {
           size = random(3, 6);
         } else {
           size = random(2, 5);
         }
-        
+
         sizeAtBirth = size;
         sizeIncreaseRate = random(0.05, 0.1);
         maxSpeed = random (2, 4);
@@ -782,7 +782,7 @@ class EhtishamsEcosystem {
       closestPotentialMate = null;
       for (int i = 0; i < mice.size(); i++) {
         Mouse curr = mice.get(i);
-        //If two mice have different genders, are both fertile, are in the house and have lastMatingTime > 500: 
+        //If two mice have different genders, are both fertile, are in the house and have lastMatingTime > 500:
         if ((gender != curr.gender) && isFertile && curr.isFertile && (location.y < houseSize) && (curr.location.y < houseSize) && (frameCount-lastMatingTime > 500) && (frameCount-curr.lastMatingTime > 500)) {
           float distance = location.dist(curr.location);
           if (distance < closestMateDistance) {
@@ -868,13 +868,13 @@ class EhtishamsEcosystem {
         desired = new PVector(2, velocity.y);
       } else if (location.x > zoneWidth - 20) {
         desired = new PVector(-2, velocity.y);
-      } 
+      }
 
       if (location.y < 20) {
         desired = new PVector(velocity.x, 2);
       } else if (location.y > houseSize-20) {
         desired = new PVector(velocity.x, -2);
-      } 
+      }
 
       if (desired != null) {
         desired.normalize();
@@ -918,7 +918,7 @@ class EhtishamsEcosystem {
 
           //Condition 1: 1) If food from mouse is adequately closer than cat, then mouse will not wait for cat to go very
           //                far and will go for the food. Note that how much is adequate depends on mouse's hunger level.
-          //             2) Secondly, if mouse is extremely hungry, it might not risk certain death by getting out of house when food is too far and 
+          //             2) Secondly, if mouse is extremely hungry, it might not risk certain death by getting out of house when food is too far and
           //                cat is too close. But if food is very close to home, it might worth taking the risk.
           //             2) Furthermore, mouse may think that the food (other than what its already eaten) is also reachable without much extra effort
           //                but won't realize that it is going far away from home in its pursuit, and might not be able to come back without getting caught.
@@ -927,7 +927,7 @@ class EhtishamsEcosystem {
           //Condition 2: if food is very far, mouse will leave the house when cat is at good distance in hope that
           //             cat will take some random path away from food and it will be able to get it.
 
-          if ((closestFoodDistance + 300 < distanceFromCat) || (distanceFromCat > 600)) { 
+          if ((closestFoodDistance + 300 < distanceFromCat) || (distanceFromCat > 600)) {
             if (!seekingMate) { //if mouse is already seeking mate, dont't seek food
               seekFood(closestFood);
             }
@@ -975,7 +975,7 @@ class EhtishamsEcosystem {
       } else if (location.x > zoneWidth - 50) { //right wall
         velocityFromWall = new PVector(-maxSpeed, velocity.y);
         lastWallTurnTime= frameCount;
-      } 
+      }
 
       if (location.y > (zoneHeight - (50))) { //bottom wall  (we don't add top wall as its mice house which mice can cross)
         velocityFromWall = new PVector(velocity.x, - maxSpeed);
@@ -1010,7 +1010,7 @@ class EhtishamsEcosystem {
     //---------------------------------------------------------------------------------//
     //Display Mouse:
     void display() {
-      strokeWeight(2); 
+      strokeWeight(2);
       if (gender == 'M') {
         stroke(0, 0, 255); //blue
       } else {
@@ -1064,7 +1064,6 @@ class EhtishamsEcosystem {
     void display() {
       fill(255, 170, 51);
       rect(location.x, location.y, 15, 15);
-
     }
   }
 
