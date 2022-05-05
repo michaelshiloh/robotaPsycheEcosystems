@@ -11,11 +11,11 @@ class AdinasEcosystem {
   int writeText(int xloc, int yloc, int textSize) {
    int index = 0;
     
-   String ageString = (index + 1) + " alpha's age: " + age;
+   String ageString = (index + 1) + " alpha's age: " + alpha.age();
    fill(colors[0], colors[1], colors[2]);
    text(ageString, xloc, yloc);
     
-   String foodString = "Food score (max is 100): " + foodScore;
+   String foodString = "Food score (max is 100): " + alpha.foodScore();
    fill(220);
    text(ageString, xloc, yloc+30);
     
