@@ -50,10 +50,10 @@ void setup() {
 }
 
 void draw() {
-  //drawIndoors(0, 0); // Indoors (top left)
+  drawIndoors(0, 0); // Indoors (top left)
   drawSky(width/2, 0); // Sky (top right)
   drawLand(0, height/2); // Land outdoors (lower left)
-  //drawWater(width/2, height/2); // Water (lower right)
+  drawWater(width/2, height/2); // Water (lower right)
 }
 
 void setupIndoors(int xloc, int yloc) {
@@ -100,9 +100,9 @@ void drawIndoors(int xloc, int yloc) {
   rectMode(CORNER);
   rect(0, 0, zoneWidth, zoneHeight);
 
-  // ehtisham.draw(); // Ehtisham
+  ehtisham.draw(); // Ehtisham
   toomie.draw();
-  //  yiyang.draw();
+  yiyang.draw();
   popMatrix();
 }
 void drawSky(int xloc, int yloc) {
@@ -112,7 +112,6 @@ void drawSky(int xloc, int yloc) {
 
   fill(0, 0, 200);
   noStroke();
-  //println("drawSky x size is " + zoneWidth + " ysize is " + zoneHeight + " xloc " + xloc + " yloc " + yloc);
   rectMode(CORNER);
   rect(0, 0, zoneWidth, zoneHeight);
 
@@ -121,9 +120,10 @@ void drawSky(int xloc, int yloc) {
   popMatrix();
 }
 void drawLand(int xloc, int yloc) {
+  
   pushMatrix();
   translate(xloc, yloc);
-  //println("drawLand x size is " + zoneWidth + " ysize is " + zoneHeight + " xloc " + xloc + " yloc " + yloc);
+  
   fill(0, 200, 0);
   noStroke();
   rectMode(CORNER);
@@ -143,7 +143,6 @@ void drawWater(int xloc, int yloc) {
 
   fill(00, 100, 100);
   noStroke();
-
   rectMode(CORNER);
   rect(0, 0, zoneWidth, zoneHeight);
 
