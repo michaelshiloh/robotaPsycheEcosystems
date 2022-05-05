@@ -142,11 +142,11 @@ void drawLand(int xloc, int yloc) {
   badr.draw();
   abdul.draw();
   genie.draw();
-  
+
   int yOffset = ehtisham.writeText(0, 0, 14);
   yOffset = toomie.writeText(0, yOffset + 20, 10);
   yiyang.writeText(0, yOffset + 20, 8);
-  
+
   popMatrix();
 }
 void drawWater(int xloc, int yloc) {
@@ -159,9 +159,14 @@ void drawWater(int xloc, int yloc) {
   rectMode(CORNER);
   rect(0, 0, zoneWidth, zoneHeight);
 
-  //brian.draw();
-  //jiayi.draw();
+  brian.draw();
+  jiayi.draw();
   yeji.draw();
+
+  int yOffset = brian.writeText(0, 0, 14);
+  yOffset = jiayi.writeText(0, yOffset + 20, 10);
+  yeji.writeText(0, yOffset + 20, 8);
+
   popMatrix();
 }
 
