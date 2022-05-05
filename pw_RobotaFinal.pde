@@ -23,6 +23,17 @@ Creature predator;
 
 // #TODO: All preys within a distance to the predator gains speed boost; Preys steer for food and increment hunger; predator rests after forage
 
+int writeText(int xloc, int yloc, int textSize) {
+   // Displaying information about the current status of the ecosystem
+  fill(0);
+  textSize(textSize);
+  text("Time elapsed: "+timeElapsed, xloc, yloc);
+  text("Preys alive: "+ alive_preys, xloc, yloc+20);
+  text("Food available: " + FG.food_cnt, xloc, yloc+20);
+  
+}
+
+
 void setup() {
 
   for (int i = 0; i < prey.length; i++) {
@@ -36,13 +47,6 @@ void setup() {
 
 void draw() {
   //background(255);
-
-  // Displaying information about the current status of the ecosystem
-  //fill(0);
-  //textSize(18);
-  //text("Time elapsed: "+timeElapsed, 30, 30);
-  //text("Preys alive: "+ alive_preys, 30, 50);
-  //text("Food available: " + FG.food_cnt, 30, 70);
 
   // Update timeElapsed after one whole second
   if (timeElapsed != millis()/1000) {
