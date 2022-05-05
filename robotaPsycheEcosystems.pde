@@ -50,8 +50,8 @@ void setup() {
 
 void draw() {
   //drawIndoors(0, 0); // Indoors (top left)
- // drawSky(width/2, 0); // Sky (top right)
- // drawLand(0, height/2); // Land outdoors (lower left)
+  // drawSky(width/2, 0); // Sky (top right)
+  // drawLand(0, height/2); // Land outdoors (lower left)
   drawWater(width/2, height/2); // Water (lower right)
 }
 
@@ -102,11 +102,11 @@ void drawIndoors(int xloc, int yloc) {
   ehtisham.draw(); // Ehtisham
   toomie.draw();
   yiyang.draw();
-  
+
   ehtisham.writeText(0, 0, 14);
   toomie.writeText(0, 20, 10);
   yiyang.writeText(0, 40, 8);
-  
+
   popMatrix();
 }
 void drawSky(int xloc, int yloc) {
@@ -121,13 +121,17 @@ void drawSky(int xloc, int yloc) {
 
   chinonyerem.draw();
   phillip.draw();
+
+  chinonyerem.writeText(0, 0, 14);
+  phillip.writeText(0, 20, 10);
+
   popMatrix();
 }
 void drawLand(int xloc, int yloc) {
-  
+
   pushMatrix();
   translate(xloc, yloc);
-  
+
   fill(0, 200, 0);
   noStroke();
   rectMode(CORNER);
