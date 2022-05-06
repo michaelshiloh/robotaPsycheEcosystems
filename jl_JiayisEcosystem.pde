@@ -39,6 +39,7 @@ class Frog{
  PVector location;
  float mass;
  float G;
+ float scale;
   
  Frog(float x,float y,float aX, float aY){
   mass=50;
@@ -54,6 +55,7 @@ class Frog{
     fill(0,150,150);
     pushMatrix();
     translate(location.x,location.y);
+    scale(0.6);
     rotate(acceleration.heading());
     ellipse(0,0,mass*3,mass*2);
     fill(0);
@@ -74,27 +76,27 @@ class Frog{
   
   //Frog changes directions when it feels it is close to the edge
  void checkEdges(){
-    if (location.x > zoneWidth-100) {
-      location.x = zoneWidth-100;
+    if (location.x > zoneWidth-50) {
+      location.x = zoneWidth-50;
       velocity.x *= -1;
       acceleration.x *= -1;
       velocity.y *= -1;
       acceleration.y *= -1;
 
-    } else if (location.x <100) {
-      location.x = 100;
+    } else if (location.x <50) {
+      location.x = 50;
       velocity.x *= -1;
       acceleration.x *= -1;
 
     }
 
-    if (location.y > height-100) {
-      location.y = height- 100;
+    if (location.y >zoneHeight-50) {
+      location.y = zoneHeight- 50;
       velocity.y *= -1;
       acceleration.y *= -1;
   
-    } else if (location.y < 100) {
-      location.y =100;
+    } else if (location.y < 50) {
+      location.y = 50;
       velocity.y *= -1;
       acceleration.y *= -1;
 
@@ -115,7 +117,7 @@ class Tadpole{
   float lifespan=50;
   float x;
   float y;
-  float scale = 1;
+  float scale = 0.6;
   float growLevel=1;
   float maxspeed= 10;
   float maxforce =10;
@@ -150,6 +152,7 @@ class Tadpole{
 
 //Tadpoles are triangle,one group of tadpoles are black, the other is gray
     void display() {
+      push();
    noStroke();
      if (Color == 1){
      fill(0);
@@ -162,6 +165,7 @@ class Tadpole{
     scale(scale);
     triangle(0, 5, 0, -5, 20, 0);
     popMatrix();
+    pop();
   }
   
   //the lifespan decreases with time
@@ -176,7 +180,7 @@ class Tadpole{
     float distance = PVector.dist(location,algae[j].location);
           if (distance<algae[j].mass*0.15 ){
             growLevel =growLevel +0.01; 
-            if(scale<2.5){
+            if(scale<1.5){
             scale = scale  +0.01;
             }
 
@@ -283,6 +287,7 @@ class LilFrog{
     pushMatrix();
     translate(location.x,location.y);
     rotate(acceleration.heading());
+    scale(0.6);
     ellipse(0,0,50,30);
 
     popMatrix();
@@ -341,7 +346,10 @@ void display(){
   x=mouseX;
   y=mouseY;
   fill(250,250,210);
+  pushMatrix();
+  scale(0.6);
   ellipse(x,y,100,100);
+  popMatrix();
 }
 
 }
