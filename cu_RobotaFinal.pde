@@ -163,6 +163,18 @@ class ChinonyeremsEcosystem {
     //text("Food: "+foods.size(), 20, 110);
   }
 
+  int writeText(int xloc, int yloc, int textSize) {
+    text("The zoinks are HUNTERS, circular in shape and are either grey or lemon green", xloc, yloc);
+    text("The jinkies are PREDATORS, triangular in shape and are purple", xloc, yloc + 20);
+    text("The jeepers are DEFENDERS, elliptical in shape and are either red or pink", xloc, yloc + 40);
+    text("The food particles are NUTRITION, circular in shape and are light pink", xloc, yloc + 60);
+    text("Zoinks: "+zoinks.size(), xloc, yloc + 80);
+    text("Jinkies: "+jinkies.size(), xloc, yloc + 100);
+    text("Jeepers: "+jeepers.size(), xloc, yloc + 120);
+    text("Food: "+foods.size(), xloc, yloc + 140);
+    return(140);
+  }
+
   void keyPressed()
   {
   }
@@ -277,7 +289,7 @@ class ChinonyeremsEcosystem {
       translate(location.x, location.y);
       ellipse(0, 0, r, r);
       fill(255);
-      //text(stored_food, r, -r); // text showing how much food each zoink is storing
+      text(stored_food, r, -r); // text showing how much food each zoink is storing
       popMatrix();
     }
 
@@ -422,13 +434,13 @@ class ChinonyeremsEcosystem {
     void checkEdges() {
       if (location.x > zoneWidth) {
         location.x = 0;
-      } else if (location.x < 0) {
+      } else if (location.x < 0) { //changed from 0 to 15
         location.x = zoneWidth;
       }
 
       if (location.y > zoneHeight) {
         location.y = 0;
-      } else if (location.y < 0) {
+      } else if (location.y < 0) { //changed from 0 to 15
         location.y = zoneHeight;
       }
     }
@@ -505,7 +517,7 @@ class ChinonyeremsEcosystem {
       //triangle(0, mass*4, 0, -(mass*4), mass*19, 0);
       ellipse(0, 0, mass*4+5, mass*19);
       fill(255);
-      //text(stored_food, -mass*4, mass*19); //text displaying how much food the jinkie has
+      text(stored_food, -mass*4, mass*19); //text displaying how much food the jinkie has
       popMatrix();
     }
 

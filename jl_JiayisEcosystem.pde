@@ -1,4 +1,3 @@
-
 class JiayiEcosystem {
  
   class Algae{
@@ -26,10 +25,13 @@ class JiayiEcosystem {
   }
 
 //size is affected by mass
-  void display() {
+  void display()  {
+    pushMatrix();
+    scale(0.6);
     noStroke();
     fill(85,180,180);
     ellipse(location.x, location.y, mass*0.15, mass*0.15);
+    popMatrix();
   }      
 }
 
@@ -361,7 +363,15 @@ void display(){
 void keyPressed() {
   }
 
-
+int writeText(int xloc, int yloc, int textSize) {
+textSize(textSize);
+text("Big green ovals: Frogs", xloc, yloc);
+text("Triangles: Tadpoles", xloc, yloc+20);
+text("Small green ovals: Little Frogs", xloc, yloc+40);
+text("Yellow circle: Light", xloc, yloc+60);
+text("Move your mouse to grow little frogs!", xloc, yloc+80);
+return(60);
+}
 
 Frog a;
 Frog b;
@@ -377,7 +387,7 @@ ArrayList<Tadpole> tadpoles2 = new ArrayList<Tadpole>();
 ArrayList<LilFrog> lilfrogs = new ArrayList<LilFrog>();
 
 //Food
-Algae[]algae = new Algae[6];
+Algae[]algae = new Algae[2];
 
 //little frog and mature tadpole count
 int countlfrog;
@@ -391,7 +401,7 @@ void setup() {
   b = new Frog (random(zoneWidth),random(zoneHeight),-0.035,0.05);
   c = new Light (mouseX,mouseY);
   for (int i = 0; i < algae.length; i++) {
-  algae [i] = new Algae(random(1600),random(800),random(1000,2000));      
+  algae [i] = new Algae(random(zoneWidth)*1.67,random(zoneHeight)*1.67,random(1000,2000));      
   }
 }
 
@@ -424,7 +434,7 @@ void draw() {
   //if tadpoles doesn't eat enough food, they die. If they eat enough food and get the light, they grow into little frogs.
   if(t.lifespan<0)
       {
-        if(t.growLevel<3){
+        if(t.growLevel<5);{
         tadpoles1.remove(i);      
       }
         if (t.growLevel>10){
@@ -505,6 +515,4 @@ void draw() {
   //text("Move Your Mouse as Light Source to grow Little Tadpoles!", 50 ,100);
 
 }
-
-
 }

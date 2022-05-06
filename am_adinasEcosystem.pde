@@ -177,32 +177,21 @@ class AdinasEcosystem {
     update();
     getOlder();
     feed();
-    //---------------------------------------------------------------------------------//
-    //Display alpha's age
-    //---------------------------------------------------------------------------------//
-    String ageString = (index + 1) + " alpha's age: " + age;
-    fill(colors[0], colors[1], colors[2]);
-    //textSize(20);
+    
+    //String ageString = (index + 1) + " alpha's age: " + age;
+    //fill(colors[0], colors[1], colors[2]);
+    //textSize(10);
     //text(ageString, 15 + zoneWidth/2.7 * index, 30);
-    textSize(10);
-    text(ageString, 15 + zoneWidth/2.7 * index, 30);
-    //---------------------------------------------------------------------------------//
-    //Display food score
-    //---------------------------------------------------------------------------------//
-    String foodString = "Food score (max is 100): " + foodScore;
-    fill(220);
-    //textSize(15);
-    //text(foodString, 15 + zoneWidth/2.7 * index, 60);
-    textSize(10);
-    text(ageString, 15 + zoneWidth/2.7 * index, 60);
-    //---------------------------------------------------------------------------------//
-    //Display pack count number
-    //---------------------------------------------------------------------------------//
-    String packString = "Pack size: " + wolves.size();
-    //textSize(15);
-    //text(packString, 15 + zoneWidth/2.7 * index, 80);
-    textSize(10);
-    text(ageString, 15 + zoneWidth/2.7 * index, 80);
+    
+    //String foodString = "Food score (max is 100): " + foodScore;
+    //fill(220);
+    //textSize(10);
+    //text(ageString, 15 + zoneWidth/2.7 * index, 60);
+    
+    //String packString = "Pack size: " + wolves.size();
+    //textSize(10);
+    //text(ageString, 15 + zoneWidth/2.7 * index, 80);
+    
     //---------------------------------------------------------------------------------//
     //Color the Alpha
     //---------------------------------------------------------------------------------//
@@ -220,6 +209,23 @@ class AdinasEcosystem {
     rotate(velocity.heading()); // rotate the mover to point in the direction of travel
     triangle(0, 5, 0, -5, 30, 0);
     popMatrix();
+  }
+  
+  int writeTextAlpha(int xloc, int yloc, int textSize, int[] colors, int index) {
+  
+   String ageString = (index + 1) + " alpha's age: " + age;
+   fill(colors[0], colors[1], colors[2]);
+   text(ageString, xloc, yloc);
+    
+   String foodString = "Food score (max is 100): " + foodScore;
+   fill(220);
+   text(ageString, xloc, yloc+30);
+    
+   String packString = "Pack size: " + wolves.size();
+   textSize(10);
+   text(ageString, xloc, yloc+50);
+    
+   return yloc;
   }
 }
 //---------------------------------------------------------------------------------//
@@ -389,6 +395,14 @@ void mouseClicked() {
 }
 
 void keyPressed() {
+}
+
+int writeText(int xloc, int yloc, int textSize) {
+   for (int k = 0; k < numofpacks; k++) {
+    alphas.get(k).writeTextAlpha( xloc, yloc, textSize, colors[k], k);
+    
+  }
+  return yloc+20;
 }
 
 }

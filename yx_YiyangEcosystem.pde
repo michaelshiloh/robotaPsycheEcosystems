@@ -10,6 +10,12 @@ class YiyangEcosystem {
   Mover[] movers = new Mover[15]; // insects
   ArrayList<LightSource> LightSources = new ArrayList<LightSource>(); // light sources
 
+  int writeText(int xloc, int yloc, int textSize) { //description
+    fill(0);
+    text("Yiyang's ecosystem demonstrates insects in their idle mode, stimulated by each other.", xloc, yloc);
+    return(0);
+  }
+  
   void setup() {
     //size(1200,800);
     // LightSources.add(new LightSource(zoneWidth/2, zoneHeight/2));

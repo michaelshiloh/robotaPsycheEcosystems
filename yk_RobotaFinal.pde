@@ -66,6 +66,17 @@ class YejisEcosystem {
       humans.get(0).acceleration.y = 5;
     }
   }
+  
+  int writeText(int xloc, int yloc, int textSize) {
+   text("Eels: "+int(eels.size()), xloc, yloc);
+   text("Seabug: "+int(seabugs.size()), xloc, yloc+20);
+   text("Divers: "+int(humans.size()), xloc, yloc+40);
+   text("Whales: "+int(whales.size()), xloc, yloc+60);
+   text("Number of eels eaten by whale: "+int(counterTwo), xloc, yloc+80);
+   text("Number of eels eaten by whale: "+int(humanHuntWhale), xloc, yloc+100);
+   text("Number of seabugs eaten by Eel: "+int(counter), xloc, yloc+120);
+   return(20); //return the last Y offset so that I know where to start the next text block
+  }
 
   //Setup Function
 

@@ -11,7 +11,7 @@ toomiesEcosystem toomie = new toomiesEcosystem();
 ChinonyeremsEcosystem chinonyerem = new ChinonyeremsEcosystem();
 PhillipEcosystem phillip = new PhillipEcosystem();
 
-// Land outdoors (lower left)
+// Outdoors (lower left)
 AdinasEcosystem adina = new AdinasEcosystem();
 SnehilsEcosystem snehil = new SnehilsEcosystem();
 BadrsEcosystem badr = new BadrsEcosystem();
@@ -34,25 +34,24 @@ int	zoneWidth;
 
 void setup() {
 
-  size(1000, 1000);
+  fullScreen();
 
   // All zones are the same size
   zoneHeight = height/2;
   zoneWidth = width/2;
 
-
   // There are four zones, corresponding to the four quadrants of the canvas
   // Parameters are the top left corner of each zone
   setupIndoors(0, 0); // Indoors (top left)
   setupSky(width/2, 0); // Do the sky zone (top right);
-  setupLand(0, height/2); // Land outdoors (lower left)
+  setupOutdoors(0, height/2); // Outdoors outdoors (lower left)
   setupWater(width/2, height/2); // Water (lower right)
 }
 
 void draw() {
   drawIndoors(0, 0); // Indoors (top left)
   drawSky(width/2, 0); // Sky (top right)
-  drawLand(0, height/2); // Land outdoors (lower left)
+  drawOutdoors(0, height/2); // Outdoors outdoors (lower left)
   drawWater(width/2, height/2); // Water (lower right)
 }
 
@@ -71,7 +70,7 @@ void setupSky(int xloc, int yloc) {
   phillip.setup();
   popMatrix();
 }
-void setupLand(int xloc, int yloc) {
+void setupOutdoors(int xloc, int yloc) {
   pushMatrix();
   translate(xloc, yloc);
   adina.setup();
@@ -103,6 +102,11 @@ void drawIndoors(int xloc, int yloc) {
   ehtisham.draw(); // Ehtisham
   toomie.draw();
   yiyang.draw();
+
+  int yOffset = ehtisham.writeText(0, 0, 14);
+  yOffset = toomie.writeText(0, yOffset+20, 10);
+  // yiyang.writeText(0, yOffset+20, 8);
+
   popMatrix();
 }
 void drawSky(int xloc, int yloc) {
@@ -117,13 +121,17 @@ void drawSky(int xloc, int yloc) {
 
   chinonyerem.draw();
   phillip.draw();
+
+  int yOffset = chinonyerem.writeText(0, 0, 14);
+  phillip.writeText(0, yOffset+20, 10);
+
   popMatrix();
 }
-void drawLand(int xloc, int yloc) {
-  
+void drawOutdoors(int xloc, int yloc) {
+
   pushMatrix();
   translate(xloc, yloc);
-  
+
   fill(0, 200, 0);
   noStroke();
   rectMode(CORNER);
@@ -134,6 +142,13 @@ void drawLand(int xloc, int yloc) {
   badr.draw();
   abdul.draw();
   genie.draw();
+
+  int yOffset = 0;//adina.writeText(0, 0, 14);
+  //yOffset = snehil.writeText(0, yOffset + 20, 10);
+  ///yOffset = badr.writeText(0, yOffset + 20, 10);
+  yOffset = abdul.writeText(0, yOffset + 20, 10);
+  genie.writeText(0, yOffset + 20, 8);
+
   popMatrix();
 }
 void drawWater(int xloc, int yloc) {
@@ -149,6 +164,11 @@ void drawWater(int xloc, int yloc) {
   brian.draw();
   jiayi.draw();
   yeji.draw();
+
+  int yOffset = 0; //brian.writeText(0, 0, 14);
+  yOffset = jiayi.writeText(0, yOffset + 20, 10);
+  yeji.writeText(0, yOffset + 20, 8);
+
   popMatrix();
 }
 
