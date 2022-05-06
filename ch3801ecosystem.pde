@@ -134,7 +134,7 @@ class GenieEcosystem {
     }
   }
 
-  int testWrite(int xloc, int yloc, int textSize)
+  int textWrite(int xloc, int yloc, int textSize)
   {
     text("25 male fireflies(yellow circles)", xloc, yloc);
     text("25 female fireflies(pink circles)", xloc, yloc+20);
