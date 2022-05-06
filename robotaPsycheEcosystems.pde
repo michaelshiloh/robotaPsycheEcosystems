@@ -49,9 +49,9 @@ void setup() {
 }
 
 void draw() {
-  //drawIndoors(0, 0); // Indoors (top left)
-  // drawSky(width/2, 0); // Sky (top right)
-  // drawOutdoors(0, height/2); // Outdoors outdoors (lower left)
+  drawIndoors(0, 0); // Indoors (top left)
+  drawSky(width/2, 0); // Sky (top right)
+  drawOutdoors(0, height/2); // Outdoors outdoors (lower left)
   drawWater(width/2, height/2); // Water (lower right)
 }
 
@@ -105,7 +105,7 @@ void drawIndoors(int xloc, int yloc) {
 
   int yOffset = ehtisham.writeText(0, 0, 14);
   yOffset = toomie.writeText(0, yOffset+20, 10);
- // yiyang.writeText(0, yOffset+20, 8);
+  // yiyang.writeText(0, yOffset+20, 8);
 
   popMatrix();
 }
@@ -145,7 +145,7 @@ void drawOutdoors(int xloc, int yloc) {
 
   int yOffset = 0;//adina.writeText(0, 0, 14);
   //yOffset = snehil.writeText(0, yOffset + 20, 10);
-  yOffset = badr.writeText(0, yOffset + 20, 10);
+  ///yOffset = badr.writeText(0, yOffset + 20, 10);
   yOffset = abdul.writeText(0, yOffset + 20, 10);
   genie.writeText(0, yOffset + 20, 8);
 

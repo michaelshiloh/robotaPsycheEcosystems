@@ -200,7 +200,6 @@ class YejisEcosystem {
     //text("Number of eels eaten by Whale: "+int(counterTwo), 1260, 20);
     //text("Number of whales hunted by divers: "+int(humanHuntWhale), 1260, 40);
     //text("Number of seabugs eaten by Eel: "+int(counter), 1260, 60);
-    return(20); //return the last Y offset so that I know where to start the next text block
   }
 
   // Add a new eel into the System by mouse drag

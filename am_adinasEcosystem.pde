@@ -400,7 +400,9 @@ void keyPressed() {
 int writeText(int xloc, int yloc, int textSize) {
    for (int k = 0; k < numofpacks; k++) {
     alphas.get(k).writeTextAlpha( xloc, yloc, textSize, colors[k], k);
+    
   }
+  return yloc+20;
 }
 
 }

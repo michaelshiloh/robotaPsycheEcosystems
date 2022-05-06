@@ -210,7 +210,6 @@ class toomiesEcosystem {
 
     //display function : just displays the image and changes its height if the image changes.
     void display() {
-      println(location.y);
       image(pbabysitter, location.x, location.y, sizew, sizeh);
     }
 
@@ -367,7 +366,7 @@ class toomiesEcosystem {
 
   void keyPressed() {
   }
-  
+
   int writeText(int xloc, int yloc, int textSize) {
     text("babysitting simulator:", xloc, yloc);
     text("the babysitter is trying to prevent the kids from causing trouble, she gives them candy to make them stop ", xloc, yloc+20);
