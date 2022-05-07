@@ -33,10 +33,12 @@ import java.util.*;
 int	zoneHeight;
 int	zoneWidth;
 int textSize = 14;
+color textFill = color(0);
 
 void setup() {
 
-  fullScreen();
+  size (1920, 1800); 
+  //fullScreen();
   textAlign(LEFT, TOP);
 
   // All zones are the same size
@@ -107,7 +109,7 @@ void drawIndoors(int xloc, int yloc) {
   toomie.draw();
   yiyang.draw();
 
-  int yOffset = ehtisham.writeText(20, 0, textSize);
+  int yOffset = ehtisham.writeText(100, 150, textSize);
   yOffset = toomie.writeText(20, yOffset+20, textSize);
   yiyang.writeText(20, yOffset+20, textSize);
 
