@@ -275,15 +275,7 @@ class BriansEcosystem {
       for (int k=0; k<foods.size(); k++) {
         foods.get(k).display();
       }
-
-      //text should be on top of the fish and food so they come after the display()
-      //text("Click to drop food for the fish", zoneWidth/8, zoneHeight/12);
-<<<<<<< HEAD
-      //textAlign(RIGHT);
       text(fishes.size() + " fish left", zoneWidth*7/8, zoneHeight/12);
-=======
-      //text(fishes.size() + " fish left", zoneWidth*7/8, zoneHeight/12);
->>>>>>> aa95d300da69ed69b2078ad59aff3398e3f2983f
     }
   }
 }

@@ -17,6 +17,8 @@ SnehilsEcosystem snehil = new SnehilsEcosystem();
 BadrsEcosystem badr = new BadrsEcosystem();
 AbdulEcosystem abdul = new AbdulEcosystem();
 GenieEcosystem genie = new GenieEcosystem();
+SarahsEcosystem sarah = new SarahsEcosystem(); 
+
 
 // Water (lower right)
 BriansEcosystem brian = new BriansEcosystem();
@@ -79,6 +81,7 @@ void setupOutdoors(int xloc, int yloc) {
   badr.setup();
   abdul.setup();
   genie.setup();
+  sarah.setup();
   popMatrix();
 }
 void setupWater(int xloc, int yloc) {
@@ -138,6 +141,7 @@ void drawOutdoors(int xloc, int yloc) {
   rectMode(CORNER);
   rect(0, 0, zoneWidth, zoneHeight);
 
+  sarah.draw(); 
   adina.draw();
   snehil.draw();
   badr.draw();
