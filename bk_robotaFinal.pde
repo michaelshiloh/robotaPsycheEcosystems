@@ -233,7 +233,6 @@ class BriansEcosystem {
     // no fish on the screen - has been disabled for minimal text
     if (fishes.size() == 0) {
       // restart screen - looks "static" because there is nothing else on display
-      // textAlign(CENTER);
       // text("No More Fish...", zoneWidth/2, zoneHeight/4);
       // text("Try again? Click the mouse", zoneWidth/2, zoneHeight*3/4);
     }
@@ -278,10 +277,13 @@ class BriansEcosystem {
       }
 
       //text should be on top of the fish and food so they come after the display()
-      //textAlign(LEFT);
       //text("Click to drop food for the fish", zoneWidth/8, zoneHeight/12);
+<<<<<<< HEAD
       //textAlign(RIGHT);
       text(fishes.size() + " fish left", zoneWidth*7/8, zoneHeight/12);
+=======
+      //text(fishes.size() + " fish left", zoneWidth*7/8, zoneHeight/12);
+>>>>>>> aa95d300da69ed69b2078ad59aff3398e3f2983f
     }
   }
 }
