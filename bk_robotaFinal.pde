@@ -220,6 +220,12 @@ class BriansEcosystem {
     }
   }
 
+  int writeText(int xloc, int yloc, int textSize) {
+   text("Click to drop food for the fish", xloc, yloc);
+   text(fishes.size() + " fish left", xloc, yloc+20);
+   return(20); //return the last Y offset so that I know where to start the next text block
+  }
+  
   //built-in function that responds to keyPressed event
   void keyPressed() {
     // empty for now
@@ -275,10 +281,6 @@ class BriansEcosystem {
       for (int k=0; k<foods.size(); k++) {
         foods.get(k).display();
       }
-
-      //text should be on top of the fish and food so they come after the display()
-      //text("Click to drop food for the fish", zoneWidth/8, zoneHeight/12);
-      //text(fishes.size() + " fish left", zoneWidth*7/8, zoneHeight/12);
     }
   }
 }
