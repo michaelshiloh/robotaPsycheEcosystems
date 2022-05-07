@@ -115,7 +115,7 @@ void drawIndoors(int xloc, int yloc) {
   int yOffset = 150;
   text("Ehtisham:", xOffset - 10, yOffset);
   yOffset+=40;
-   yOffset = ehtisham.writeText(xOffset, yOffset, textSize);
+  yOffset = ehtisham.writeText(xOffset, yOffset, textSize);
   //yOffset = toomie.writeText(20, yOffset+40, textSize);
   //yiyang.writeText(20, yOffset+40, textSize);
 
@@ -135,8 +135,16 @@ void drawSky(int xloc, int yloc) {
   phillip.draw();
 
   fill(textFill);
-  int yOffset = chinonyerem.writeText(20, 0, textSize);
-  phillip.writeText(20, yOffset+40, textSize);
+  textSize(textSize);
+  int xOffset = 20;
+  int yOffset = 0;
+  text("Chinonyerem:", xOffset - 10, yOffset);
+  yOffset+=20;
+  yOffset = chinonyerem.writeText(xOffset, yOffset, textSize);
+  yOffset += 50;
+  text("Phillip:", xOffset - 10, yOffset);
+  yOffset+=20;
+  phillip.writeText(xOffset, yOffset, textSize);
 
   popMatrix();
 }
