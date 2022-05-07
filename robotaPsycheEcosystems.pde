@@ -191,7 +191,7 @@ void drawWater(int xloc, int yloc) {
   yeji.draw();
 
   fill(textFill);
-  int yOffset = 0;//brian.writeText(20, 0, textSize);
+  int yOffset = brian.writeText(20, 0, textSize);
   yOffset = jiayi.writeText(20, yOffset + 40, textSize);
   yeji.writeText(20, yOffset + 40, textSize);
 
