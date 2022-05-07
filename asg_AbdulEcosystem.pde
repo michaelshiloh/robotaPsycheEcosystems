@@ -23,9 +23,6 @@ int ENEMY_COUNT = 5;
 // the attractor object
 Attractor a;
 
-// font to display the text in
-PFont font;
-
 // game screen specification
 int GAME_SCREEN = 3;
 
@@ -293,11 +290,6 @@ class Enemy {
 
 void setup() {
 
-  //println(PFont.list());
-  // using the desired font
-  font = createFont("Osaka-Mono", 32);
-  textFont(font);
-
   //initializing the movers randomly
   for (int i = 0; i < 75; i++) {
     // Each Mover is initialized randomly.
@@ -311,7 +303,6 @@ void setup() {
 int writeText(int xloc, int yloc, int textSize) {
   //text
   fill(0);
-  //textAlign(CENTER);
   textSize(textSize+10);
   // displaying the on screen text instructions
   text("Instructions: " + "\n\n", 380, 150);
