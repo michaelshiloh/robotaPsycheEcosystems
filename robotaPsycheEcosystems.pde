@@ -110,7 +110,12 @@ void drawIndoors(int xloc, int yloc) {
   yiyang.draw();
 
   fill(textFill);
-  int yOffset = ehtisham.writeText(20, 150, textSize);
+  textSize(textSize);
+  int xOffset = 20;
+  int yOffset = 150;
+  text("Ehtisham:", xOffset - 10, yOffset);
+  yOffset+=40;
+   yOffset = ehtisham.writeText(xOffset, yOffset, textSize);
   //yOffset = toomie.writeText(20, yOffset+40, textSize);
   //yiyang.writeText(20, yOffset+40, textSize);
 
