@@ -111,8 +111,8 @@ void drawIndoors(int xloc, int yloc) {
 
   fill(textFill);
   int yOffset = ehtisham.writeText(20, 150, textSize);
-  yOffset = toomie.writeText(20, yOffset+20, textSize);
-  yiyang.writeText(20, yOffset+20, textSize);
+  //yOffset = toomie.writeText(20, yOffset+20, textSize);
+  //yiyang.writeText(20, yOffset+20, textSize);
 
   popMatrix();
 }
