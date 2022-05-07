@@ -35,6 +35,7 @@ int	zoneWidth;
 void setup() {
 
   fullScreen();
+  textAlign(LEFT, TOP);
 
   // All zones are the same size
   zoneHeight = height/2;
@@ -103,9 +104,9 @@ void drawIndoors(int xloc, int yloc) {
   toomie.draw();
   yiyang.draw();
 
-  int yOffset = ehtisham.writeText(0, 0, 14);
-  yOffset = toomie.writeText(0, yOffset+20, 10);
-  // yiyang.writeText(0, yOffset+20, 8);
+  int yOffset = ehtisham.writeText(20, 0, 14);
+  yOffset = toomie.writeText(20, yOffset+20, 10);
+  // yiyang.writeText(20, yOffset+20, 8);
 
   popMatrix();
 }
@@ -122,8 +123,8 @@ void drawSky(int xloc, int yloc) {
   chinonyerem.draw();
   phillip.draw();
 
-  int yOffset = chinonyerem.writeText(0, 0, 14);
-  phillip.writeText(0, yOffset+20, 10);
+  int yOffset = chinonyerem.writeText(20, 0, 14);
+  phillip.writeText(20, yOffset+20, 10);
 
   popMatrix();
 }
@@ -143,11 +144,11 @@ void drawOutdoors(int xloc, int yloc) {
   abdul.draw();
   genie.draw();
 
-  int yOffset = 0;//adina.writeText(0, 0, 14);
-  //yOffset = snehil.writeText(0, yOffset + 20, 10);
-  ///yOffset = badr.writeText(0, yOffset + 20, 10);
-  yOffset = abdul.writeText(0, yOffset + 20, 10);
-  genie.writeText(0, yOffset + 20, 8);
+  int yOffset = 0;//adina.writeText(20, 0, 14);
+  //yOffset = snehil.writeText(20, yOffset + 20, 10);
+  ///yOffset = badr.writeText(20, yOffset + 20, 10);
+  yOffset = abdul.writeText(20, yOffset + 20, 10);
+  genie.writeText(20, yOffset + 20, 8);
 
   popMatrix();
 }
@@ -165,9 +166,9 @@ void drawWater(int xloc, int yloc) {
   jiayi.draw();
   yeji.draw();
 
-  int yOffset = 0; //brian.writeText(0, 0, 14);
-  yOffset = jiayi.writeText(0, yOffset + 20, 10);
-  yeji.writeText(0, yOffset + 20, 8);
+  int yOffset = 0; //brian.writeText(20, 0, 14);
+  yOffset = jiayi.writeText(20, yOffset + 20, 10);
+  yeji.writeText(20, yOffset + 20, 8);
 
   popMatrix();
 }
