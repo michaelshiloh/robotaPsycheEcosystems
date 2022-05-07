@@ -311,7 +311,7 @@ void setup() {
 int writeText(int xloc, int yloc, int textSize) {
   //text
   fill(0);
-  textAlign(CENTER);
+  //textAlign(CENTER);
   textSize(textSize+10);
   // displaying the on screen text instructions
   text("Instructions: " + "\n\n", 380, 150);

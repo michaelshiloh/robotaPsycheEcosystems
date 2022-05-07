@@ -280,7 +280,7 @@ class BriansEcosystem {
       //text should be on top of the fish and food so they come after the display()
       //textAlign(LEFT);
       //text("Click to drop food for the fish", zoneWidth/8, zoneHeight/12);
-      textAlign(RIGHT);
+      //textAlign(RIGHT);
       text(fishes.size() + " fish left", zoneWidth*7/8, zoneHeight/12);
     }
   }
