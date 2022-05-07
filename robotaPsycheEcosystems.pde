@@ -21,7 +21,7 @@ SarahsEcosystem sarah = new SarahsEcosystem();
 
 
 // Water (lower right)
-BriansEcosystem irian = new BriansEcosystem();
+BriansEcosystem brian = new BriansEcosystem();
 JiayiEcosystem jiayi = new JiayiEcosystem();
 YejisEcosystem yeji = new YejisEcosystem();
 
