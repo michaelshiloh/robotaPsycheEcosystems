@@ -141,7 +141,9 @@ void drawOutdoors(int xloc, int yloc) {
   rectMode(CORNER);
   rect(0, 0, zoneWidth, zoneHeight);
 
-  sarah.draw(); 
+  pushStyle();
+  sarah.draw();
+  popStyle(); 
   adina.draw();
   snehil.draw();
   badr.draw();
