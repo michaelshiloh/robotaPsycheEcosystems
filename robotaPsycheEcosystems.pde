@@ -37,7 +37,7 @@ color textFill = color(0);
 
 void setup() {
 
-  size (1920, 1200);
+  size (1850, 1000);
   //fullScreen();
   textAlign(LEFT, TOP);
 
