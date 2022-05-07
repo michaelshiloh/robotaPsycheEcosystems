@@ -21,7 +21,7 @@ SarahsEcosystem sarah = new SarahsEcosystem();
 
 
 // Water (lower right)
-BriansEcosystem brian = new BriansEcosystem();
+BriansEcosystem irian = new BriansEcosystem();
 JiayiEcosystem jiayi = new JiayiEcosystem();
 YejisEcosystem yeji = new YejisEcosystem();
 
@@ -111,8 +111,8 @@ void drawIndoors(int xloc, int yloc) {
 
   fill(textFill);
   int yOffset = ehtisham.writeText(20, 150, textSize);
-  //yOffset = toomie.writeText(20, yOffset+20, textSize);
-  //yiyang.writeText(20, yOffset+20, textSize);
+  //yOffset = toomie.writeText(20, yOffset+40, textSize);
+  //yiyang.writeText(20, yOffset+40, textSize);
 
   popMatrix();
 }
@@ -131,7 +131,7 @@ void drawSky(int xloc, int yloc) {
 
   fill(textFill);
   int yOffset = chinonyerem.writeText(20, 0, textSize);
-  phillip.writeText(20, yOffset+20, textSize);
+  phillip.writeText(20, yOffset+40, textSize);
 
   popMatrix();
 }
@@ -156,10 +156,10 @@ void drawOutdoors(int xloc, int yloc) {
 
   fill(textFill);
   int yOffset = adina.writeText(20, 0, textSize);
-  yOffset = snehil.writeText(20, yOffset + 20, textSize);
-  yOffset = badr.writeText(20, yOffset + 20, textSize);
-  yOffset = abdul.writeText(20, yOffset + 20, textSize);
-  genie.writeText(20, yOffset + 20, textSize);
+  yOffset = snehil.writeText(20, yOffset + 40, textSize);
+  yOffset = badr.writeText(20, yOffset + 40, textSize);
+  yOffset = abdul.writeText(20, yOffset + 40, textSize);
+  genie.writeText(20, yOffset + 40, textSize);
 
   popMatrix();
 }
@@ -179,8 +179,8 @@ void drawWater(int xloc, int yloc) {
 
   fill(textFill);
   int yOffset = 0;//brian.writeText(20, 0, textSize);
-  yOffset = jiayi.writeText(20, yOffset + 20, textSize);
-  yeji.writeText(20, yOffset + 20, textSize);
+  yOffset = jiayi.writeText(20, yOffset + 40, textSize);
+  yeji.writeText(20, yOffset + 40, textSize);
 
   popMatrix();
 }
