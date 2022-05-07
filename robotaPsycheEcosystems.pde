@@ -121,7 +121,7 @@ void drawSky(int xloc, int yloc) {
   pushMatrix();
   translate(xloc, yloc);
 
-  fill(0, 0, 200);
+  fill(#91e3e3);
   noStroke();
   rectMode(CORNER);
   rect(0, 0, zoneWidth, zoneHeight);
