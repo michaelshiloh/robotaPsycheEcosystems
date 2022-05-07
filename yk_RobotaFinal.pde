@@ -9,6 +9,7 @@
  23 Mar 2022 - created
  20 April 2022 - zoneWidth / zoneHeight
  27 April 2022 - zoneWidth / zoneHeight + Commented out all text
+ 07 May 2022 - Whales disappear when they pass the zoneWidth / Height Boundary
  
  This code is in the public domain
  */
@@ -138,7 +139,7 @@ class YejisEcosystem {
         if (d < humans.get(k).r + whales.get(i).r-60) {
           whales.remove(i);
           humanHuntWhale += 1;
-          whales.add(new Whale(random(zoneWidth), random(zoneHeight)));
+          whales.add(new Whale(random(zoneWidth), random(zoneHeight))); 
         }
       }
     }
@@ -174,7 +175,7 @@ class YejisEcosystem {
       w.separate(whales);
       // Call the generic run method (update, borders, display, etc.)
       w.update();
-      w.borders();
+      //w.borders(); //whalefix
       w.display();
     }
 
@@ -191,15 +192,6 @@ class YejisEcosystem {
     // Instructions
 
     fill(255);
-    //text("Eels: "+int(eels.size()), 10, 20);
-    //text("Seabug: "+int(seabugs.size()), 10, 40);
-    //text("Divers: "+int(humans.size()), 10, 60);
-    //text("Whales: "+int(whales.size()), 10, 80);
-    //text("Click to produce more Eels!", 600, 20);
-    //text("Use WASD to move the diver!", 600, 40);
-    //text("Number of eels eaten by Whale: "+int(counterTwo), 1260, 20);
-    //text("Number of whales hunted by divers: "+int(humanHuntWhale), 1260, 40);
-    //text("Number of seabugs eaten by Eel: "+int(counter), 1260, 60);
   }
 
   // Add a new eel into the System by mouse drag
@@ -280,6 +272,25 @@ class YejisEcosystem {
       position.add(velocity);
       // acceleration reset to 0
       acceleration.mult(0);
+      for (int i = 0; i<whales.size(); i++) {
+      if (whales.get(i).position.x < -r) {
+        whales.remove(i);
+        //whales.add(new Whale(random(zoneWidth), random(zoneHeight))); 
+      }
+      if (whales.get(i).position.x > zoneWidth+r){
+        whales.remove(i);
+        //whales.add(new Whale(random(zoneWidth), random(zoneHeight))); 
+      }
+      if (whales.get(i).position.y < -r){
+        whales.remove(i);
+        whales.add(new Whale(random(zoneWidth), random(zoneHeight))); 
+        //whales.add(new Whale(zoneWidth, zoneHeight)); 
+      }
+      if (whales.get(i).position.y > zoneHeight+r){
+        whales.remove(i);
+        //whales.add(new Whale(random(zoneWidth), random(zoneHeight))); 
+      }
+    }
     }
 
     // From Nature of Code
@@ -480,14 +491,17 @@ class YejisEcosystem {
     }
 
 
-    // Wraparound
-    void borders() {
-      if (position.x < -r) position.x = zoneWidth+r;
-      if (position.y < -r) position.y = zoneHeight+r;
-      if (position.x > zoneWidth+r) position.x = -r;
-      if (position.y > zoneHeight+r) position.y = -r;
-    }
+     //Wraparound //whalefix
+    //void borders() {
+    //  if (position.x < -r) position.x = zoneWidth+r;
+    //  if (position.y < -r) position.y = zoneHeight+r;
+    //  if (position.x > zoneWidth+r) position.x = -r;
+    //  if (position.y > zoneHeight+r) position.y = -r;
+    //}
   }
+  
+
+
 
 
   //Class Seabug
@@ -563,9 +577,9 @@ class YejisEcosystem {
     }
 
     void display() {
-      noFill();
+      //noFill();
       pushMatrix();
-      stroke(100);
+      stroke(200);
       translate(position.x, position.y);
       ellipse(0, 0, r, r);
       popMatrix();
