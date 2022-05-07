@@ -17,7 +17,7 @@ SnehilsEcosystem snehil = new SnehilsEcosystem();
 BadrsEcosystem badr = new BadrsEcosystem();
 AbdulEcosystem abdul = new AbdulEcosystem();
 GenieEcosystem genie = new GenieEcosystem();
-SarahsEcosystem sarah = new SarahsEcosystem(); 
+SarahsEcosystem sarah = new SarahsEcosystem();
 
 
 // Water (lower right)
@@ -32,7 +32,7 @@ import java.util.*;
 // Global variables
 int	zoneHeight;
 int	zoneWidth;
-
+int textSize = 14;
 
 void setup() {
 
@@ -107,9 +107,9 @@ void drawIndoors(int xloc, int yloc) {
   toomie.draw();
   yiyang.draw();
 
-  int yOffset = ehtisham.writeText(20, 0, 14);
-  yOffset = toomie.writeText(20, yOffset+20, 10);
-  // yiyang.writeText(20, yOffset+20, 8);
+  int yOffset = ehtisham.writeText(20, 0, textSize);
+  yOffset = toomie.writeText(20, yOffset+20, textSize);
+  yiyang.writeText(20, yOffset+20, textSize);
 
   popMatrix();
 }
@@ -126,8 +126,8 @@ void drawSky(int xloc, int yloc) {
   chinonyerem.draw();
   phillip.draw();
 
-  int yOffset = chinonyerem.writeText(20, 0, 14);
-  phillip.writeText(20, yOffset+20, 10);
+  int yOffset = chinonyerem.writeText(20, 0, textSize);
+  phillip.writeText(20, yOffset+20, textSize);
 
   popMatrix();
 }
@@ -143,18 +143,18 @@ void drawOutdoors(int xloc, int yloc) {
 
   pushStyle();
   sarah.draw();
-  popStyle(); 
+  popStyle();
   adina.draw();
   snehil.draw();
   badr.draw();
   abdul.draw();
   genie.draw();
 
-  int yOffset = 0;//adina.writeText(20, 0, 14);
-  //yOffset = snehil.writeText(20, yOffset + 20, 10);
-  ///yOffset = badr.writeText(20, yOffset + 20, 10);
-  yOffset = abdul.writeText(20, yOffset + 20, 10);
-  genie.writeText(20, yOffset + 20, 8);
+  int yOffset = adina.writeText(20, 0, textSize);
+  //yOffset = snehil.writeText(20, yOffset + 20, textSize);
+  yOffset = badr.writeText(20, yOffset + 20, textSize);
+  yOffset = abdul.writeText(20, yOffset + 20, textSize);
+  genie.writeText(20, yOffset + 20, textSize);
 
   popMatrix();
 }
@@ -172,9 +172,9 @@ void drawWater(int xloc, int yloc) {
   jiayi.draw();
   yeji.draw();
 
-  int yOffset = 0; //brian.writeText(20, 0, 14);
-  yOffset = jiayi.writeText(20, yOffset + 20, 10);
-  yeji.writeText(20, yOffset + 20, 8);
+  int yOffset = 0;//brian.writeText(20, 0, textSize);
+  yOffset = jiayi.writeText(20, yOffset + 20, textSize);
+  yeji.writeText(20, yOffset + 20, textSize);
 
   popMatrix();
 }
