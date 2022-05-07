@@ -303,9 +303,7 @@ void setup() {
 int writeText(int xloc, int yloc, int textSize) {
   //text
   fill(0);
-  textSize(textSize+10);
   // displaying the on screen text instructions
-  text("Instructions: " + "\n\n", 380, 150);
   textSize(textSize);
   text("1. There are three types of movers based on their sizes; "+ "\n"+"the biggest (green) is the most aggresive for food," + "\n"+ "followed by the purple, and the" + "\n" +
     " least aggresive is the yellow." + 
