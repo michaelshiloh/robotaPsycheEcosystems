@@ -37,7 +37,7 @@ color textFill = color(0);
 
 void setup() {
 
-  size (1920, 1800); 
+  size (1920, 1800);
   //fullScreen();
   textAlign(LEFT, TOP);
 
@@ -109,6 +109,7 @@ void drawIndoors(int xloc, int yloc) {
   toomie.draw();
   yiyang.draw();
 
+  fill(textFill);
   int yOffset = ehtisham.writeText(100, 150, textSize);
   yOffset = toomie.writeText(20, yOffset+20, textSize);
   yiyang.writeText(20, yOffset+20, textSize);
@@ -128,6 +129,7 @@ void drawSky(int xloc, int yloc) {
   chinonyerem.draw();
   phillip.draw();
 
+  fill(textFill);
   int yOffset = chinonyerem.writeText(20, 0, textSize);
   phillip.writeText(20, yOffset+20, textSize);
 
@@ -152,6 +154,7 @@ void drawOutdoors(int xloc, int yloc) {
   abdul.draw();
   genie.draw();
 
+  fill(textFill);
   int yOffset = adina.writeText(20, 0, textSize);
   //yOffset = snehil.writeText(20, yOffset + 20, textSize);
   yOffset = badr.writeText(20, yOffset + 20, textSize);
@@ -174,6 +177,7 @@ void drawWater(int xloc, int yloc) {
   jiayi.draw();
   yeji.draw();
 
+  fill(textFill);
   int yOffset = 0;//brian.writeText(20, 0, textSize);
   yOffset = jiayi.writeText(20, yOffset + 20, textSize);
   yeji.writeText(20, yOffset + 20, textSize);
