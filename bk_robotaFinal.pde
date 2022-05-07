@@ -235,7 +235,6 @@ class BriansEcosystem {
   void draw() {
     //text settings
     fill(0);
-    textSize(20);
 
     // no fish on the screen - has been disabled for minimal text
     if (fishes.size() == 0) {
