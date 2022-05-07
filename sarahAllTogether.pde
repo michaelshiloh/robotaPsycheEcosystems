@@ -23,7 +23,7 @@ class SarahsEcosystem {
       velocity = new PVector(0, 0); 
       acceleration = new PVector(0.2, 0.1); 
       dictColor = color(217, 32, 38); 
-      shapeWidth = 90; 
+      shapeWidth = 40; 
       maxSpeed = 1.5;
       maxForce = 1.6;
     }
@@ -378,7 +378,7 @@ class SarahsEcosystem {
 
     int x = 0; 
     int y = 0; 
-    int w = 400; 
+    int w = 200; 
     int h = zoneHeight;
     PVector center = new PVector(x+w/2, y+h/2); 
 
@@ -401,11 +401,23 @@ class SarahsEcosystem {
   Dictator dict; 
   color backgroundColor = color(245, 245, 220);
   safeZone shelter; 
-  boolean startEcoSystem; 
+ 
 
 
 
+  int writeText(int xloc, int yloc, int textSize)
+  {
+    text("Central red square: Dictator", xloc, yloc);
+    text("Transparent/red-turning circles: Revolutionaries", xloc, yloc+20);
+    text("Orange squares: Elites", xloc, yloc+40);
+    text("Green zone: Revolutionary safe zone", xloc, yloc+60);
+    text("revolutionaries X revolutionaries -> more strength to defeat dictator", xloc, yloc+80);
+    text("revolutionaries X elites -> less strength to defeat dictator", xloc, yloc+100);
+    text("WEAK revolutionaries X dictator -> killed", xloc, yloc+120);
+    text("STRONG revolutionaries X dictator -> bounce off", xloc, yloc+140);
 
+    return(140);
+  }
   void setup() {
 
     numberOfRevs = 15;
