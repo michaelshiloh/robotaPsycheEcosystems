@@ -37,7 +37,7 @@ color textFill = color(0);
 
 void setup() {
 
-  size (1920, 1800);
+  size (1920, 1200);
   //fullScreen();
   textAlign(LEFT, TOP);
 
@@ -156,7 +156,7 @@ void drawOutdoors(int xloc, int yloc) {
 
   fill(textFill);
   int yOffset = adina.writeText(20, 0, textSize);
-  //yOffset = snehil.writeText(20, yOffset + 20, textSize);
+  yOffset = snehil.writeText(20, yOffset + 20, textSize);
   yOffset = badr.writeText(20, yOffset + 20, textSize);
   yOffset = abdul.writeText(20, yOffset + 20, textSize);
   genie.writeText(20, yOffset + 20, textSize);
