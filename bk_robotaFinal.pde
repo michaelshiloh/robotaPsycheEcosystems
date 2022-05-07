@@ -10,6 +10,7 @@
  - introduce another creature
  
  Change log:
+ - May 7 - delete textAlign() and create writeText()
  - Apr 11 - switch from width/height to zoneWidth/zoneHeight and minimize text
  - Mar 28 - make a separate file with just the class in root repo
  - Mar 23 - copy midterm content, put everything in Ecosystem class
@@ -220,6 +221,12 @@ class BriansEcosystem {
     }
   }
 
+  int writeText(int xloc, int yloc, int textSize) {
+   text("Click to drop food for the fish", xloc, yloc);
+   text(fishes.size() + " fish left", xloc, yloc+20);
+   return(20); //return the last Y offset so that I know where to start the next text block
+  }
+  
   //built-in function that responds to keyPressed event
   void keyPressed() {
     // empty for now
@@ -275,7 +282,6 @@ class BriansEcosystem {
       for (int k=0; k<foods.size(); k++) {
         foods.get(k).display();
       }
-      text(fishes.size() + " fish left", zoneWidth*7/8, zoneHeight/12);
     }
   }
 }
