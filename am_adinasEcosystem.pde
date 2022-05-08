@@ -235,7 +235,7 @@ class AdinasEcosystem {
      fill(220);
      text(foodScore, xloc*9*index, yloc+20);
       
-     textSize(14);
+     //textSize(14);
      text(wolves.size(), xloc*9*index, yloc+40);
    }
    else if (index==2) {
@@ -245,7 +245,7 @@ class AdinasEcosystem {
      fill(220);
      text(foodScore, xloc*5.625*index, yloc+20);
       
-     textSize(14);
+     //textSize(14);
      text(wolves.size(), xloc*5.625*index, yloc+40);
    }
   
