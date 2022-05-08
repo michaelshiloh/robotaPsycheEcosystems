@@ -421,6 +421,7 @@ void mouseClicked() {
 void keyPressed() {
 }
 
+//displays properly only for textSize = 14 
 int writeText(int xloc, int yloc, int textSize) {
    for (int k = 0; k < numofpacks; k++) {
    alphas.get(k).writeTextAlpha( xloc, yloc, textSize, colors[k], k);
