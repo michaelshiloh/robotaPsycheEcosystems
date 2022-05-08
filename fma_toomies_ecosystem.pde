@@ -47,7 +47,7 @@ class toomiesEcosystem {
         velocity.y += random(-.1, .1);
         location.add(velocity); // she moves around
 
-        if (pmei == mei1 && frameCount % 300 == 0) { // every 5 seconds
+        if (pmei == mei1 && frameCount % 240 == 0) { // every 5 seconds
           pmei = mei2;
           timerstarted = false;
 
