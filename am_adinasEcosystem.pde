@@ -249,7 +249,7 @@ class AdinasEcosystem {
      text(wolves.size(), xloc*5*index, yloc+40);
    }
   
-   return yloc;
+   return(40);
   }
 }
 //---------------------------------------------------------------------------------//
