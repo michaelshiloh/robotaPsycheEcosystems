@@ -318,7 +318,6 @@ class toomiesEcosystem {
     bshappy = loadImage("toomie/bshappy.png");
     noStroke();
     imageMode(CENTER);
-    //textAlign(CENTER);
 
     // class objects: (people)
     sam= new Sam(random(100, zoneWidth-150), random(300, zoneHeight-250), random(2, -2), random(2, -2));
@@ -327,7 +326,6 @@ class toomiesEcosystem {
   }
 
   void draw() {
-    //background(150);
 
     // calling class functions :
     sam.display();
@@ -368,8 +366,9 @@ class toomiesEcosystem {
   }
 
   int writeText(int xloc, int yloc, int textSize) {
-    text("babysitting simulator:", xloc, yloc);
-    text("the babysitter is trying to prevent the kids from causing trouble, she gives them candy to make them stop ", xloc, yloc+20);
-    return(20);
+    text("toomie:", xloc, yloc);
+    text("babysitting simulator-", xloc, yloc+20);
+    text("the babysitter is trying to prevent the kids from causing trouble, she gives them candy to make them stop ", xloc, yloc+40);
+    return(40);
   }
 }// ecosystem end
