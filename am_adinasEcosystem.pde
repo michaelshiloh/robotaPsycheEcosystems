@@ -172,7 +172,7 @@ class AdinasEcosystem {
   //---------------------------------------------------------------------------------//
   //Display function
   //---------------------------------------------------------------------------------//
-  void display(int[] colors, int index) {
+  void display(int[] colors) {
     checkCollisionsRabbit();
     update();
     getOlder();
@@ -212,19 +212,43 @@ class AdinasEcosystem {
   }
   
   int writeTextAlpha(int xloc, int yloc, int textSize, int[] colors, int index) {
+    
+   if (index==0) {
+     String ageString = "Alphas' ages: ";
+     fill(220);
+     text(ageString, xloc*index, yloc);
+     fill(colors[0], colors[1], colors[2]);
+     text(age, xloc*4.95, yloc);
+     
+     String foodString = "Food scores (/100): " + foodScore;
+     fill(220);
+     text(foodString, xloc*index, yloc+20);
+    
+     String packString = "Pack sizes: " + "             " + wolves.size();
+     //textSize(10);
+     text(packString, xloc*index, yloc+40);
+   }
+   else if (index==1) {
+     fill(colors[0], colors[1], colors[2]);
+     text(age, xloc*7.5*index, yloc);
+      
+     fill(220);
+     text(foodScore, xloc*7.5*index, yloc+20);
+      
+     //textSize(10);
+     text(wolves.size(), xloc*7.5*index, yloc+40);
+   }
+   else if (index==2) {
+     fill(colors[0], colors[1], colors[2]);
+     text(age, xloc*5*index, yloc);
+      
+     fill(220);
+     text(foodScore, xloc*5*index, yloc+20);
+      
+     //textSize(10);
+     text(wolves.size(), xloc*5*index, yloc+40);
+   }
   
-   String ageString = (index + 1) + " alpha's age: " + age;
-   fill(colors[0], colors[1], colors[2]);
-   text(ageString, xloc, yloc);
-    
-   String foodString = "Food score (max is 100): " + foodScore;
-   fill(220);
-   text(ageString, xloc, yloc+30);
-    
-   String packString = "Pack size: " + wolves.size();
-   textSize(10);
-   text(ageString, xloc, yloc+50);
-    
    return yloc;
   }
 }
@@ -264,7 +288,7 @@ class Wolf {
     //Color the pack
     //---------------------------------------------------------------------------------//
     stroke(0);
-    fill(colors[0], colors[1], colors[2], 80);
+    fill(colors[0], colors[1], colors[2]);
     //---------------------------------------------------------------------------------//
     //Display the wolves
     //---------------------------------------------------------------------------------//
@@ -274,7 +298,7 @@ class Wolf {
     //so the pointer of the triangle is looking at the alpha, not on anything else
     PVector check = new PVector(alpha.location.x - location.x, alpha.location.y - location.y);
     rotate(check.heading()); //rotate the mover to point in the direction of travel
-    triangle(0, wolfWeight, 0, -5, 20, 0);
+    triangle(0, wolfWeight, 0, -5, 15, 0);
     popMatrix();
   }
 }
@@ -377,7 +401,7 @@ void draw() {
   //legendDisplay();
 
   for (int j = 0; j < numofpacks; j++) {
-    alphas.get(j).display(colors[j], j);
+    alphas.get(j).display(colors[j]);
   }
 
   for (int i = 0; i < rabbits.size(); i++) {
@@ -399,7 +423,7 @@ void keyPressed() {
 
 int writeText(int xloc, int yloc, int textSize) {
    for (int k = 0; k < numofpacks; k++) {
-    alphas.get(k).writeTextAlpha( xloc, yloc, textSize, colors[k], k);
+   alphas.get(k).writeTextAlpha( xloc, yloc, textSize, colors[k], k);
     
   }
   return yloc+20;
