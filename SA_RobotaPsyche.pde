@@ -117,42 +117,11 @@ class SnehilsEcosystem {
     if (moversBlue.size() == 2) {
       moversBlue.add(new Mover(ellipseAttractor, color(0, 0, 255), random(1, 5)*.05));
     }
-
-    //Below are various text methods to display important information about the ecosystem
-    //String b = "Blue prey: " + moversBlue.size();
-    //textSize(10);
-    //textAlign(LEFT);
-    //fill(0, 0, 255);
-    //text(b, 10, height - 10);
-
-
-    //String r = "Red prey: " + moversRed.size();
-    //textSize(10);
-    //textAlign(RIGHT);
-    //fill(255, 0, 0);
-    //text(r, width - 10, height - 10);
-
-    //String p = "Prey Deaths: " + deaths;
-    //textSize(10);
-    //textAlign(CENTER);
-    //fill(0, 0, 255);
-    //text(p, width/2, height - 10);
-
-    //String g = "Green Predators: 2" ;
-    //textSize(10);
-    //textAlign(RIGHT,TOP);
-    //fill(0, 255, 0);
-    //text(g, width-10, 10);
-
-    //String text = "Press 'r' to resume and 'p' to pause" ;
-    //textSize(10);
-    //textAlign(LEFT,TOP);
-    //fill(0, 0, 0);
-    //text(text, 10, 10);
   }
 
   int writeText(int xloc, int yloc, int textSize)
   {
+    textSize(textSize); 
     text("10 red preys are at the start", xloc, yloc);
     text("10 blue preys are at the start", xloc, yloc+20);
     text("Preys feed on a food source(black circle). Food randomly spawns after being consumed", xloc, yloc+40);
