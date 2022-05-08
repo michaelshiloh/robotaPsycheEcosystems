@@ -93,6 +93,13 @@ class toomiesEcosystem {
         pmei = mei3;
       } // she's happy and likes you! she stops moving around now!
     }// happy function end
+
+    void reset() {
+      if (pmei == mei3 && frameCount % 360 == 0) {
+        adoration = 1;
+        pmei = mei1;
+      }
+    }//reset
   } // end of mei's class
 
   class Sam {
@@ -191,6 +198,13 @@ class toomiesEcosystem {
         location.add(velocity);
       }
     }//jump end
+
+    void reset() {
+      if (psam == sam3 && frameCount % 300 == 0) {
+        adoration = 1;
+        psam = sam1;
+      }
+    }//reset
   }// end of sam's class
 
   class Babysitter {
@@ -332,11 +346,13 @@ class toomiesEcosystem {
     sam.move();
     sam.jump();
     sam.update();
+    sam.reset();
 
     mei.display();
     mei.move();
     mei.edge();
     mei.happy();
+    mei.reset();
 
     babysitter.display();
     babysitter.edge();
@@ -365,7 +381,7 @@ class toomiesEcosystem {
   void keyPressed() {
   }
 
-   int writeText(int xloc, int yloc, int textSize) {
+  int writeText(int xloc, int yloc, int textSize) {
     text("toomie:", xloc, yloc);
     text("babysitting simulator-", xloc, yloc+20);
     text("the babysitter is trying to prevent the kids from causing trouble, she gives them candy to make them stop ", xloc, yloc+40);
