@@ -10,6 +10,7 @@ class BadrsEcosystem {
   int size = 50; // default amount of food
 
   int writeText(int xloc, int yloc, int textSize) {
+    fill(0);
     text("Alive: " + creatures.size(), xloc, yloc);
     text("Food: " + foodlist.size(), xloc, yloc+20);
     //text("Healthy: " + cnt, xloc, yloc+20);
