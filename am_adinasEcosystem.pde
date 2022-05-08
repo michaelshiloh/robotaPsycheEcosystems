@@ -218,7 +218,7 @@ class AdinasEcosystem {
      fill(220);
      text(ageString, xloc*index, yloc);
      fill(colors[0], colors[1], colors[2]);
-     text(age, xloc*4.95, yloc);
+     text(age, xloc*6.85, yloc);
      
      String foodString = "Food scores (/100): " + foodScore;
      fill(220);
@@ -230,23 +230,23 @@ class AdinasEcosystem {
    }
    else if (index==1) {
      fill(colors[0], colors[1], colors[2]);
-     text(age, xloc*7.5*index, yloc);
+     text(age, xloc*9*index, yloc);
       
      fill(220);
-     text(foodScore, xloc*7.5*index, yloc+20);
+     text(foodScore, xloc*9*index, yloc+20);
       
-     //textSize(10);
-     text(wolves.size(), xloc*7.5*index, yloc+40);
+     textSize(14);
+     text(wolves.size(), xloc*9*index, yloc+40);
    }
    else if (index==2) {
      fill(colors[0], colors[1], colors[2]);
-     text(age, xloc*5*index, yloc);
+     text(age, xloc*5.625*index, yloc);
       
      fill(220);
-     text(foodScore, xloc*5*index, yloc+20);
+     text(foodScore, xloc*5.625*index, yloc+20);
       
-     //textSize(10);
-     text(wolves.size(), xloc*5*index, yloc+40);
+     textSize(14);
+     text(wolves.size(), xloc*5.625*index, yloc+40);
    }
   
    return(40);
