@@ -222,7 +222,13 @@ class BriansEcosystem {
   }
 
   int writeText(int xloc, int yloc, int textSize) {
-   text("Click to drop food for the fish", xloc, yloc);
+   if (fishes.size() == 0) {
+    text("No More Fish...", xloc, yloc);
+   }
+   else {
+    text("Click to drop food for the fish", xloc, yloc);
+   }
+   
    text(fishes.size() + " fish left", xloc, yloc+20);
    return(20); //return the last Y offset so that I know where to start the next text block
   }
