@@ -139,7 +139,7 @@ class ChinonyeremsEcosystem {
   void mouseClicked() {
     if (foods.size()<2) //limits amount of food on screen to 2
     {
-      foods.add(new Food(mouseX, mouseY)); //add food on mouse click
+      foods.add(new Food(int(random(zoneWidth)), int(random(zoneHeight)))); //add food on mouse click
     }
   }
 
