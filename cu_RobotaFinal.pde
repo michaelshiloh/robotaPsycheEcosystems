@@ -172,7 +172,7 @@ class ChinonyeremsEcosystem {
     text("Jinkies: "+jinkies.size(), xloc, yloc + 100);
     text("Jeepers: "+jeepers.size(), xloc, yloc + 120);
     text("Food: "+foods.size(), xloc, yloc + 140);
-    return(140);
+    return(yloc+140);
   }
 
   void keyPressed()
