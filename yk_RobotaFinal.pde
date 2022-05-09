@@ -10,7 +10,6 @@
  20 April 2022 - zoneWidth / zoneHeight
  27 April 2022 - zoneWidth / zoneHeight + Commented out all text
  07 May 2022 - Whales disappear when they pass the zoneWidth / Height Boundary
- 09 May 2022 - Whale index, minused by one considering that it starts from 0
  
  This code is in the public domain
  */
@@ -110,7 +109,7 @@ class YejisEcosystem {
 
     //Ten Whales
     whales = new ArrayList<Whale>();
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 7; i++) {
       whales.add(new Whale(random(zoneWidth), random(zoneHeight)));
     }
   }
@@ -273,23 +272,23 @@ class YejisEcosystem {
       position.add(velocity);
       // acceleration reset to 0
       acceleration.mult(0);
-      for (int i = 0; i<whales.size()-1; i++) {
+      for (int i = 0; i<whales.size(); i++) {
       if (whales.get(i).position.x < -r) {
         println(whales);
         whales.remove(i);
         //whales.add(new Whale(random(zoneWidth), random(zoneHeight))); 
       }
-      if (whales.get(i).position.x > zoneWidth+r){
+      else if (whales.get(i).position.x > zoneWidth+r){
         println(whales);
         whales.remove(i);
         //whales.add(new Whale(random(zoneWidth), random(zoneHeight))); 
       }
-      if (whales.get(i).position.y < -r){
+      else if (whales.get(i).position.y < -r){
         println(whales);
         whales.remove(i);
         //whales.add(new Whale(zoneWidth, zoneHeight)); 
       }
-      if (whales.get(i).position.y > zoneHeight+r){
+      else if (whales.get(i).position.y > zoneHeight+r){
         println(whales);
         whales.remove(i);
         //whales.add(new Whale(random(zoneWidth), random(zoneHeight))); 
