@@ -305,14 +305,14 @@ int writeText(int xloc, int yloc, int textSize) {
   fill(0);
   // displaying the on screen text instructions
   textSize(textSize);
-  text("1. There are three types of movers based on their sizes; "+ "\n"+
+  text("1. There are three types of movers based on their sizes; "+
   "the biggest (green) is the most aggresive for food," + "\n"+ 
-  "followed by the purple, and the" + "\n" +
+  "followed by the purple, and the" +
     " least aggresive is the yellow." + "\n" +
-    "2. On the mouse click, a new  enemy"+ "\n"+" is created, and the movers" + " are repelled by the enemy " + "\n"+ 
-    "3. The smallest movers are, also attracted"+ "\n" +
+    "2. On the mouse click, a new  enemy"+" is created, and the movers" + " are repelled by the enemy " + "\n"+ 
+    "3. The smallest movers are, also attracted" +
     " to the largest movers, as if for protection"  + "\n"+ 
-    "4. The medium movers consume, the small"+ "\n" 
+    "4. The medium movers consume, the small"
     +" movers when largest movers, as if for protection"  + "\n" 
     , xloc, yloc);
     return (RSEOffsetBetweenLines*10) + yloc;
