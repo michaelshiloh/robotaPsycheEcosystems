@@ -10,6 +10,7 @@
  - introduce another creature
  
  Change log:
+ - May 9 - change additional writeText() things and delete comments
  - May 7 - delete textAlign() and create writeText()
  - Apr 11 - switch from width/height to zoneWidth/zoneHeight and minimize text
  - Mar 28 - make a separate file with just the class in root repo
@@ -58,7 +59,6 @@ class BriansEcosystem {
     float mass = 10; //increased as fish eats food, decreased over time, consider this as radius
     float gravity = 0.01;
 
-    //int timer; //switched hunger logic from timer to mass, but still kept in the code for reference
     PVector location;
     PVector velocity;
     PVector acceleration;
@@ -79,7 +79,6 @@ class BriansEcosystem {
       shapeX = new float[numShapes];
       shapeY = new float[numShapes];
       shapeA = new float[numShapes];
-      //timer = millis();
     }
 
     // Newton's second law
@@ -115,10 +114,8 @@ class BriansEcosystem {
         //vertical check
         (location.y - mass <= f.location.y) && (location.y + mass >= f.location.y)
         ) {
+        
         mass += 2; //small increase in mass for every food eaten
-
-        //reset timer if fish eats food
-        //timer = millis();
         return true;
       } else {
         return false;
@@ -127,10 +124,6 @@ class BriansEcosystem {
 
     //it dies of starvation when mass is below a certain limit
     boolean diesHungry() {
-      //int runtime = millis() - timer;
-      //if (runtime >= 20000) { //20 seconds
-      //  return true;
-      //} else
       if (mass <= 5) { //it slowly thinned out
         return true;
       } else {
@@ -226,10 +219,8 @@ class BriansEcosystem {
     text("No More Fish...", xloc, yloc);
    }
    else {
-    //text("Click to drop food for the fish", xloc, yloc); //commented out because we assume there will be no mouseClicked or keyPressed (they will all die hungry)
+    text(fishes.size() + " fish left", xloc, yloc);
    }
-   
-   text(fishes.size() + " fish left", xloc, yloc+20);
    return(20); //return the last Y offset so that I know where to start the next text block
   }
   
@@ -242,51 +233,41 @@ class BriansEcosystem {
     //text settings
     fill(0);
 
-    // no fish on the screen - has been disabled for minimal text
-    if (fishes.size() == 0) {
-      // restart screen - looks "static" because there is nothing else on display
-      // text("No More Fish...", zoneWidth/2, zoneHeight/4);
-      // text("Try again? Click the mouse", zoneWidth/2, zoneHeight*3/4);
+    //for every fish - this will not run if there are no fishes
+    for (int i=0; i<fishes.size(); i++) {
+
+      //fish repel each other
+      for (int j=0; j<fishes.size(); j++) {
+        if (i != j) { // do not repel yourself
+          PVector fishForce = fishes.get(j).repel(fishes.get(i));
+          fishes.get(i).applyForce(fishForce);
+        }
+      }
+
+      //for every food
+      for (int k=0; k<foods.size(); k++) {
+        //food attracts fish
+        PVector foodForce = foods.get(k).attract(fishes.get(i));
+        fishes.get(i).applyForce(foodForce);
+
+        //did this fish eat the food?
+        boolean foodEaten = fishes.get(i).eatCheck(foods.get(k));
+        if (foodEaten) foods.remove(k);
+      }
+
+      //update all forces and display fish
+      fishes.get(i).update();
+      fishes.get(i).display();
+
+      //if fish doesn't eat in time...
+      if (fishes.get(i).diesHungry()) {
+        fishes.remove(i);
+      }
     }
 
-    // there are fish on the screen
-    else {
-      //for every fish
-      for (int i=0; i<fishes.size(); i++) {
-
-        //fish repel each other
-        for (int j=0; j<fishes.size(); j++) {
-          if (i != j) { // do not repel yourself
-            PVector fishForce = fishes.get(j).repel(fishes.get(i));
-            fishes.get(i).applyForce(fishForce);
-          }
-        }
-
-        //for every food
-        for (int k=0; k<foods.size(); k++) {
-          //food attracts fish
-          PVector foodForce = foods.get(k).attract(fishes.get(i));
-          fishes.get(i).applyForce(foodForce);
-
-          //did this fish eat the food?
-          boolean foodEaten = fishes.get(i).eatCheck(foods.get(k));
-          if (foodEaten) foods.remove(k);
-        }
-
-        //update all forces and display fish
-        fishes.get(i).update();
-        fishes.get(i).display();
-
-        //if fish doesn't eat in time...
-        if (fishes.get(i).diesHungry()) {
-          fishes.remove(i);
-        }
-      }
-
-      //display food
-      for (int k=0; k<foods.size(); k++) {
-        foods.get(k).display();
-      }
+    //display food
+    for (int k=0; k<foods.size(); k++) {
+      foods.get(k).display();
     }
   }
 }
