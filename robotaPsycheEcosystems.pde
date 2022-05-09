@@ -173,7 +173,6 @@ void drawOutdoors(int xloc, int yloc) {
   badr.draw();
   abdul.draw();
   genie.draw();
-
   
   fill(textFill);
   textSize(textSize);
@@ -186,19 +185,20 @@ void drawOutdoors(int xloc, int yloc) {
   yOffset+=RSEOffsetBetweenLines;
   text("Adina:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = adina.writeText(20, yOffset + 40, textSize);yOffset+=RSEOffsetBetweenLines;
+  yOffset = adina.writeText(20, yOffset, textSize);yOffset+=RSEOffsetBetweenLines;
+  fill(textFill);
   text("Snehil:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = snehil.writeText(20, yOffset + 40, textSize);yOffset+=RSEOffsetBetweenLines;
+  yOffset = snehil.writeText(20, yOffset , textSize);yOffset+=RSEOffsetBetweenLines;
   text("Badr:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = badr.writeText(20, yOffset + 40, textSize);yOffset+=RSEOffsetBetweenLines;
+  yOffset = badr.writeText(20, yOffset, textSize);yOffset+=RSEOffsetBetweenLines;
   text("Abdul:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = abdul.writeText(20, yOffset + 40, textSize);yOffset+=RSEOffsetBetweenLines;
+  yOffset = abdul.writeText(20, yOffset, textSize);yOffset+=RSEOffsetBetweenLines;
   text("Genie:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  genie.writeText(20, yOffset + 40, textSize);
+  genie.writeText(20, yOffset, textSize);
 
   popMatrix();
 }
