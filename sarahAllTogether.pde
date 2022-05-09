@@ -411,12 +411,13 @@ class SarahsEcosystem {
     text("Transparent/red-turning circles: Revolutionaries", xloc, yloc+RSEOffsetBetweenLines);
     text("Orange squares: Elites", xloc, yloc+(RSEOffsetBetweenLines*2));
     text("Green zone: Revolutionary safe zone", xloc, yloc+(RSEOffsetBetweenLines*3));
-    text("revolutionaries X revolutionaries -> more strength to defeat dictator", xloc, yloc+(RSEOffsetBetweenLines*4));
-    text("revolutionaries X elites -> less strength to defeat dictator", xloc, yloc+(RSEOffsetBetweenLines*5));
-    text("WEAK revolutionaries X dictator -> killed", xloc, yloc+(RSEOffsetBetweenLines*6));
-    text("STRONG revolutionaries X dictator -> bounce off", xloc, yloc+(RSEOffsetBetweenLines*7));
+    text("When:", xloc, yloc+(RSEOffsetBetweenLines*4));
+    text("> revolutionaries collide with revolutionaries, they gain strength to defeat dictator", xloc, yloc+(RSEOffsetBetweenLines*5));
+    text("> revolutionaries collide with elites, they lose strength to defeat dictator", xloc, yloc+(RSEOffsetBetweenLines*6));
+    text("> WEAK revolutionaries collide with dictator, they're killed", xloc, yloc+(RSEOffsetBetweenLines*7));
+    text("> STRONG revolutionaries collide with dictator, they bounce off", xloc, yloc+(RSEOffsetBetweenLines*8));
 
-    return(yloc+(RSEOffsetBetweenLines*7));
+    return(yloc+(RSEOffsetBetweenLines*8));
   }
   void setup() {
 
