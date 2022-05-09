@@ -9,6 +9,8 @@ class BadrsEcosystem {
   boolean dragged = false; // flag for sliders
   int size = 50; // default amount of food
 
+  int RSEOffsetBetweenLines = 15
+  
   int writeText(int xloc, int yloc, int textSize) {
     fill(0);
     text("Alive: " + creatures.size(), xloc, yloc);

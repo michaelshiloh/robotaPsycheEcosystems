@@ -215,13 +215,13 @@ class AdinasEcosystem {
     
    if (index==0) {
      String ageString = "Alphas' ages: ";
-     fill(220);
+     //fill(220);
      text(ageString, xloc*index, yloc);
      fill(colors[0], colors[1], colors[2]);
      text(age, xloc*6.85, yloc);
      
      String foodString = "Food scores (/100): " + foodScore;
-     fill(220);
+     //fill(220);
      text(foodString, xloc*index, yloc+20);
     
      String packString = "Pack sizes: " + "             " + wolves.size();
@@ -232,7 +232,7 @@ class AdinasEcosystem {
      fill(colors[0], colors[1], colors[2]);
      text(age, xloc*9*index, yloc);
       
-     fill(220);
+     //fill(220);
      text(foodScore, xloc*9*index, yloc+20);
       
      //textSize(14);
@@ -242,7 +242,7 @@ class AdinasEcosystem {
      fill(colors[0], colors[1], colors[2]);
      text(age, xloc*5.625*index, yloc);
       
-     fill(220);
+     //fill(220);
      text(foodScore, xloc*5.625*index, yloc+20);
       
      //textSize(14);
