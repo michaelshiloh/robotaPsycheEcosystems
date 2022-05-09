@@ -77,7 +77,7 @@ class EhtishamsEcosystem {
         fill(0);
       }
     }
-    text ("Mice in House: " + miceInHouse, 50, 50);
+    text ("Mice in House: " + miceInHouse, 50, 30);
 
     cat.update();
     flowField.shiftField(); //change field direction randomly after some time to exhibit random movement of cat
@@ -120,6 +120,12 @@ class EhtishamsEcosystem {
     yloc += RSEOffsetBetweenLines;
     
     text ("Otherwise they avoid getting eaten by the Cat and stay inside their home", xloc, yloc);
+    
+    yloc += RSEOffsetBetweenLines;
+    
+    text ("When mice population in the house becomes too much, too young and too old mice die of suffocation!", xloc, yloc);
+    
+    yloc += RSEOffsetBetweenLines;
     
     return(yloc);
 
