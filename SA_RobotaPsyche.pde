@@ -127,7 +127,7 @@ class SnehilsEcosystem {
     text("Preys feed on a food source(black circle). Food randomly spawns after being consumed", xloc, yloc+40);
     text("Red or blue prey can eat each other when its size is bigger than the other", xloc, yloc+60);
     text("Green Predator(green rectangle)", xloc, yloc+80);
-    return(80);
+    return(yloc+80);
   }
 
   class Predator {
