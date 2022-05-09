@@ -107,7 +107,6 @@ class EhtishamsEcosystem {
     
     text ("Otherwise they avoid getting eaten by the Cat and stay inside their home", xloc, yloc+RSEOffsetBetweenLines);
     
-    
     return(yloc+(RSEOffsetBetweenLines*8));
 
   }
