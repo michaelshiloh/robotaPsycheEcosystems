@@ -123,11 +123,15 @@ class SnehilsEcosystem {
   {
     textSize(textSize); 
     text("10 red preys are at the start", xloc, yloc);
-    text("10 blue preys are at the start", xloc, yloc+20);
-    text("Preys feed on a food source(black circle). Food randomly spawns after being consumed", xloc, yloc+40);
-    text("Red or blue prey can eat each other when its size is bigger than the other", xloc, yloc+60);
-    text("Green Predator(green rectangle)", xloc, yloc+80);
-    return(yloc+80);
+    yloc+=RSEOffsetBetweenLines;
+    text("10 blue preys are at the start", xloc, yloc);
+    yloc+=RSEOffsetBetweenLines;
+    text("Preys feed on a food source(black circle). Food randomly spawns after being consumed", xloc, yloc);
+    yloc+=RSEOffsetBetweenLines;
+    text("Red or blue prey can eat each other when its size is bigger than the other", xloc, yloc);
+    yloc+=RSEOffsetBetweenLines;
+    text("2 Green Predators (small green rectangle)", xloc, yloc);
+    return(yloc);
   }
 
   class Predator {
