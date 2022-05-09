@@ -141,7 +141,7 @@ class GenieEcosystem {
     text("limited amount of worms as food(little grey squares)", xloc, yloc+40);
     text("larvae reproduced when conditions(food,encounters) met", xloc, yloc+60);
     text("Triangle(your mouse!) as human(disrupt the system)", xloc, yloc+80);
-    return(80);
+    return(yloc+80);
   }
   //a function to keep track of the humans(where the mouse is)
   void mouseposition()
