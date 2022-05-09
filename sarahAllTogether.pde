@@ -416,7 +416,7 @@ class SarahsEcosystem {
     text("WEAK revolutionaries X dictator -> killed", xloc, yloc+120);
     text("STRONG revolutionaries X dictator -> bounce off", xloc, yloc+140);
 
-    return(140);
+    return(yloc+140);
   }
   void setup() {
 
