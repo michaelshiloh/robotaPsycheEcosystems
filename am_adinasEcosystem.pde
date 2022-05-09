@@ -212,41 +212,57 @@ class AdinasEcosystem {
   }
   
   int writeTextAlpha(int xloc, int yloc, int textSize, int[] colors, int index) {
-    
+  String descriptionStr1 = "Three packs of wolves (triangles) run after rabbits (circles) to sustain themselves and increase their packs."
+  String descriptionStr2 = "Alphas live up to 50 y.o, after which the biggest member of the pack replaces him."
+  String descriptionStr3 = "New pack members are spawned after alpha hits max in food score."
+  
+  text(descriptionStr1, xloc, yloc);
+  yloc+=RSEOffsetBetweenLines;
+  text(descriptionStr2, xloc, yloc);
+  yloc+=RSEOffsetBetweenLines;
+  text(descriptionStr3, xloc, yloc);
+  yloc+=RSEOffsetBetweenLines;
+  
    if (index==0) {
      String ageString = "Alphas' ages: ";
      //fill(220);
      text(ageString, xloc*index, yloc);
      fill(colors[0], colors[1], colors[2]);
      text(age, xloc*6.85, yloc);
+     yloc+=RSEOffsetBetweenLines;
      
      String foodString = "Food scores (/100): " + foodScore;
      //fill(220);
-     text(foodString, xloc*index, yloc+20);
+     text(foodString, xloc*index, yloc);
+     yloc+=RSEOffsetBetweenLines;
     
      String packString = "Pack sizes: " + "             " + wolves.size();
      //textSize(10);
-     text(packString, xloc*index, yloc+40);
+     text(packString, xloc*index, yloc);
    }
    else if (index==1) {
      fill(colors[0], colors[1], colors[2]);
      text(age, xloc*9*index, yloc);
+     yloc+=RSEOffsetBetweenLines;
       
      //fill(220);
-     text(foodScore, xloc*9*index, yloc+20);
+     text(foodScore, xloc*9*index, yloc);
+     yloc+=RSEOffsetBetweenLines;
       
      //textSize(14);
-     text(wolves.size(), xloc*9*index, yloc+40);
+     text(wolves.size(), xloc*9*index, yloc);
    }
    else if (index==2) {
      fill(colors[0], colors[1], colors[2]);
      text(age, xloc*5.625*index, yloc);
+     yloc+=RSEOffsetBetweenLines;
       
      //fill(220);
-     text(foodScore, xloc*5.625*index, yloc+20);
+     text(foodScore, xloc*5.625*index, yloc);
+     yloc+=RSEOffsetBetweenLines;
       
      //textSize(14);
-     text(wolves.size(), xloc*5.625*index, yloc+40);
+     text(wolves.size(), xloc*5.625*index, yloc);
    }
   
    return(yloc+40);
