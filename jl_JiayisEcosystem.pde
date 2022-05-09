@@ -365,9 +365,7 @@ text("Big green ovals: Frogs", xloc, yloc);
   yloc += RSEOffsetBetweenLines;
 text("Triangles: Tadpoles", xloc, yloc);
   yloc += RSEOffsetBetweenLines;
-text("Small green ovals: Little Frogs", xloc, yloc);
-  yloc += RSEOffsetBetweenLines;
-text("Yellow circle: Light", xloc, yloc);
+text("Green Circles: Algae", xloc, yloc);
 return(yloc);
 }
 
