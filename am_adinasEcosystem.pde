@@ -211,10 +211,13 @@ class AdinasEcosystem {
     popMatrix();
   }
   
-  int writeTextAlpha(int xloc, int yloc, int textSize, int[] colors, int index) {
-  String descriptionStr1 = "Three packs of wolves (triangles) run after rabbits (circles) to sustain themselves and increase their packs."
-  String descriptionStr2 = "Alphas live up to 50 y.o, after which the biggest member of the pack replaces him."
-  String descriptionStr3 = "New pack members are spawned after alpha hits max in food score."
+  int writeTextAlpha(int xloc, int yloc, int textSize, int[] colors, int index, color textFill) {
+  
+  fill(textFill);
+    
+  String descriptionStr1 = "Three packs of wolves (triangles) run after rabbits (circles) to sustain themselves and increase their packs.";
+  String descriptionStr2 = "Alpha lives up to 50 y.o, after which the biggest member of the pack replaces them.";
+  String descriptionStr3 = "New pack members are spawned as Alpha hits max in food score after which food score resets to 50 (initial score).";
   
   text(descriptionStr1, xloc, yloc);
   yloc+=RSEOffsetBetweenLines;
@@ -231,14 +234,20 @@ class AdinasEcosystem {
      text(age, xloc*6.85, yloc);
      yloc+=RSEOffsetBetweenLines;
      
-     String foodString = "Food scores (/100): " + foodScore;
+     String foodString = "Food scores (/100): ";
      //fill(220);
+     fill(textFill);
      text(foodString, xloc*index, yloc);
+     fill(colors[0], colors[1], colors[2]);
+     text(foodScore, xloc*6.85, yloc);
      yloc+=RSEOffsetBetweenLines;
     
-     String packString = "Pack sizes: " + "             " + wolves.size();
+     String packString = "Pack sizes: " + "             ";
      //textSize(10);
+     fill(textFill);
      text(packString, xloc*index, yloc);
+     fill(colors[0], colors[1], colors[2]);
+     text(wolves.size(), xloc*6.85, yloc);
    }
    else if (index==1) {
      fill(colors[0], colors[1], colors[2]);
@@ -440,7 +449,7 @@ void keyPressed() {
 //displays properly only for textSize = 14 
 int writeText(int xloc, int yloc, int textSize) {
    for (int k = 0; k < numofpacks; k++) {
-   alphas.get(k).writeTextAlpha( xloc, yloc, textSize, colors[k], k);
+   alphas.get(k).writeTextAlpha( xloc, yloc, textSize, colors[k], k, textFill);
     
   }
   return yloc+20;
