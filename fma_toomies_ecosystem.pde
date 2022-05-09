@@ -382,8 +382,6 @@ class toomiesEcosystem {
   }
 
   int writeText(int xloc, int yloc, int textSize) {
-    text("toomie:", xloc, yloc);
-    yloc += RSEOffsetBetweenLines;
     text("babysitting simulator-", xloc, yloc);
     yloc += RSEOffsetBetweenLines;
     text("the babysitter is trying to prevent the kids from causing trouble, she gives them candy to make them stop ", xloc, yloc);
