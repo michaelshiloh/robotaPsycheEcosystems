@@ -150,6 +150,7 @@ void drawSky(int xloc, int yloc) {
   yOffset = chinonyerem.writeText(xOffset, yOffset, textSize);
   yOffset += RSEOffsetBetweenLines;
   text("Phillip:", xOffset - 10, yOffset);
+  yOffset+=RSEOffsetBetweenLines;
   phillip.writeText(xOffset, yOffset, textSize);
 
   popMatrix();
