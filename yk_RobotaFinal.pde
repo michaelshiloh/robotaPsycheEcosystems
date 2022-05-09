@@ -274,22 +274,22 @@ class YejisEcosystem {
       acceleration.mult(0);
       for (int i = 0; i<whales.size(); i++) {
       if (whales.get(i).position.x < -r) {
-        println(whales);
+        //println(whales);
         whales.remove(i);
         //whales.add(new Whale(random(zoneWidth), random(zoneHeight))); 
       }
       else if (whales.get(i).position.x > zoneWidth+r){
-        println(whales);
+        //println(whales);
         whales.remove(i);
         //whales.add(new Whale(random(zoneWidth), random(zoneHeight))); 
       }
       else if (whales.get(i).position.y < -r){
-        println(whales);
+        //println(whales);
         whales.remove(i);
         //whales.add(new Whale(zoneWidth, zoneHeight)); 
       }
       else if (whales.get(i).position.y > zoneHeight+r){
-        println(whales);
+        //println(whales);
         whales.remove(i);
         //whales.add(new Whale(random(zoneWidth), random(zoneHeight))); 
       }
