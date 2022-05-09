@@ -27,10 +27,9 @@ class JiayiEcosystem {
 //size is affected by mass
   void display()  {
     pushMatrix();
-    scale(0.6);
     noStroke();
     fill(85,180,180);
-    ellipse(location.x, location.y, mass*0.15, mass*0.15);
+    ellipse(location.x, location.y, mass*0.15*0.6, mass*0.15*0.6);
     popMatrix();
   }      
 }
@@ -57,12 +56,11 @@ class Frog{
     fill(0,150,150);
     pushMatrix();
     translate(location.x,location.y);
-    scale(0.6);
     rotate(acceleration.heading());
-    ellipse(0,0,mass*3,mass*2);
+    ellipse(0,0,mass*3*0.6,mass*2*0.6);
     fill(0);
-    ellipse(60,10,20,20);
-    ellipse(60,-10,20,20);
+    ellipse(60*0.6,10*0.6,20*0.6,20*0.6);
+    ellipse(60*0.6,-10*0.6,20*0.6,20*0.6);
     popMatrix();
   }
    
@@ -119,7 +117,7 @@ class Tadpole{
   float lifespan=50;
   float x;
   float y;
-  float scale = 0.6;
+  float scale = 1;
   float growLevel=1;
   float maxspeed= 10;
   float maxforce =10;
@@ -165,14 +163,14 @@ class Tadpole{
     translate(location.x, location.y);
     rotate(velocity.heading());
     scale(scale);
-    triangle(0, 5, 0, -5, 20, 0);
+    triangle(0, 5*0.6, 0, -5*0.6, 20*0.6, 0);
     popMatrix();
     pop();
   }
   
   //the lifespan decreases with time
   void live(){
-   lifespan = lifespan -0.5;
+   lifespan = lifespan -0.3;
   }
 
 
@@ -180,9 +178,9 @@ class Tadpole{
   void eat(){
  for (int j = 0; j < algae.length;j++) {
     float distance = PVector.dist(location,algae[j].location);
-          if (distance<algae[j].mass*0.15 ){
+          if (distance<algae[j].mass*0.15*0.6 ){
             growLevel =growLevel +0.01; 
-            if(scale<1.5){
+            if(scale<2){
             scale = scale  +0.01;
             }
 
@@ -289,8 +287,7 @@ class LilFrog{
     pushMatrix();
     translate(location.x,location.y);
     rotate(acceleration.heading());
-    scale(0.6);
-    ellipse(0,0,50,30);
+    ellipse(0,0,50*0.6,30*0.6);
 
     popMatrix();
   }
@@ -349,8 +346,7 @@ void display(){
   y=mouseY;
   fill(250,250,210);
   pushMatrix();
-  scale(0.6);
-  ellipse(x,y,100,100);
+  ellipse(x,y,100*0.6,100*0.6);
   popMatrix();
 }
 
@@ -366,11 +362,13 @@ void keyPressed() {
 int writeText(int xloc, int yloc, int textSize) {
 textSize(textSize);
 text("Big green ovals: Frogs", xloc, yloc);
-text("Triangles: Tadpoles", xloc, yloc+20);
-text("Small green ovals: Little Frogs", xloc, yloc+40);
-text("Yellow circle: Light", xloc, yloc+60);
-text("Move your mouse to grow little frogs!", xloc, yloc+80);
-return(yloc+80);
+  yloc += RSEOffsetBetweenLines;
+text("Triangles: Tadpoles", xloc, yloc);
+  yloc += RSEOffsetBetweenLines;
+text("Small green ovals: Little Frogs", xloc, yloc);
+  yloc += RSEOffsetBetweenLines;
+text("Yellow circle: Light", xloc, yloc);
+return(yloc);
 }
 
 Frog a;
@@ -401,7 +399,7 @@ void setup() {
   b = new Frog (random(zoneWidth),random(zoneHeight),-0.035,0.05);
   c = new Light (mouseX,mouseY);
   for (int i = 0; i < algae.length; i++) {
-  algae [i] = new Algae(random(zoneWidth)*1.67,random(zoneHeight)*1.67,random(1000,2000));      
+  algae [i] = new Algae(random(zoneWidth),random(zoneHeight),random(1000,2000));      
   }
 }
 
@@ -434,12 +432,12 @@ void draw() {
   //if tadpoles doesn't eat enough food, they die. If they eat enough food and get the light, they grow into little frogs.
   if(t.lifespan<0)
       {
-        if(t.growLevel<5);{
+        if(t.growLevel<2.8){
         tadpoles1.remove(i);      
       }
-        if (t.growLevel>10){
+        if (t.growLevel>5){
           countmtadpole = 1;
-         if( PVector.dist(mouse,t.location)<100){
+         if( PVector.dist(mouse,t.location)<100*0.6){
           tadpoles1.remove(i);
           lilfrogs.add(new LilFrog(mouseX,mouseY, random(-0.05,0.05),random(-0.05,0.05)));
           countlfrog++;
