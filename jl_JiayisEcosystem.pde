@@ -370,7 +370,7 @@ text("Triangles: Tadpoles", xloc, yloc+20);
 text("Small green ovals: Little Frogs", xloc, yloc+40);
 text("Yellow circle: Light", xloc, yloc+60);
 text("Move your mouse to grow little frogs!", xloc, yloc+80);
-return(60);
+return(80);
 }
 
 Frog a;
@@ -387,7 +387,7 @@ ArrayList<Tadpole> tadpoles2 = new ArrayList<Tadpole>();
 ArrayList<LilFrog> lilfrogs = new ArrayList<LilFrog>();
 
 //Food
-Algae[]algae = new Algae[2];
+Algae[]algae = new Algae[3];
 
 //little frog and mature tadpole count
 int countlfrog;
