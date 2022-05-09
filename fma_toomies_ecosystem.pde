@@ -385,6 +385,6 @@ class toomiesEcosystem {
     text("toomie:", xloc, yloc);
     text("babysitting simulator-", xloc, yloc+20);
     text("the babysitter is trying to prevent the kids from causing trouble, she gives them candy to make them stop ", xloc, yloc+40);
-    return(40);
+    return(yloc+40);
   }
 }// ecosystem end
