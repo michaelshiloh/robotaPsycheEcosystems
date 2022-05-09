@@ -382,9 +382,11 @@ class toomiesEcosystem {
   }
 
   int writeText(int xloc, int yloc, int textSize) {
-    text("babysitting simulator-", xloc, yloc);
+    text("Babysitting Simulator-", xloc, yloc);
     yloc += RSEOffsetBetweenLines;
-    text("the babysitter is trying to prevent the kids from causing trouble, she gives them candy to make them stop ", xloc, yloc);
+    text("The babysitter is trying to prevent the kids from causing trouble, she gives them candy to make them stop.", xloc, yloc);
+    yloc += RSEOffsetBetweenLines;
+    text("The bars on the top left indicate how much they like the babysitter. This bar decreases when the children are ignored for too long.", xloc, yloc);
     return(yloc);
   }
 }// ecosystem end
