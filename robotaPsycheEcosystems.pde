@@ -197,7 +197,7 @@ void drawOutdoors(int xloc, int yloc) {
   yOffset+=RSEOffsetBetweenLines;
   yOffset = abdul.writeText(20, yOffset, textSize);yOffset+=RSEOffsetBetweenLines;
   yOffset = 0;
-  xOffset = 600;
+  xOffset = 530;
   text("Genie:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
   genie.writeText(xOffset, yOffset, textSize);
