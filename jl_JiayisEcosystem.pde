@@ -370,7 +370,7 @@ text("Triangles: Tadpoles", xloc, yloc+20);
 text("Small green ovals: Little Frogs", xloc, yloc+40);
 text("Yellow circle: Light", xloc, yloc+60);
 text("Move your mouse to grow little frogs!", xloc, yloc+80);
-return(80);
+return(yloc+80);
 }
 
 Frog a;
