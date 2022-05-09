@@ -316,7 +316,7 @@ int writeText(int xloc, int yloc, int textSize) {
     "4. The medium movers consume, the small"+ "\n" 
     +" movers when largest movers, as if for protection"  + "\n" 
     , xloc, yloc);
-    return 10*yloc;
+    return (textSize*10) + yloc;
   //text end
 }
 void draw() {
