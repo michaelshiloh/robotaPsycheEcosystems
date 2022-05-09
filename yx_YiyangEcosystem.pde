@@ -13,12 +13,12 @@ class YiyangEcosystem {
   int writeText(int xloc, int yloc, int textSize) { //description
     fill(0);
     text("Yiyang's ecosystem demonstrates insects in their idle mode, stimulated by each other.", xloc, yloc);
-    if (LightSources.size() >= 5) {
-        text("You reached the maximum number of light sources permitted.", xloc+20, yloc+20);
-    } else {
-        text("Click the mouse to place a light source.", xloc+20, yloc+20);
-    }
-    return(20);
+    // if (LightSources.size() >= 5) {
+    //     text("You reached the maximum number of light sources permitted.", xloc+20, yloc+20);
+    // } else {
+    //     text("Click the mouse to place a light source.", xloc+20, yloc+20);
+    // }
+    return(0);
   }
   
   void setup() {
