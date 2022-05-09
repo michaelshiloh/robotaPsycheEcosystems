@@ -197,10 +197,10 @@ void drawOutdoors(int xloc, int yloc) {
   yOffset+=RSEOffsetBetweenLines;
   yOffset = abdul.writeText(20, yOffset, textSize);yOffset+=RSEOffsetBetweenLines;
   yOffset = 0;
-  xOffset = 400;
+  xOffset = 600;
   text("Genie:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  genie.writeText(20, yOffset, textSize);
+  genie.writeText(xOffset, yOffset, textSize);
 
   popMatrix();
 }
