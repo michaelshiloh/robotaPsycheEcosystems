@@ -309,10 +309,10 @@ int writeText(int xloc, int yloc, int textSize) {
   "the biggest (green) is the most aggresive for food," + "\n"+ 
   "followed by the purple, and the" +
     " least aggresive is the yellow." + "\n" +
-    "2. On the mouse click, a new  enemy"+" is created, and the movers" + " are repelled by the enemy " + "\n"+ 
-    "3. The smallest movers are, also attracted" +
+   // "2. On the mouse click, a new  enemy"+" is created, and the movers" + " are repelled by the enemy " + "\n"+ 
+    "2. The smallest movers are, also attracted" +
     " to the largest movers, as if for protection"  + "\n"+ 
-    "4. The medium movers consume, the small"
+    "3. The medium movers consume, the small"
     +" movers when largest movers, as if for protection"  + "\n" 
     , xloc, yloc);
     return (RSEOffsetBetweenLines*10) + yloc;
