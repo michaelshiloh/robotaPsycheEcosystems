@@ -305,45 +305,19 @@ int writeText(int xloc, int yloc, int textSize) {
   fill(0);
   // displaying the on screen text instructions
   textSize(textSize);
-  text("1. There are three types of movers based on their sizes; "+
-  "the biggest (green) is the most aggresive for food," + "\n"+ 
-  "followed by the purple, and the" +
-    " least aggresive is the yellow." + "\n" +
-   // "2. On the mouse click, a new  enemy"+" is created, and the movers" + " are repelled by the enemy " + "\n"+ 
-    "2. The smallest movers are, also attracted" +
-    " to the largest movers, as if for protection"  + "\n"+ 
-    "3. The medium movers consume, the small"
-    +" movers when largest movers, as if for protection"  + "\n" 
-    , xloc, yloc);
-    return (RSEOffsetBetweenLines*10) + yloc;
+  
+   text("1. There are three types of movers based on their sizes; the biggest (green) is the most aggresive for food,", xloc, yloc);
+    yloc += RSEOffsetBetweenLines;
+    text("followed by the purple, and the least aggresive is the yellow.", xloc, yloc);
+    yloc += RSEOffsetBetweenLines;
+    text("2. The smallest movers are also attracted to the largest movers, as if for protection", xloc, yloc);
+    yloc += RSEOffsetBetweenLines;
+    text("3. The medium movers consume, the smaller movers", xloc, yloc);
+    return(yloc);
+    
   //text end
 }
 void draw() {
-  //instructionsText();
-  // displaying a screen based on current game state
-  //if (GAME_SCREEN == 1) {
-  //  instructionsText();
-  //  // starting the home screen when the mouse is pressed
-  //  text("START >>", 350, 700); 
-  //  if ((mouseX>= 308 && mouseX<=396) && (mouseY>= 679 && mouseY<=705)) {
-  //    noFill();
-  //    stroke(255);
-  //    rect(280, 670, 150, 40);
-
-  //    if (mousePressed) {
-  //      GAME_SCREEN = 2; // changing the screen to the home screen
-  //      firstIteration = true; // to remove the mover created on click
-  //    }
-  //  }
-  //} else if (GAME_SCREEN == 2) {
-  //  if (firstIteration && enemy.size() > 0) {
-  //    // removing any enemies created by accidental mouse clicks before the start of the game
-  //    for (int i=0; i< enemy.size(); i++)
-  //      enemy.remove(0);
-  //    firstIteration = false;
-  //  }
-
-    //instructionsText();
     // For each mover
     for (int i = 0; i < movers.size(); i++) {
       // Apply the attraction force from the Attractor on the mover, and the predator
@@ -383,13 +357,6 @@ void draw() {
             // the mover shouldn't count itself as another organism
             if (i!=j) {
               fill(0, 255, 255);
-              // checking that the movers are close enough to reproduce
-
-              //if (dist(movers.get(i).location.x, movers.get(i).location.y, movers.get(j).location.x, movers.get(j).location.y) == (movers.get(i).mass + movers.get(j).mass)) {
-
-              //  movers.add(new Mover(
-              //    ((movers.get(i).location.x + movers.get(j).location.x)/2), (movers.get(i).location.y +  movers.get(j).location.y)/2)); // initial location
-              //}
             }
 
             // making the smaller movers attracted to the larger movers 
