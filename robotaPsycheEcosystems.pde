@@ -232,15 +232,15 @@ void drawWater(int xloc, int yloc) {
   yOffset+=RSEOffsetBetweenLines;
   text("Brian:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = brian.writeText(20, 0, textSize);
+  yOffset += brian.writeText(20, yOffset, textSize);
   yOffset+=RSEOffsetBetweenLines;
   text("Jiayi:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = jiayi.writeText(20, yOffset + 40, textSize);
+  yOffset += jiayi.writeText(20, yOffset, textSize);
   yOffset+=RSEOffsetBetweenLines;
   text("Yeji:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yeji.writeText(20, yOffset + 40, textSize);
+  yOffset += yeji.writeText(20, yOffset, textSize);
 
   popMatrix();
 }
