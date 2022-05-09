@@ -120,7 +120,8 @@ void drawIndoors(int xloc, int yloc) {
   yOffset += RSEOffsetBetweenLines;
   text("Toomie:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = toomie.writeText(RSEOffsetBetweenLines, yOffset, textSize);  yOffset += RSEOffsetBetweenLines;
+  yOffset = toomie.writeText(RSEOffsetBetweenLines, yOffset, textSize);
+  yOffset += RSEOffsetBetweenLines;
   yOffset+=RSEOffsetBetweenLines;
   text("Yiyang:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
@@ -173,7 +174,7 @@ void drawOutdoors(int xloc, int yloc) {
   badr.draw();
   abdul.draw();
   genie.draw();
-  
+
   fill(textFill);
   textSize(textSize);
   int xOffset = 20;
@@ -181,21 +182,25 @@ void drawOutdoors(int xloc, int yloc) {
   yOffset+=RSEOffsetBetweenLines;
   text("Sarah:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-   yOffset = sarah.writeText(20, RSEOffsetBetweenLines, textSize);
+  yOffset = sarah.writeText(20, yOffset, textSize);
   yOffset+=RSEOffsetBetweenLines;
   text("Adina:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = adina.writeText(20, yOffset, textSize);yOffset+=RSEOffsetBetweenLines;
+  yOffset = adina.writeText(20, yOffset, textSize);
+  yOffset+=RSEOffsetBetweenLines;
   fill(textFill);
   text("Snehil:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = snehil.writeText(20, yOffset , textSize);yOffset+=RSEOffsetBetweenLines;
+  yOffset = snehil.writeText(20, yOffset, textSize);
+  yOffset+=RSEOffsetBetweenLines;
   text("Badr:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = badr.writeText(20, yOffset, textSize);yOffset+=RSEOffsetBetweenLines;
+  yOffset = badr.writeText(20, yOffset, textSize);
+  yOffset+=RSEOffsetBetweenLines;
   text("Abdul:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = abdul.writeText(20, yOffset, textSize);yOffset+=RSEOffsetBetweenLines;
+  yOffset = abdul.writeText(20, yOffset, textSize);
+  yOffset+=RSEOffsetBetweenLines;
   yOffset = 0;
   xOffset = 530;
   text("Genie:", xOffset - 10, yOffset);
@@ -218,7 +223,7 @@ void drawWater(int xloc, int yloc) {
   jiayi.draw();
   yeji.draw();
 
-  
+
   fill(textFill);
   textSize(textSize);
   int xOffset = 20;
@@ -227,7 +232,7 @@ void drawWater(int xloc, int yloc) {
   yOffset+=RSEOffsetBetweenLines;
   text("Brian:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-   yOffset = brian.writeText(20, 0, textSize);
+  yOffset = brian.writeText(20, 0, textSize);
   yOffset+=RSEOffsetBetweenLines;
   text("Jiayi:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
