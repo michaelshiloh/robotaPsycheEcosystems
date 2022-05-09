@@ -15,9 +15,9 @@ class BadrsEcosystem {
     fill(0);
     text("Alive: " + creatures.size(), xloc, yloc);
     text("Food: " + foodlist.size(), xloc, yloc+RSEOffsetBetweenLines);
-    //text("Healthy: " + cnt, xloc, yloc+RSEOffsetBetweenLines*2);
-    //text("Unhealthy: " + cnt2, xloc, yloc+RSEOffsetBetweenLines*3);
-    text("Temperature: " + temperature + " °C", xloc, yloc+RSEOffsetBetweenLines*4);
+    //text("Healthy: " + cnt, xloc, yloc+RSEOffsetBetweenLines);
+    //text("Unhealthy: " + cnt2, xloc, yloc+RSEOffsetBetweenLines);
+    text("Temperature: " + temperature + " °C", xloc, yloc+RSEOffsetBetweenLines*2);
     return(yloc+40);
   }
 
