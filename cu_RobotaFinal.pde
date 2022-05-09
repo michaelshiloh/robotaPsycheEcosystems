@@ -165,14 +165,21 @@ class ChinonyeremsEcosystem {
 
   int writeText(int xloc, int yloc, int textSize) {
     text("The zoinks are HUNTERS, circular in shape and are either grey or lemon green", xloc, yloc);
-    text("The jinkies are PREDATORS, triangular in shape and are purple", xloc, yloc + 20);
-    text("The jeepers are DEFENDERS, elliptical in shape and are either red or pink", xloc, yloc + 40);
-    text("The food particles are NUTRITION, circular in shape and are light pink", xloc, yloc + 60);
-    text("Zoinks: "+zoinks.size(), xloc, yloc + 80);
-    text("Jinkies: "+jinkies.size(), xloc, yloc + 100);
-    text("Jeepers: "+jeepers.size(), xloc, yloc + 120);
-    text("Food: "+foods.size(), xloc, yloc + 140);
-    return(yloc+140);
+    yloc+=RSEOffsetBetweenLines;
+    text("The jinkies are PREDATORS, triangular in shape and are purple", xloc, yloc);
+    yloc+=RSEOffsetBetweenLines;
+    text("The jeepers are DEFENDERS, elliptical in shape and are either red or pink", xloc, yloc);
+    yloc+=RSEOffsetBetweenLines;
+    text("The food particles are NUTRITION, circular in shape and are light pink", xloc, yloc);
+    yloc+=RSEOffsetBetweenLines;
+    text("Zoinks: "+zoinks.size(), xloc, yloc);
+    yloc+=RSEOffsetBetweenLines;
+    text("Jinkies: "+jinkies.size(), xloc, yloc);
+    yloc+=RSEOffsetBetweenLines;
+    text("Jeepers: "+jeepers.size(), xloc, yloc);
+    yloc+=RSEOffsetBetweenLines;
+    text("Food: "+foods.size(), xloc, yloc);
+    return(yloc);
   }
 
   void keyPressed()
