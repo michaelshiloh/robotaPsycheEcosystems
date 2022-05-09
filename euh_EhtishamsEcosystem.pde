@@ -93,21 +93,35 @@ class EhtishamsEcosystem {
     
     text ("The gray block in the top represents mice home where the cat cannot enter", xloc, yloc);
     
-    text ("The cat is represented by the big gray triangle with black or red outline (red outline shows high hunger level)", xloc, yloc + RSEOffsetBetweenLines);
+    yloc += RSEOffsetBetweenLines;
     
-    text ("Mice are represented by SMALL triangles with small bars below that indicate their AGE", xloc, yloc+RSEOffsetBetweenLines);
+    text ("The cat is represented by the big gray triangle with black or red outline (red outline shows high hunger level)", xloc, yloc);
     
-    text ("Green bar -> YOUNG; Blue bar -> ADULT, Red bar -> OLD ", xloc, yloc+RSEOffsetBetweenLines);
+    yloc += RSEOffsetBetweenLines;
     
-    text ("Mice triangle OUTLINE represents their GENDER (blue - male and pink - female)", xloc, yloc+RSEOffsetBetweenLines);
+    text ("Mice are represented by SMALL triangles with small bars below that indicate their AGE", xloc, yloc);
     
-    text ("Mice triangle INNER COLOR represents HUNGER LELVEL (Green -> not hungry; Yellow -> hungry; Red -> very hungry)", xloc, yloc+RSEOffsetBetweenLines);
+    yloc += RSEOffsetBetweenLines;
     
-    text ("Mice leave house only to get FOOD (which is represented by yellow rectangle)", xloc, yloc+RSEOffsetBetweenLines);
+    text ("Green bar -> YOUNG; Blue bar -> ADULT, Red bar -> OLD ", xloc, yloc);
     
-    text ("Otherwise they avoid getting eaten by the Cat and stay inside their home", xloc, yloc+RSEOffsetBetweenLines);
+    yloc += RSEOffsetBetweenLines;
     
-    return(yloc+(RSEOffsetBetweenLines*8));
+    text ("Mice triangle OUTLINE represents their GENDER (blue - male and pink - female)", xloc, yloc);
+    
+    yloc += RSEOffsetBetweenLines;
+    
+    text ("Mice triangle INNER COLOR represents HUNGER LELVEL (Green -> not hungry; Yellow -> hungry; Red -> very hungry)", xloc, yloc);
+    
+    yloc += RSEOffsetBetweenLines;
+    
+    text ("Mice leave house only to get FOOD (which is represented by yellow rectangle)", xloc, yloc);
+    
+    yloc += RSEOffsetBetweenLines;
+    
+    text ("Otherwise they avoid getting eaten by the Cat and stay inside their home", xloc, yloc);
+    
+    return(yloc);
 
   }
 
