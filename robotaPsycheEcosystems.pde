@@ -173,28 +173,32 @@ void drawOutdoors(int xloc, int yloc) {
   badr.draw();
   abdul.draw();
   genie.draw();
-
+  
   fill(textFill);
+  textSize(textSize);
+  int xOffset = 20;
+  int yOffset = 0;
   yOffset+=RSEOffsetBetweenLines;
   text("Sarah:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  int yOffset = sarah.writeText(RSEOffsetBetweenLines, 0, textSize);yOffset+=RSEOffsetBetweenLines;
+   yOffset = sarah.writeText(RSEOffsetBetweenLines, 0, textSize);
+  yOffset+=RSEOffsetBetweenLines;
   text("Adina:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = adina.writeText(20, yOffset + 40, textSize);yOffset+=RSEOffsetBetweenLines;
+  yOffset = adina.writeText(20, yOffset, textSize);yOffset+=RSEOffsetBetweenLines;
   fill(textFill);
   text("Snehil:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = snehil.writeText(20, yOffset + 40, textSize);yOffset+=RSEOffsetBetweenLines;
+  yOffset = snehil.writeText(20, yOffset , textSize);yOffset+=RSEOffsetBetweenLines;
   text("Badr:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = badr.writeText(20, yOffset + 40, textSize);yOffset+=RSEOffsetBetweenLines;
+  yOffset = badr.writeText(20, yOffset, textSize);yOffset+=RSEOffsetBetweenLines;
   text("Abdul:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  yOffset = abdul.writeText(20, yOffset + 40, textSize);yOffset+=RSEOffsetBetweenLines;
+  yOffset = abdul.writeText(20, yOffset, textSize);yOffset+=RSEOffsetBetweenLines;
   text("Genie:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  genie.writeText(20, yOffset + 40, textSize);
+  genie.writeText(20, yOffset, textSize);
 
   popMatrix();
 }
@@ -212,11 +216,16 @@ void drawWater(int xloc, int yloc) {
   jiayi.draw();
   yeji.draw();
 
+  
   fill(textFill);
+  textSize(textSize);
+  int xOffset = 20;
+  fill(textFill);
+  int yOffset = 0;
   yOffset+=RSEOffsetBetweenLines;
   text("Brian:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
-  int yOffset = brian.writeText(20, 0, textSize);
+   yOffset = brian.writeText(20, 0, textSize);
   yOffset+=RSEOffsetBetweenLines;
   text("Jiayi:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;

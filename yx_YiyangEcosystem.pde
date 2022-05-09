@@ -13,7 +13,12 @@ class YiyangEcosystem {
   int writeText(int xloc, int yloc, int textSize) { //description
     fill(0);
     text("Yiyang's ecosystem demonstrates insects in their idle mode, stimulated by each other.", xloc, yloc);
-    return(0);
+    if (LightSources.size() >= 5) {
+        text("You reached the maximum number of light sources permitted.", xloc+20, yloc+20);
+    } else {
+        text("Click the mouse to place a light source.", xloc+20, yloc+20);
+    }
+    return(20);
   }
   
   void setup() {
@@ -27,32 +32,6 @@ class YiyangEcosystem {
   }
 
   void draw() {
-    if (mode == 0) { // dark mode
-      // background(0,0,0);
-      fill(0,0,0);
-      rect(0, 0, zoneWidth, 20);
-      
-      fill(255,255,255);
-      if (LightSources.size() >= 5) {
-        text("Press N to switch to day mode. Click the mouse to place a light source. You reached the maximum number of light sources permitted.", 5,15);
-      } else {
-        text("Press N to switch to day mode. Click the mouse to place a light source.", 5,15);
-      }
-    }
-    
-    else if (mode == 1) { // day mode
-      // background(255,255,255);
-      fill(255,255,255);
-      rect(0, 0, zoneWidth, 20);
-
-      fill(0,0,0);
-      if (LightSources.size() >= 5) {
-        text("Press N to switch to dark mode. Click the mouse to place a light source. You reached the maximum number of light sources permitted.", 5,15);
-      } else {
-        text("Press N to switch to dark mode. Click the mouse to place a light source.", 5,15);
-      }
-    }
-
     // For each mover
     for (int i = 0; i < movers.length; i++) {
       // Apply the attraction force from the LightSources on this mover
