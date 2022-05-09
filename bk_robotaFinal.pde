@@ -226,7 +226,7 @@ class BriansEcosystem {
     text("No More Fish...", xloc, yloc);
    }
    else {
-    text("Click to drop food for the fish", xloc, yloc);
+    //text("Click to drop food for the fish", xloc, yloc); //commented out because we assume there will be no mouseClicked or keyPressed (they will all die hungry)
    }
    
    text(fishes.size() + " fish left", xloc, yloc+20);
