@@ -2,7 +2,7 @@
 // Course: Robata Psyche
 // Instructor: Michael Shiloh
 // Project Description: This is a project that aims to simulate a virtual ecosystem with digital creatures interacting with each other.
-// The code simulates the situation where a predator attempts to hund down the preys. From the start, their locations are randomly generated.
+// The code simulates the situation where a predator attempts to hunt down the preys. From the start, their locations are randomly generated.
 // For each prey, they are constantly running away from the predator. On the other hand, the predator locates the nearest prey at any given time and chase it down at a higher speed.
 
 
@@ -27,10 +27,13 @@ class PhillipEcosystem {
     // Displaying information about the current status of the ecosystem
     fill(0);
     textSize(textSize);
-    text("Time elapsed: "+timeElapsed, xloc, yloc);
-    text("Preys alive: "+ alive_preys, xloc, yloc+20);
-    text("Food available: " + FG.food_cnt, xloc, yloc+40);
-    return 40;
+    text("The red triangle is the PREDATOR, they hunt down the preys", xloc, yloc);
+    text("The blue triangles are the PREYS, they run away from the predator and chase the food", xloc, yloc+20);
+    text("The pink circles are the FOOD, they are randomly generated", xloc, yloc+40);
+    text("Time elapsed: "+timeElapsed, xloc, yloc+60);
+    text("Preys alive: "+ alive_preys, xloc, yloc+80);
+    text("Food available: " + FG.food_cnt, xloc, yloc+100);
+    return 100;
   }
 
 

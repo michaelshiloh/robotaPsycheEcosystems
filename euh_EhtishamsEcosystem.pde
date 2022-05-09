@@ -81,7 +81,6 @@ class EhtishamsEcosystem {
 
     cat.update();
     flowField.shiftField(); //change field direction randomly after some time to exhibit random movement of cat
-    //displayLegend(); //Commented text out
   }
   
   //---------------------------------------------------------------------------------//
@@ -110,70 +109,6 @@ class EhtishamsEcosystem {
     
     return(140);
 
-  }
-  
-  //---------------------------------------------------------------------------------//
-  //Display Legend: It displays all the informative text on screen
-  //---------------------------------------------------------------------------------//
-
-  void displayLegend() {
-    fill(0);
-    noStroke();
-    rectMode(CORNER);
-    rect(0, zoneHeight-legendSize, zoneWidth, legendSize);
-    PFont algerian = createFont("algerian", 16);
-    textFont(algerian);
-    text ("Mice Home", 10, 20);
-    if (miceInHouse >= 145) {
-      fill(255, 0, 0);
-    } else {
-      fill(0);
-    }
-    text ("Current Mice: " + miceInHouse, 10, 40);
-
-    fill(0);
-    text ("Room: ", 10, houseSize + 20);
-
-    text ("Click anywhere inside the room to put", 20, houseSize + 40);
-    fill(255, 170, 51);
-    text ("food", 340, houseSize + 40);
-
-    fill(0);
-    text ("Cat is represented by gray triangle:", 20, houseSize + 60);
-    text ("Black outline of triangle: Cat is normal", 40, houseSize + 80);
-    fill(255, 0, 0);
-    text ("Red", 40, houseSize + 100);
-    fill(0);
-    text ("outline of triangle: Cat is aggressive", 75, houseSize + 100);
-
-
-
-    PFont georgia = createFont("georgia", 16);
-    textFont(georgia);
-    fill(0, 255, 255);
-    text ("Life Remaining - Indicated by a Rectangle:", 20, zoneHeight-(legendSize-20));
-    fill(0, 255, 0);
-    text ("Green: > 80 ", 40, zoneHeight-(legendSize-40));
-    fill(0, 100, 255);
-    text ("Blue: > 30 and < 80 (reproduction occurs in blue)", 40, zoneHeight-(legendSize-60));
-    fill (255, 0, 0);
-    text ("Red: < 30 ", 40, zoneHeight-(legendSize-80));
-
-    fill(0, 255, 255);
-    text ("Hunger - Indicated by inner color of triangle:", zoneWidth - 350, zoneHeight-(legendSize-20));
-    fill(0, 255, 0);
-    text ("Green: < 50 ", zoneWidth - 300, zoneHeight-(legendSize-40));
-    fill (255, 233, 0);
-    text ("Yellow: > 50 and < 80", zoneWidth - 300, zoneHeight-(legendSize-60));
-    fill (128, 0, 0);
-    text ("Maroon: > 80 ", zoneWidth - 300, zoneHeight-(legendSize-80));
-
-    fill (0, 255, 255);
-    text ("Gender - Indicated by triangle's outline (stroke):", zoneWidth/2 - 150, zoneHeight-(legendSize-20));
-    fill (255, 53, 184);
-    text ("Pink: Female", zoneWidth/2 - 100, zoneHeight-(legendSize-50));
-    fill (0, 0, 255);
-    text ("Blue: Male", zoneWidth/2 - 100, zoneHeight-(legendSize-80));
   }
 
   //---------------------------------------------------------------------------------//
