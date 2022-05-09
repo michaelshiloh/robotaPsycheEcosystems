@@ -114,9 +114,13 @@ void drawIndoors(int xloc, int yloc) {
   int xOffset = 20;
   int yOffset = 150;
   text("Ehtisham:", xOffset - 10, yOffset);
-  yOffset+=40;
+  yOffset+=20;
   yOffset = ehtisham.writeText(xOffset, yOffset, textSize);
-  //yOffset = toomie.writeText(20, yOffset+40, textSize);
+  text("Toomie:", xOffset - 10, yOffset);
+  yOffset+=20;
+  yOffset = toomie.writeText(20, yOffset+180, textSize);
+  text("Yiyang:", xOffset - 10, yOffset);
+  yOffset+=20;
   //yiyang.writeText(20, yOffset+40, textSize);
 
   popMatrix();
@@ -168,7 +172,8 @@ void drawOutdoors(int xloc, int yloc) {
   genie.draw();
 
   fill(textFill);
-  int yOffset = adina.writeText(20, 0, textSize);
+  int yOffset = sarah.writeText(20, 0, textSize);
+  yOffset = adina.writeText(20, yOffset + 40, textSize);
   yOffset = snehil.writeText(20, yOffset + 40, textSize);
   yOffset = badr.writeText(20, yOffset + 40, textSize);
   yOffset = abdul.writeText(20, yOffset + 40, textSize);
