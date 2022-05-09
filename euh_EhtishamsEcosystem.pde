@@ -134,9 +134,9 @@ class EhtishamsEcosystem {
   //---------------------------------------------------------------------------------//
   //spawn new food
   //---------------------------------------------------------------------------------//
-  // On call in draw function, this fucntion spawns new food on a random location after every 600 frames (10 seconds)
+  // On call in draw function, this fucntion spawns new food on a random location after every 200 frames
   void spawnNewFood() {
-    if (frameCount - lastSpawnTime > 500) {
+    if (frameCount - lastSpawnTime > 200) {
       float x = random(20, zoneWidth-20);
       float y = random(houseSize+20, zoneHeight-(20));
       food.add(new Food(x, y));
