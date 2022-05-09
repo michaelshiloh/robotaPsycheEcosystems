@@ -174,13 +174,15 @@ void drawOutdoors(int xloc, int yloc) {
   abdul.draw();
   genie.draw();
 
-  fill(textFill);yOffset+=RSEOffsetBetweenLines;
+  fill(textFill);
+  yOffset+=RSEOffsetBetweenLines;
   text("Sarah:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
   int yOffset = sarah.writeText(RSEOffsetBetweenLines, 0, textSize);yOffset+=RSEOffsetBetweenLines;
   text("Adina:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
   yOffset = adina.writeText(20, yOffset + 40, textSize);yOffset+=RSEOffsetBetweenLines;
+  fill(textFill);
   text("Snehil:", xOffset - 10, yOffset);
   yOffset+=RSEOffsetBetweenLines;
   yOffset = snehil.writeText(20, yOffset + 40, textSize);yOffset+=RSEOffsetBetweenLines;
