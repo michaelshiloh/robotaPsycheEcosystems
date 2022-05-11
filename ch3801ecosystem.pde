@@ -40,8 +40,6 @@ class GenieEcosystem {
 
   //draw function
   void draw() {
-    if (mouseX>=40&&mouseX<=140&&mouseY>=60&&mouseY<=100&&mousePressed)
-    {
       for (int i = 0; i < movers.length; i++) {
         //worms and the attract forces
         worms[i].update();
@@ -61,36 +59,6 @@ class GenieEcosystem {
         movers[i].nolightupdate();
         movers[i].checkEdges();
         movers[i].nolight();
-      }
-
-      //button
-      //buttonclick();
-    } else 
-    {
-      for (int i = 0; i < movers.length; i++) {
-        //worms and the attract forces
-        worms[i].update();
-        worms[i].display();
-        PVector force1=worms[i].attract(movers[i]);
-        PVector forcefemale1=fmovers[i].attract(movers[i]);
-
-        //female displaying 
-        fmovers[i].update();
-        fmovers[i].checkEdges();
-        //male displaying 
-        movers[i].update();
-        movers[i].checkEdges();
-        //apply attract force to the fireflies
-        movers[i].applyForce(force1);
-        fmovers[i].applyForce(force1);
-        movers[i].applyForce(forcefemale1);
-        //displaying
-        fmovers[i].display();
-        movers[i].display();
-      }
-
-      //buttonclick();
-      mouseposition();
     }
 
     //if eat more than 5 worms than if the female and male meet they can reproduce new larvae
