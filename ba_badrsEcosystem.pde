@@ -21,6 +21,15 @@ class BadrsEcosystem {
     //text("Unhealthy: " + cnt2, xloc, yloc+RSEOffsetBetweenLines);
     text("Temperature: " + temperature + " °C", xloc, yloc);
     yloc += RSEOffsetBetweenLines;
+    text("- Green means that the creature is healthy, red means it is unhealthy.", xloc, yloc);
+    yloc += RSEOffsetBetweenLines;
+    text("- Eating food decreases hunger, and increases energy. ", xloc, yloc);
+    yloc += RSEOffsetBetweenLines;
+    text("- With time and movement, hunger increases.", xloc, yloc);
+    text("- If the energy is too low or the creature hits the edges, its health decreases.", xloc, yloc);
+    yloc += RSEOffsetBetweenLines;
+    text("- The creature dies when its health is too low, and reproduces when its energy is high.", xloc, yloc);
+    yloc += RSEOffsetBetweenLines;
     return(yloc);
   }
 
